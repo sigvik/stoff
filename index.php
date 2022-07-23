@@ -65,6 +65,55 @@ HTML;
 
 ?>
 
+<!-------------------------------------------------->
+
+<div id="menu-overlay">
+    
+    <div class="menu dark">
+
+        <div class="icons">
+            <div id="search-btn" class="icon">&#xe8b6;</div>
+            <div id="menu-exit" class="icon">&#xe5cd;</div>
+        </div>
+
+        <div class="large-categories">
+            <div class="category samfunn extends">Samfunn</div>
+            <div class="category kultur extends">Kultur</div>
+            <div class="category debatt extends">Debatt</div>
+            <div class="category extends">Arkiv</div>
+        </div>
+
+        <div class="small-menu-items">
+            <div class="menu-item">Bergensguiden</div>
+            <div class="menu-item">Papirutgaven</div>
+            <div class="menu-item">Om oss</div>
+        </div>
+
+        <div class="menu-footer">
+
+            <div class="social-icons">
+                <div class="icon facebook"></div>
+                <div class="icon insta"></div>
+            </div>
+            
+            <div class="text">
+                <p>
+                    STOFF arbeider etter Vær Varsom-plakatens regler for god presseskikk, og får støtte fra Velferdstinget i Bergen.
+                </p>
+                <p>Utviklet av Sigurd Vikene</p>
+                <p>© STOFF 2022</p>
+            </div>
+
+            <div class="vt-logo">Velferdstinget Vest</div>
+
+        </div>
+
+    </div>
+
+    <div id="menu-overlay-bg"></div>
+
+</div>
+
 <div class="header-wrapper dark pattern-bg">
 
     <div class="header-big"> 

@@ -28,9 +28,9 @@ Anything styling the header and it's contents.
 }
   
 .header-menu-wrapper {
+    @include divider-top();
     width: 100%;
     padding-top: 0.5rem;
-    border-top: $divider-height solid var(--text-color);
 }
   
 .header-menu {

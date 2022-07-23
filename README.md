@@ -5,3 +5,6 @@ as well as making it more robust, intuitive and maintainable for the editors. ST
 
 Here's the previous theme, which was quite messy as stated by the creator himself:
 https://github.com/marcusln/stoffmagasin.no
+
+Here's the visual sketch made with Figma
+https://www.figma.com/proto/dwEEWPEDjQmPNkkvWknQdv/STOFF-Sketch

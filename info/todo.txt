@@ -3,19 +3,17 @@ Todo:
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
 Lær å avslutte i tide sjølom du ikkje e ferdig.
 
-- Få ditte opp på git.
-- Menyknappen går utafor på mobil?
 - Meny
 
 -------
 
 Seinare:
 
-- få alle rem sizes over i px2rem
-- meny
 - scrollande mini header (how? transforme den store eller vise anna element? berre en scroll to top?)
 - artikkel
 - portraits på mob bør få full size
+
+- ta alle px2rem tilbake til berre rem, og constantane tilbake til var(--)
 
 -------------------------------------
 
