@@ -1,0 +1,46 @@
+@import 'dirs';
+
+// FONTS
+
+
+// ----- Icon fonts --------
+
+@font-face {
+    // https://fonts.google.com/icons
+    font-family: 'Material_Symbols';
+    src: url("#{$fonts}/MaterialSymbolsSharp.woff2") format("woff2");
+}
+
+@font-face {
+    /* 
+    Made with fontello.com for icons Material Symbols lack.
+    Has 3 symbols, make a new font to add more:
+        Facebook: 
+        Instagram: 
+        Twitter: 
+    */
+    font-family: 'Social_Icons';
+    src: url("#{$fonts}/Social-Icons/icons.woff2") format("woff2");
+}
+
+
+// ----- DIN --------
+
+@mixin DIN($name, $weight) {
+    font-family: 'DIN_web';
+    src: url("#{$fonts}/DIN/DIN-#{$name}.woff2") format("woff2");
+    font-weight: $weight;
+}
+
+$DIN-vars: (
+    "Light": 300, 
+    "Regular": 400, 
+    "Bold": 700, 
+    "Black": 900, 
+);
+
+@each $name, $weight in $DIN-vars {
+    @font-face {
+        @include DIN($name, $weight);
+    }
+}

@@ -1,0 +1,33 @@
+// IMAGE SIZING
+
+.bilde-wrapper {
+    display: flex;
+    justify-content: center;
+    height: px2rem(256);
+    background-color: var(--opaque);
+    overflow: hidden;
+}
+  
+.bilde {
+    align-self: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+// DESKTOP ONLY ------------------------ 
+@media screen and (min-width: $tablet) {
+
+    .one-split .landscape {
+        height: auto;
+    }
+
+    .two-split .bilde-wrapper {
+        height: px2rem(400);
+    }
+
+    .landscape .bilde {
+        max-height: inherit;
+        width: 100%;
+    }
+}

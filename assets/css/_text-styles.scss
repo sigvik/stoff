@@ -1,0 +1,91 @@
+@import "constants/fonts";
+
+// TEXT STYLES AND SIZES
+
+
+@mixin material-symbol() {
+    line-height: 1;
+    font-variation-settings: 'FILL' 1, 'wght' 700;
+}
+
+@mixin spaced() {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+body {
+    font-family: "DIN_web", -apple-system, BlinkMacSystemFont, 'Helvetica', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif, 'Social_Icons', 'Material_Symbols';
+}
+
+#hamburger {
+    @include material-symbol;
+    font-size: px2rem(48);
+}
+
+.menu-item {
+    @include spaced;
+    font-size: px2rem(16);
+    font-weight: bold;
+}
+
+.rad-overskrift {
+    @include spaced;
+    font-size: px2rem(24);
+}
+
+.annonse-tag {
+    font-size: px2rem(12);
+}
+
+.tekstdel {
+    text-align: center;
+    
+    // Use &shy; to mark good places to break text. E.g. "train&shy;station"
+    word-wrap: break-word;
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;
+}
+
+.overskrift {
+    // Variable size for resizing in smaller viewports.
+    --font-size: 2rem;
+    font-size: var(--font-size);
+    line-height: var(--font-size);
+}
+
+.tag {
+    @include spaced;
+    font-size: px2rem(12);
+    font-weight: bold;
+}
+
+
+
+// DESKTOP ONLY ------------------------ 
+@media screen and (min-width: $tablet) {
+
+    // ---- one-split ----
+
+    .one-split .overskrift {
+        --font-size: 4rem;
+    }
+    
+    .dark .one-split .overskrift {
+        // Some bold headlines in dark mode 
+        font-weight: bold;
+    }
+
+
+    // ---- two-split & one-split ----
+
+    .two-split .overskrift {
+        --font-size: 2.5rem;
+    }
+    
+    .one-split .ingress, .two-split .ingress {
+        font-size: px2rem(20);
+    }
+}

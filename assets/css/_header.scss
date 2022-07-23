@@ -1,0 +1,71 @@
+/*
+
+HEADER
+
+Anything styling the header and it's contents.
+
+*/
+
+.header-big {
+    @include centered-content();
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $default-gap;
+    padding: $small-gap 0; // For mobile, overridden elsewhere
+}
+  
+#hamburger {
+    position: absolute;
+    padding: inherit;
+    top: 0;
+    right: 0;
+}
+  
+.header-big .logo, .header-menu {
+    // Header menu has same size as logo
+    width: clamp(8rem, 60%, px2rem(560));
+}
+  
+.header-menu-wrapper {
+    width: 100%;
+    padding-top: 0.5rem;
+    border-top: $divider-height solid var(--text-color);
+}
+  
+.header-menu {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+  
+.menu-item {
+    flex-grow: 0.2;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+
+
+//  TABLET & BIGGER --------------------
+@media screen and (min-width: $mobile) {
+
+    .header-big .logo, .header-menu {
+        @include centered();
+    }
+
+    .header-big {
+      padding: px2rem(56) 0; // This size isn't used anywhere else 
+    }
+
+}
+
+
+//  TABLET & SMALLER -------------------
+@media screen and (max-width: $tablet) {
+
+    .header-menu-wrapper {
+      display: none;
+    }
+    
+}

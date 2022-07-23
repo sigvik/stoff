@@ -1,0 +1,135 @@
+/*
+
+GRID
+
+Sizing and placement in the overall page structure of rows and columns.
+
+*/
+
+
+//  DESKTOP & SMALLER ------------------------
+
+body {
+    margin: 0;
+}
+
+@mixin centered() {
+    margin: 0 auto;
+}
+
+@mixin centered-content() {
+    @include centered();
+    width: $content-width;
+}
+
+.rad-gruppe {
+    @include centered-content();
+    padding: $default-gap 0;
+}
+  
+.rad, .kolonne {
+    display: flex;
+    flex-direction: row; // flex-direction: column for .kolonne further down */
+    gap: $default-gap;
+}
+  
+.annonse-tag {
+    padding-bottom: px2rem(4);
+}
+  
+.ad {
+    width: 100%;
+}
+  
+.sak {
+    display: flex;
+    flex-direction: column;
+    gap: $small-gap;
+    padding: $default-gap 0;
+    width: 100%;
+}
+  
+.tekstdel {
+    display: flex;
+    flex-direction: column;
+    gap: $small-gap;
+}
+  
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: $small-gap;
+}
+  
+.kolonne {
+    flex-direction: column;
+}
+  
+  
+  
+//  DESKTOP ONLY ------------------------ 
+@media screen and (min-width: $tablet) {
+  
+    // ---- one-split ----
+  
+    .one-split .tekstdel {
+        gap: $default-gap;
+    }
+  
+  
+    // ---- two-split & one-split ----
+  
+    .two-split .sak, .one-split .sak, .three-split-alt, .three-split-alt .one-split {
+        gap: px2rem(48);
+    }
+  
+  
+    // ---- three-split-alt ----
+    
+    .three-split-alt {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .three-split-alt .one-split {
+        grid-column: span 2;
+    }
+  
+    .kolonne {
+        gap: 0;
+    }
+  
+    .kolonne .bilde-wrapper {
+        height: px2rem(208);
+    }
+  
+    .kolonne .ingress {
+        display: none;
+    }
+  
+}
+  
+  
+// TABLET & SMALLER ------------------------ 
+@media screen and (max-width: $tablet) {
+  
+    .three-split, .three-split-alt {
+        flex-direction: column;
+    }
+  
+    .kolonne {
+        flex-direction: row;
+    }
+  
+}
+  
+  
+  
+// MOBILE ------------------------ 
+@media screen and (max-width: $mobile) {
+  
+    .two-split, .kolonne {
+        flex-direction: column;
+    }
+  
+}

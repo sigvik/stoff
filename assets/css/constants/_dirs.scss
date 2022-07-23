@@ -1,0 +1,9 @@
+/*
+Directories, folder paths
+
+Only to be used by files in the same directory.
+*/
+
+$assets: "..";
+$images: $assets + "/images";
+$fonts: $assets + "/fonts";
