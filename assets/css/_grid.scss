@@ -9,11 +9,6 @@ Sizing and placement in the overall page structure of rows and columns.
 
 //  DESKTOP & SMALLER ------------------------
 
-@mixin centered-content() {
-    @include centered();
-    width: $content-width;
-}
-
 .rad-gruppe {
     @include centered-content();
     padding: $default-gap 0;

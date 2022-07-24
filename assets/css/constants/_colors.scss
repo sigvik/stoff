@@ -23,7 +23,8 @@ body {
   
 
     // Color constants -----------------
-    --opaque:rgba(128, 128, 128, 0.15);
+    --invisible: rgba(0, 0, 0, 0.15)
+    --opaque: rgba(128, 128, 128, 0.15);
     --old-stoff-bg: #F9F7F1;
     --black: #000;
     --white: #FFF;

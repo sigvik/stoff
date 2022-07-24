@@ -10,6 +10,11 @@ Common style elements to be used by other stylesheets.
     margin: 0 auto;
 }
 
+@mixin centered-content() {
+    @include centered();
+    width: $content-width;
+}
+
 @mixin divider-top() {
     border-top: $divider-height solid var(--text-color);
 }

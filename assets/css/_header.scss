@@ -6,6 +6,41 @@ Anything styling the header and it's contents.
 
 */
 
+#header-bar {
+    $t-time: 0.25s ease;
+
+    position: fixed;
+    width: 100%;
+    height: px2rem(80);
+    background-color: rgba(255, 255, 255, 0.80);
+    z-index: 1;
+    transition: background-color $t-time;
+
+    .content {
+        @include centered-content();
+        position: relative;
+        height: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+
+        .logo svg{
+            height: px2rem(32);
+            width: auto;
+            transition: opacity $t-time;
+        }
+    }
+}
+
+#header-bar.hidden {
+    background-color: var(--invisible);
+    .logo svg{
+        opacity: 0;
+    }
+}
+
+
 .header-big {
     @include centered-content();
     position: relative;
@@ -13,13 +48,6 @@ Anything styling the header and it's contents.
     flex-direction: column;
     gap: $default-gap;
     padding: $small-gap 0; // For mobile, overridden elsewhere
-}
-  
-#hamburger {
-    position: absolute;
-    padding: inherit;
-    top: 0;
-    right: 0;
 }
   
 .header-big .logo, .header-menu {

@@ -114,7 +114,7 @@ HTML;
             <div class="row">
 
                 <div class="text">
-                    STOFF arbeider etter Vær Varsom-plakatens regler for god presseskikk, og får støtte fra Velferdstinget i Bergen.
+                    STOFF arbeider etter Vær Varsom-plakatens regler for god presseskikk, og får støtte fra Velferdstinget Vest.
                     
                     <p><a href="https://goodshit.no">Utviklet av Sigurd Vikene</a></p>
                     
@@ -137,11 +137,21 @@ HTML;
 
 </div>
 
+<div id="header-bar" class="hidden">
+    <div class="content">
+
+        <a class="logo" href="<?php echo get_home_url() ?>">
+            <?php echo file_get_contents( $imgDir . "/stoff.svg"); ?>
+        </a> 
+
+        <div id="hamburger">&#xe5d2;</div>
+
+    </div>
+</div>
+
 <div class="header-wrapper dark pattern-bg">
 
     <div class="header-big"> 
-
-        <div id="hamburger">&#xe5d2;</div>
 
         <a class="logo" href="<?php echo get_home_url() ?>">
             <?php echo file_get_contents( $imgDir . "/stoff.svg"); ?>
@@ -160,6 +170,8 @@ HTML;
     </div>
 
 </div>
+
+
 
 
 <div class="rad-gruppe">

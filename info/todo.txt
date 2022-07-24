@@ -3,19 +3,15 @@ Todo:
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
 Lær å avslutte i tide sjølom du ikkje e ferdig.
 
-- Style menyen 
-  - VT logo svg
-- begynde på mini header?
+- style mini header properly
 
 -------
 
 Seinare:
 
-- scrollande mini header (how? transforme den store eller vise anna element? berre en scroll to top?)
 - artikkel
 - portraits på mob bør få full size
 
-- ta alle px2rem tilbake til berre rem, og constantane tilbake til var(--)
 
 -------------------------------------
 
@@ -26,6 +22,7 @@ Backlog:
 - fiks header osv, wordpress shite
 - landscape photos på full width på mobile og?
 - bug: det e mulig å size vinduet akkurat til breakpointet og kuke reglane
+- ta alle px2rem tilbake til berre rem, og constantane tilbake til var(--)?
 
 ------------------------------------
 
