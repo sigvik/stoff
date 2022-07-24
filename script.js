@@ -8,6 +8,6 @@ const menuExit = elem('menu-exit')
 const menuOpen = () => menuOverlay.classList.add('active')
 const menuClose = () => menuOverlay.classList.remove('active')
 
-hamburger.onclick = () => menuOpen()
+hamburger.onmousedown = () => menuOpen()
 menuOverlayBg.onclick = () => menuClose()
 menuExit.onclick = () => menuClose()

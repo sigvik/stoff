@@ -76,7 +76,7 @@ HTML;
 
 <!---------------------- HTML -------------------------------------------->
 
-<div id="menu-overlay" class="active">
+<div id="menu-overlay" class="">
     
     <div class="menu dark">
 
@@ -118,12 +118,14 @@ HTML;
                     
                     <p><a href="https://goodshit.no">Utviklet av Sigurd Vikene</a></p>
                     
-                    <p>© STOFF 2022</p>
+                    <p>© STOFF <?php echo date("Y"); ?></p>
                 </div>
 
-                <a class="vt-logo" href="https://vtvest.no/">
-                    <?php echo file_get_contents( $imgDir . "/vt-logo.svg"); ?>
-                </a>
+                <div class="wrapper">
+                    <a class="vt-logo" href="https://vtvest.no/">
+                        <?php echo file_get_contents( $imgDir . "/vt-logo.svg"); ?>
+                    </a>
+                </div>
 
             </div>
 
