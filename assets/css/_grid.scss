@@ -9,14 +9,6 @@ Sizing and placement in the overall page structure of rows and columns.
 
 //  DESKTOP & SMALLER ------------------------
 
-body {
-    margin: 0;
-}
-
-@mixin centered() {
-    margin: 0 auto;
-}
-
 @mixin centered-content() {
     @include centered();
     width: $content-width;

@@ -5,12 +5,17 @@
 
 @mixin material-symbol() {
     line-height: 1;
-    font-variation-settings: 'FILL' 1, 'wght' 700;
+    font-variation-settings: 'FILL' 1;
 }
 
 @mixin spaced() {
     letter-spacing: 0.1em;
     text-transform: uppercase;
+}
+
+@mixin sizeNline($size){
+    font-size: $size;
+    line-height: $size;
 }
 
 body {
@@ -21,22 +26,23 @@ body {
 
 #hamburger {
     @include material-symbol;
+    font-variation-settings: 'FILL' 1, 'wght' 700;
     font-size: px2rem(48);
 }
 
 .menu-item {
     @include spaced;
-    font-size: px2rem(16);
+    @include sizeNline(px2rem(16));
     font-weight: bold;
 }
 
 .rad-overskrift {
     @include spaced;
-    font-size: px2rem(24);
+    @include sizeNline(px2rem(24));
 }
 
 .annonse-tag {
-    font-size: px2rem(12);
+    @include sizeNline(px2rem(12));
 }
 
 .tekstdel {
@@ -58,10 +64,28 @@ body {
 
 .tag {
     @include spaced;
-    font-size: px2rem(12);
+    @include sizeNline(px2rem(12));
     font-weight: bold;
 }
 
+.menu .icon {
+    @include material-symbol();
+    @include sizeNline(px2rem(40));
+}
+
+.large-categories .category {
+    @include sizeNline(px2rem(40));
+    padding: px2rem(6) 0;
+}            
+
+.menu .social-icons .icon {
+    @include sizeNline(px2rem(24));
+}
+
+.menu .text {
+    font-weight: bold;
+    line-height: 1.4;
+}
 
 
 // DESKTOP ONLY ------------------------ 

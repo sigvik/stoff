@@ -1,0 +1,16 @@
+/*
+
+RESETS
+
+Removes built in styling for DOM elements.
+
+*/
+
+body {
+    margin: 0;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}

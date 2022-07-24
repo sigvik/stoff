@@ -37,25 +37,27 @@ Anything styling the header and it's contents.
     display: flex;
     justify-content: center; 
     flex-wrap: wrap;
+
+    .menu-item {
+        flex-grow: 0.2;
+        padding: 0.5rem;
+        text-align: center;
+    }
 }
   
-.menu-item {
-    flex-grow: 0.2;
-    padding: 0.5rem;
-    text-align: center;
-}
+
 
 
 
 //  TABLET & BIGGER --------------------
 @media screen and (min-width: $mobile) {
 
-    .header-big .logo, .header-menu {
-        @include centered();
+    .header-big {
+        padding: px2rem(56) 0; // This size isn't used anywhere else 
     }
 
-    .header-big {
-      padding: px2rem(56) 0; // This size isn't used anywhere else 
+    .header-big .logo, .header-menu {
+        @include centered();
     }
 
 }

@@ -6,6 +6,9 @@ Common style elements to be used by other stylesheets.
 
 */
 
+@mixin centered() {
+    margin: 0 auto;
+}
 
 @mixin divider-top() {
     border-top: $divider-height solid var(--text-color);

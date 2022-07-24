@@ -1,5 +1,8 @@
 <?php
 
+$templDir = get_template_directory();
+$imgDir = $templDir . "/assets/images";
+
 get_header();
 
 /*
@@ -20,6 +23,9 @@ if ( have_posts() ){
 }
 */
 
+
+
+//------------------ PHP elements -----------------------------------
 
 function sak ($size="three-split", $img="https://engineroom.ie/images/Sean-Kingston3.jpg") {
     
@@ -65,9 +71,12 @@ HTML;
 
 ?>
 
-<!-------------------------------------------------->
 
-<div id="menu-overlay">
+
+
+<!---------------------- HTML -------------------------------------------->
+
+<div id="menu-overlay" class="active">
     
     <div class="menu dark">
 
@@ -85,26 +94,38 @@ HTML;
 
         <div class="small-menu-items">
             <div class="menu-item">Bergensguiden</div>
-            <div class="menu-item">Papirutgaven</div>
+            <a class="menu-item" href="https://issuu.com/stoffmagasin">
+                Papirutgaven
+            </a>
             <div class="menu-item">Om oss</div>
         </div>
 
         <div class="menu-footer">
 
             <div class="social-icons">
-                <div class="icon facebook"></div>
-                <div class="icon insta"></div>
+                <a class="icon facebook" href="https://www.facebook.com/STOFFmagasin/">
+                    
+                </a>
+                <a class="icon insta" href="https://www.instagram.com/stoffmagasin/">
+                    
+                </a>
             </div>
             
-            <div class="text">
-                <p>
-                    STOFF arbeider etter Vær Varsom-plakatens regler for god presseskikk, og får støtte fra Velferdstinget i Bergen.
-                </p>
-                <p>Utviklet av Sigurd Vikene</p>
-                <p>© STOFF 2022</p>
-            </div>
+            <div class="row">
 
-            <div class="vt-logo">Velferdstinget Vest</div>
+                <div class="text">
+                    STOFF arbeider etter Vær Varsom-plakatens regler for god presseskikk, og får støtte fra Velferdstinget i Bergen.
+                    
+                    <p><a href="https://goodshit.no">Utviklet av Sigurd Vikene</a></p>
+                    
+                    <p>© STOFF 2022</p>
+                </div>
+
+                <a class="vt-logo" href="https://vtvest.no/">
+                    <?php echo file_get_contents( $imgDir . "/vt-logo.svg"); ?>
+                </a>
+
+            </div>
 
         </div>
 
@@ -121,7 +142,7 @@ HTML;
         <div id="hamburger">&#xe5d2;</div>
 
         <a class="logo" href="<?php echo get_home_url() ?>">
-            <?php echo file_get_contents( get_template_directory() . "/assets/images/stoff.svg"); ?>
+            <?php echo file_get_contents( $imgDir . "/stoff.svg"); ?>
         </a> 
 
         <div class="header-menu-wrapper">

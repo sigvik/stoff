@@ -3,7 +3,9 @@ Todo:
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
 Lær å avslutte i tide sjølom du ikkje e ferdig.
 
-- Meny
+- Style menyen 
+  - VT logo svg
+- begynde på mini header?
 
 -------
 
