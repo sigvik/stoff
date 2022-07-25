@@ -11,10 +11,15 @@ Anything styling the header and it's contents.
 
     position: fixed;
     width: 100%;
-    height: px2rem(80);
+    height: px2rem(40);
+    padding: 1.5rem;
+
     background-color: rgba(255, 255, 255, 0.80);
+    color: var(--theme-dark);
+    fill: var(--theme-dark);
+
     z-index: 1;
-    transition: background-color $t-time;
+    transition: background-color $t-time, padding $t-time;
 
     .content {
         @include centered-content();
@@ -23,25 +28,36 @@ Anything styling the header and it's contents.
 
         display: flex;
         justify-content: space-between;
-        align-items: center; 
 
-        .logo svg{
-            height: px2rem(32);
-            width: auto;
-            transition: opacity $t-time;
+        .logo {
+            width: 0; // Hacky, probably proper flexbox way to avoid container filling whole space
+            svg {
+                height: 100%;
+                width: auto;
+                transition: opacity $t-time;
+            }
         }
     }
 }
 
 #header-bar.hidden {
     background-color: var(--invisible);
+    padding-top: px2rem(56);
+    color: inherit;
+    pointer-events: none;
+
     .logo svg{
         opacity: 0;
     }
 }
 
+#hamburger {
+    pointer-events: all;
+    font-size: px2rem(48);
+}
 
-.header-big {
+
+#header-big {
     @include centered-content();
     position: relative;
     display: flex;
@@ -50,7 +66,7 @@ Anything styling the header and it's contents.
     padding: $small-gap 0; // For mobile, overridden elsewhere
 }
   
-.header-big .logo, .header-menu {
+#header-big .logo, .header-menu {
     // Header menu has same size as logo
     width: clamp(8rem, 60%, px2rem(560));
 }
@@ -80,11 +96,11 @@ Anything styling the header and it's contents.
 //  TABLET & BIGGER --------------------
 @media screen and (min-width: $mobile) {
 
-    .header-big {
+    #header-big {
         padding: px2rem(56) 0; // This size isn't used anywhere else 
     }
 
-    .header-big .logo, .header-menu {
+    #header-big .logo, .header-menu {
         @include centered();
     }
 

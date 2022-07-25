@@ -21,24 +21,29 @@ menuExit.onclick = () => menuClose()
 
 // Header bar scroll visibility ----------------
 
-const headerBar = elem('header-bar')
-let lastScrollPos = 0
-let ticking = false
+if (elem('header-big')) {
 
-function showHeaderBar(scroll_pos) {
-    (scroll_pos > 0) ? delClass(headerBar, 'hidden') : addClass(headerBar, 'hidden')
-} 
+    const headerBar = elem('header-bar')
+    let lastScrollPos = 0
+    let ticking = false
+    
+    function showHeaderBar(scroll_pos) {
+        (scroll_pos > 0) ? delClass(headerBar, 'hidden') : addClass(headerBar, 'hidden')
+    } 
+    
+    window.addEventListener('scroll', function(e) {
+        console.log("called")
+        lastScrollPos = window.scrollY
+    
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+            showHeaderBar(lastScrollPos)
+            ticking = false
+            })
+    
+            ticking = true
+        }
+    });
+    
+}
 
-window.addEventListener('scroll', function(e) {
-    console.log("called")
-    lastScrollPos = window.scrollY
-
-    if (!ticking) {
-        window.requestAnimationFrame(function() {
-        showHeaderBar(lastScrollPos)
-        ticking = false
-        })
-
-        ticking = true
-    }
-});

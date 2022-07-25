@@ -26,8 +26,7 @@ body {
 
 #hamburger {
     @include material-symbol;
-    font-variation-settings: 'FILL' 1, 'wght' 700;
-    font-size: px2rem(48);
+    font-variation-settings: 'FILL' 1, 'wght' 700;   
 }
 
 .menu-item {
