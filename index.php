@@ -81,8 +81,8 @@ HTML;
     <div class="menu dark">
 
         <div class="icons">
-            <div id="search-btn" class="icon">&#xe8b6;</div>
-            <div id="menu-exit" class="icon">&#xe5cd;</div>
+            <button id="search-btn" class="icon">&#xe8b6;</button>
+            <button id="menu-exit" class="icon">&#xe5cd;</button>
         </div>
 
         <div class="large-categories">
@@ -148,7 +148,7 @@ HTML;
                 <?php echo file_get_contents( $imgDir . "/stoff.svg"); ?>
             </a> 
 
-            <div id="hamburger">&#xe5d2;</div>
+            <button id="hamburger">&#xe5d2;</button>
 
         </div>
     </div>

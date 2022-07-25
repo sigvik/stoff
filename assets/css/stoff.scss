@@ -22,11 +22,12 @@ found in this directory.
 */
 
 
-a {
+a, button {
     transition: color 0.1s, fill 0.1s;
     &:hover {
-        color: var(--innhold);
-        fill: var(--innhold);
+        $hoverClr: var(--essay);
+        color: $hoverClr;
+        fill: $hoverClr;
     }
 }
 
