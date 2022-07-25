@@ -1,4 +1,4 @@
-Todo:
+## Todo:
 
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
 Lær å avslutte i tide sjølom du ikkje e ferdig.
@@ -9,7 +9,7 @@ Lær å avslutte i tide sjølom du ikkje e ferdig.
 
 -------
 
-Seinare:
+## Seinare:
 
 - artikkel
 - portraits på mob bør få full size
@@ -17,7 +17,7 @@ Seinare:
 
 -------------------------------------
 
-Backlog: 
+## Backlog: 
 
 - mindre padding på ad gruppe, og på mobil generelt
 - finne ut av bilde resizing. gjere rade til grids? nja)
@@ -28,11 +28,7 @@ Backlog:
 
 ------------------------------------
 
-Rescources:
-
-Main grid takeaway: 
-Edita du 1 col/row bruk flex, fleire bruk grid
-https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/
+## Rescources:
 
 Om fleksibel layout:
 https://developer.wordpress.org/themes/customize-api/
@@ -41,26 +37,26 @@ advanced custom fields
 
 -------------------------------
 
-Prosess:
+## Prosess:
 
-> (Lære grid, flexbox, html article markup og Sass)
-> Sketche sida komplett ferdig i figma, alle layouts og stilvalg spikra
-> Planlegge struktur mtp ka som kan endrast inni wordpress
-> Bygge sida statisk
-> Gjere den statiske sida til wordpress theme,
+- (Lære grid, flexbox, html article markup og Sass)
+- Sketche sida komplett ferdig i figma, alle layouts og stilvalg spikra
+- Planlegge struktur mtp ka som kan endrast inni wordpress
+- Bygge sida statisk
+- Gjere den statiske sida til wordpress theme,
   først som kun tom index/style og so bygge oppatt gradvis
 
 
 -------------------------
 
-Mysteries:
+## Mysteries:
 - Korfor blir brødteksta fakka av og til, med tilsynelatande same formatering
 - korleis funka utgave systemet, e visst ikkje BERRE categories. slags search term? virka introdusert i nye themen. nåke basic php sql variable shit?
 - suggested articles e berre forsidesakene til tidligare utgave? (OG ALLE AV DEI?)
 - vanilla framside vise kun stickies?
 - korleis kan vi få gamle utgave til å ha en viss custom layout?
 
-Solved mysteries:
+## Solved mysteries:
 - Riktig themenavn må oppdaterast i alle style.css paths
 - Versjonnavn på css må oppdaterast i header for refresh
 - der e functions fil i themen som drive å endra admin adressa til ny.stoffmagasin wtf
@@ -73,14 +69,14 @@ Solved mysteries:
 
 ------------------------
 
-Other business:
+## Other business:
 
 .. finne ut om vi he prøvd å kjøpe stoff.no
 .. foreslå vi burde opprette en wikipedia artikkel for stoff magasin
 
 -------------------------
 
-Inspos:
+## Inspos:
 
 - Medium.com med riktige fonta, Grist, It's Nice That
 - D2, Subjekt
@@ -89,7 +85,7 @@ Inspos:
 
 -------------------------
 
-Husk:
+## Husk:
 - Optimize logo svg
 - Å gjere DIN i admin til en linka font
 - Oversett filene til engelsk
