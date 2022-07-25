@@ -1,4 +1,4 @@
-// SIZE CONSTANTS
+// SIZE CONSTANTS (and other numbers)
 
 $content-width: clamp(px2rem(256), 90vw, px2rem(1200));
 $default-gap: px2rem(40);
@@ -8,3 +8,6 @@ $divider-height: 1px;
 // Breakpoints
 $tablet: px2rem(1024);
 $mobile: px2rem(600);
+
+// Times
+$t-time: 0.25s ease;

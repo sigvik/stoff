@@ -7,19 +7,17 @@ Anything styling the header and it's contents.
 */
 
 #header-bar {
-    $t-time: 0.25s ease;
 
     position: fixed;
     width: 100%;
-    height: px2rem(40);
-    padding: 1.5rem;
+    height: 1.5rem;
+    padding: 1rem 0;
 
-    background-color: rgba(255, 255, 255, 0.80);
-    color: var(--theme-dark);
-    fill: var(--theme-dark);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    fill: var(--text-color);
 
     z-index: 1;
-    transition: background-color $t-time, padding $t-time;
 
     .content {
         @include centered-content();
@@ -34,7 +32,7 @@ Anything styling the header and it's contents.
             svg {
                 height: 100%;
                 width: auto;
-                transition: opacity $t-time;
+                // transition: opacity $t-time;
             }
         }
     }
@@ -42,7 +40,6 @@ Anything styling the header and it's contents.
 
 #header-bar.hidden {
     background-color: var(--invisible);
-    padding-top: px2rem(56);
     color: inherit;
     pointer-events: none;
 
@@ -51,9 +48,21 @@ Anything styling the header and it's contents.
     }
 }
 
+#header-big, #header-bar.hidden {
+    padding: $small-gap 0; // For mobile, overridden elsewhere
+
+    // Header bar only fades in, not out
+    transition: /*background-color $t-time,*/ padding $t-time;
+}
+
+#header-big, #header-bar {
+    transition: background-color $t-time, padding $t-time;
+}
+
+
 #hamburger {
     pointer-events: all;
-    font-size: px2rem(48);
+    font-size: 2rem;
 }
 
 
@@ -63,7 +72,6 @@ Anything styling the header and it's contents.
     display: flex;
     flex-direction: column;
     gap: $default-gap;
-    padding: $small-gap 0; // For mobile, overridden elsewhere
 }
   
 #header-big .logo, .header-menu {
@@ -96,12 +104,17 @@ Anything styling the header and it's contents.
 //  TABLET & BIGGER --------------------
 @media screen and (min-width: $mobile) {
 
-    #header-big {
+    #header-big, #header-bar.hidden {
         padding: px2rem(56) 0; // This size isn't used anywhere else 
     }
 
     #header-big .logo, .header-menu {
         @include centered();
+    }
+
+    #header-bar.hidden #hamburger{
+        font-size: 3.5rem;
+        font-variation-settings: 'FILL' 1, 'wght' 700;   
     }
 
 }

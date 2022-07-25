@@ -81,7 +81,7 @@ $clr-categories: "samfunn", "kultur", "debatt";
     background-repeat: repeat;
 }
   
-.dark-mode .pattern-bg {
+.dark-mode .pattern-bg #header-big, .dark-mode .pattern-bg .hidden #hamburger {
     --text-color: var(--theme-dark);
     color: var(--text-color);
     fill: var(--text-color);
