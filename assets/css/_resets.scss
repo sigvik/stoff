@@ -15,12 +15,11 @@ a, a:hover, a:focus, a:active {
     color: inherit;
 }
 
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
+button {
+	all: unset;
 	cursor: pointer;
-	outline: inherit;
+}
+
+input {
+	all: unset;
 }

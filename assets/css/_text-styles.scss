@@ -69,7 +69,12 @@ body {
 
 .menu .icon {
     @include material-symbol();
-    @include sizeNline(px2rem(40));
+    font-size: 2rem;
+    font-variation-settings: 'FILL' 1, 'wght' 300;   
+}
+
+#search-input {
+    font-size: 1.5rem;
 }
 
 .large-categories .category {

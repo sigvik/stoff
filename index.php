@@ -82,6 +82,8 @@ HTML;
 
         <div class="icons">
             <button id="search-btn" class="icon">&#xe8b6;</button>
+            <input id="search-input" type="text" placeholder="Søk.."></input>
+            <button id="ui-mode-toggle" class="icon">&#xe51c;</button>
             <button id="menu-exit" class="icon">&#xe5cd;</button>
         </div>
 

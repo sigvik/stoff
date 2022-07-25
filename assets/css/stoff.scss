@@ -24,6 +24,7 @@ found in this directory.
 
 a, button {
     transition: color 0.1s, fill 0.1s;
+    user-select: none;
     &:hover {
         $hoverClr: var(--essay);
         color: $hoverClr;

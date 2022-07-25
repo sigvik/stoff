@@ -25,6 +25,7 @@ Lær å avslutte i tide sjølom du ikkje e ferdig.
 - landscape photos på full width på mobile og?
 - bug: det e mulig å size vinduet akkurat til breakpointet og kuke reglane
 - ta alle px2rem tilbake til berre rem, og constantane tilbake til var(--)?
+- add session storage to dark/light mode
 
 ------------------------------------
 

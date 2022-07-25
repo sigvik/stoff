@@ -18,3 +18,7 @@ Common style elements to be used by other stylesheets.
 @mixin divider-top() {
     border-top: $divider-height solid var(--text-color);
 }
+
+@mixin divider-btm() {
+    border-bottom: $divider-height solid var(--text-color);
+}
