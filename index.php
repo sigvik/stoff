@@ -32,23 +32,25 @@ function sak ($size="three-split", $img="https://engineroom.ie/images/Sean-Kings
     list($width, $height) = getimagesize($img); /* Might break accessing images on a remote server */
     $orientation = ($width > $height and $height / $width < 0.8) ? 'landscape' : '';
 
+    $link = "https://ringo.beef/2022/06/30/testsak/";
+
     echo <<<HTML
         <div class="sak $size">
 
-            <div class="bilde-wrapper $orientation">
+            <a href="$link" class="bilde-wrapper $orientation">
                 <img class="bilde" src="$img">
-            </div>
+            </a>
 
             <div class="tekstdel">
 
-                <div class="overskrift">
+                <a href="$link" class="overskrift">
                     Nei, Helle-Valle; vi er en arbeids&shy;plass
-                </div>
-                <div class="ingress">
+                </a>
+                <a href="$link" class="ingress">
                     Kristin Helle-Valle, som leder Litteraturhuset i Bergen, vil ikke stille seg bak de overordnede retningslinjene som skal motvirke seksuell trakassering og overgrep i jobbsammenheng.
-                </div>
+                </a>
                 <div class="tags">
-                    <div class="tag debatt">Kommentarstoff</div>
+                    <a href="/debatt" class="tag debatt">Kommentarstoff</a>
                 </div>
 
             </div>
@@ -88,18 +90,18 @@ HTML;
         </div>
 
         <div class="large-categories">
-            <div class="category samfunn extends">Samfunn</div>
-            <div class="category kultur extends">Kultur</div>
-            <div class="category debatt extends">Debatt</div>
-            <div class="category extends">Arkiv</div>
+            <button class="category samfunn extends"> Samfunn </button> <!-- <div class="icon">&#xe5c5;</div> -->
+            <button class="category kultur extends"> Kultur </button>
+            <button class="category debatt extends"> Debatt </button>
+            <button class="category extends"> Arkiv </button>
         </div>
 
         <div class="small-menu-items">
-            <div class="menu-item">Bergensguiden</div>
+            <a href="/bergensguide" class="menu-item">Bergensguiden</a>
             <a class="menu-item" href="https://issuu.com/stoffmagasin">
                 Papirutgaven
             </a>
-            <div class="menu-item">Om oss</div>
+            <a href="/om-oss" class="menu-item">Om oss</a>
         </div>
 
         <div class="menu-footer">
@@ -163,11 +165,11 @@ HTML;
 
         <div class="header-menu-wrapper">
             <div class="header-menu">
-                <div class="menu-item">Samfunn</div>
-                <div class="menu-item">Kultur</div>
-                <div class="menu-item">Debatt</div>
-                <div class="menu-item">Bergensguiden</div>
-                <div class="menu-item">Om oss</div>
+                <a href="/samfunn" class="menu-item">Samfunn</a>
+                <a href="/kultur" class="menu-item">Kultur</a>
+                <a href="/debatt" class="menu-item">Debatt</a>
+                <a href="/bergensguide" class="menu-item">Bergensguiden</a>
+                <a href="/om-oss" class="menu-item">Om oss</a>
             </div>
         </div>
 

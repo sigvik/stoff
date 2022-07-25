@@ -1,9 +1,12 @@
--------------------------- LAYOUT STRUCTURE ------------------------
+# Layout structure
 
 [] = Times the element can be used. [min..max]
+
 () = Class variants. '/' means they are mutually exclusive.
 
 
+
+```
 body (dark-mode) {
 
   header-wrapper (dark, pattern-bg) [0..1] {

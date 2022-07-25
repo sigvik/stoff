@@ -2,13 +2,13 @@
 @import 'constants/sizes';
 @import 'constants/colors';
 
-@import 'resets';
-@import 'mixins';
-@import 'text-styles';
-@import 'grid';
-@import 'header';
-@import 'image-sizing';
-@import 'menu';
+@import 'general/resets';
+@import 'general/mixins';
+@import 'general/text-styles';
+@import 'components/grid';
+@import 'components/header';
+@import 'general/image-sizing';
+@import 'components/menu';
 
 /*
 
