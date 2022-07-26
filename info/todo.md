@@ -41,6 +41,8 @@ Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 
 ## Rescources:
 
+https://www.youtube.com/watch?v=-h7gOJbIpmo
+
 Om fleksibel layout:
 https://developer.wordpress.org/themes/customize-api/
 .. korleis bruke custom info en he satt opp?

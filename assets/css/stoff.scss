@@ -1,13 +1,15 @@
 @import 'abstracts/helpers';
-@import 'abstracts/sizes';
+@import 'abstracts/variables';
 @import 'abstracts/colors';
+@import 'abstracts/mixins';
 
 @import 'core/resets';
-@import 'abstracts/mixins';
 @import 'core/typography';
+
 @import 'layout/grid';
-@import 'components/header';
 @import 'layout/image-sizing';
+
+@import 'components/header';
 @import 'components/menu';
 
 /*

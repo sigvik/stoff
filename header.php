@@ -1,7 +1,4 @@
-<?php 
-$templDir = get_template_directory();
-$templURI = get_template_directory_uri();
-?>
+<?php require get_template_directory() . '/inc/directories.php' ?>
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

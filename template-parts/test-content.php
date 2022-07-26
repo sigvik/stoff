@@ -1,0 +1,27 @@
+<?php 
+echo $args['big']; 
+?>
+
+<p>Når hvitløksmarinert scampi er noe av det beste man kan få, er det trist at økosystemet betaler en høy pris for hver reke vi putter i kjeften. Utstrakt bruk av antibiotika, sykdomsutbrudd, vannforurensing og ødeleggelse av verdifulle mangroveskoger er noen av de negative aspektene ved scampioppdrett.<br />
+Jeg vet om mange jenter som ville passet perfekt som tømrere, og mange gutter som hadde stortrivdes som sykepleiere.<br />
+Vi trodde kanskje på det som ble sagt i oppveksten. At jentene ikke kunne bære de tunge stolene fra kjelleren til klasserommet på ungdomsskolen. Eller at gutter ikke er omsorgsfulle nok til å ta vare på barn i barnehagen.<br />
+Jeg som jente, skal helst ikke mene så mye. Jeg skal først og fremst passe barn, eller skaffe meg en jobb som ligner. Jeg bør helst ikke snakke høyt, og ikke glem å nikke og smile. Husk å vær yndig, følsom, empatisk og forsiktig. Også er vi jo ikke sterke. For ikke lenge siden skulle vi ikke svette, og vi fikk ikke lov til å løpe maraton. Vi er jo heller ikke så smarte, det er jo en grunn til at det finnes <i>mansplaining</i>.<br />
+For ikke lenge siden var guttenes kall i livet å skaffe seg en god jobb med en lønn som kunne forsørge et helt annet menneske og fremtidige barn. Det var mye vekt på et par skuldre. Mannen skal fortsatt helst være høy, muskuløs, uredd og nesten følelsesløs. Han skal være snill, men ikke for snill. Selvsikker, og gjerne veldig. Det er viktig å være sterk og handy. Og helst drømme store ambisiøse drømmer.<br />
+Men så er det jo urettferdig, for alle er ikke genetisk i stand til å få tydelig store muskler. Eller som naturlig ikke tar store risikoer, på grunn av en tidlig utviklet frontallapp. Noen har det omvendt, med et ønske om adrenalin i kroppen eller å føle seg vel med muskler på kroppen.<br />
+Noen finner livets kall gjennom menneskelige relasjoner, og andre gjennom tekniske utfordringer som en kameralinse eller understellet på en bil. Trenger det virkelig å være enten jentete eller guttete?<br />
+Hvorfor må sminke være en «jentete» ting, og ikke bare handle om øyne og kinnbein? Hvorfor er det «guttete» å dra i skatehallen og ikke bare en nervepirrende aktivitet? Hvorfor syns man det er morsomt med en gutt i kjole, men ikke jenter i dress?<br />
+Det er greit å ha store muskler, og det er greit å ha små. Det er greit å være brautende og å være sjenert. Det er helt greit å vise empati og sårbarhet, og å ta risiko og drømme stort. Også er det helt greit å være litt alt. Uansett om man er jente eller gutt eller alt i mellom.<br />
+<b>Denne teksten gir uttrykk for skribentens personlige holdninger.</b><br />
+&nbsp;</p>
+<div id="attachment_17366" style="width: 610px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-17366" class="size-medium wp-image-17366" src="http://www.stoffmagasin.no/wp-content/uploads/2022/06/140522_fs_kjonnsroller-3-600x400.jpg" alt="" data-wp-pid="17366" width="600" height="400"><p id="caption-attachment-17366" class="wp-caption-text">Eira kan være like høylytt som hun er stille.</p></div>
+<p>&nbsp;</p>
+<div id="attachment_17367" style="width: 610px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-17367" loading="lazy" class="size-medium wp-image-17367" src="http://www.stoffmagasin.no/wp-content/uploads/2022/06/140522_fs_kjonnsroller-10-600x900.jpg" alt="" data-wp-pid="17367" width="600" height="900"><p id="caption-attachment-17367" class="wp-caption-text">Dette er Lasse, og han konkurrerer i kroppsbygging.</p></div>
+<p>&nbsp;</p>
+<div id="attachment_17365" style="width: 610px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-17365" loading="lazy" class="size-medium wp-image-17365" src="http://www.stoffmagasin.no/wp-content/uploads/2022/06/140522_fs_kjonnsroller-4-600x900.jpg" alt="" data-wp-pid="17365" width="600" height="900"><p id="caption-attachment-17365" class="wp-caption-text">Anita er Norgesmester i benkpress, med en rekord på 112,5 kg. Her løfter hun 140kg i markløft, 32,5 kg fra hennes personlig rekord.</p></div>
+<p>&nbsp;</p>
+<div id="attachment_17362" style="width: 610px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-17362" loading="lazy" class="size-medium wp-image-17362" src="http://www.stoffmagasin.no/wp-content/uploads/2022/06/140522_fs_kjonnsroller-9-600x900.jpg" alt="" data-wp-pid="17362" width="600" height="900"><p id="caption-attachment-17362" class="wp-caption-text">Annie, også kjent med sitt scenenavn Maple Thorpe, er en av Bergens drag kings.</p></div>
+<p>&nbsp;<br />
+<img loading="lazy" class="size-medium wp-image-17364 aligncenter" src="http://www.stoffmagasin.no/wp-content/uploads/2022/06/140522_fs_kjonnsroller-6-600x400.jpg" alt="" data-wp-pid="17364" width="600" height="400"></p>
+<div id="attachment_17363" style="width: 610px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-17363" loading="lazy" class="size-medium wp-image-17363" src="http://www.stoffmagasin.no/wp-content/uploads/2022/06/140522_fs_kjonnsroller-7-600x900.jpg" alt="" data-wp-pid="17363" width="600" height="900"><p id="caption-attachment-17363" class="wp-caption-text">Tarjei kler seg i det som faller han inn, blant annet glittersminke, én øredobb og hanekam.</p></div>
+<p>&nbsp;<br />
+<strong>LES OGSÅ: </strong><a href=" https://www.stoffmagasin.no/2021/05/05/snorkling-i-det-analoge-farvann/ ">Snorkling i det analoge farvann</a></p>
