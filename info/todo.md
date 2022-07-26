@@ -3,12 +3,6 @@
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
 Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 
-- Sjå på sass docs, finne best practices
-  - bruk @use istaden, structure istadenfor global
-  - bruk inheritance istadenfor mixins, kortare kode
-  - lite nesting
-
-- Mob bug med for long meny. pga search? gi meir flex istadenfor width?
 - Mekke artikkelside
   - https://www.youtube.com/watch?v=-h7gOJbIpmo&list=LL&index=6
   - begynde med template parts
@@ -36,6 +30,7 @@ Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 - endre struktur på framsidesak til at bilde/overskrift/ingress ligge under samme link
 - ei greie for å få lysare/mørkare versjona av noværande farge på link hover, theme basert
 - gjere 'dark' og 'link hover/excentuate' shit til theme colors
+- bug: dynamic titles funkakje, no idea why
 
 ------------------------------------
 

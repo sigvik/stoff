@@ -7,7 +7,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>STOFF &#8211; Gratismagasin for unge i Bergen</title>
 	<link rel="pingback" href="<?php echo $templURI . "/xmlrpc.php" ?>"  />
 
 	<?php wp_head(); ?>
