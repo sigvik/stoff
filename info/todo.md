@@ -3,6 +3,7 @@
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
 Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 
+- rydd opp i spacing underneath big header kode. meir php heavy, legge inn spacer?
 - del tinga hittil i template parts
 - mekk artikkelside
 - https://www.youtube.com/watch?v=-h7gOJbIpmo&list=LL&index=6

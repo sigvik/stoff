@@ -77,13 +77,14 @@ HTML;
 
 <!---------------------- HTML -------------------------------------------->
 
-<?php get_template_part('template-parts/menu-overlay'); ?>
+<?php 
 
-<?php get_template_part('template-parts/header-part', false, 
+get_template_part('template-parts/header-part', false, 
 [
     'classes' => 'dark pattern-bg', 
     'big' => true,
 ]);
+
 ?>
 
 

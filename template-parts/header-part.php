@@ -4,17 +4,21 @@ require get_template_directory() . '/inc/directories.php';
 /*
 HEADER
 
-Arguments = ['classes' => 'dark pattern-bg', 'big' => true]
+Arguments = ['big' => bool]
 */
 
 $logo = file_get_contents( $imgDir . "/stoff.svg");
 $home_url = get_home_url();
-$big = $args['big']
+$big = $args['big'];
+$classes = 'dark pattern-bg';
+
+// The menu overlay comes with the header, as you need the header to open it
+get_template_part('template-parts/menu-overlay');
+
 ?>
 
 
-
-<div class="header-wrapper <?php echo $args['classes'] ?>">
+<div class="header-wrapper <?php echo $classes ?>">
 
     <div id="header-bar" class="<?php if ($big) echo 'hidden' ?>">
         <div class="content">
