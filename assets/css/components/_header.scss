@@ -49,8 +49,6 @@ Anything styling the header and it's contents.
 }
 
 #header-big, #header-bar.hidden {
-    padding: $small-gap 0; // For mobile, overridden elsewhere
-
     // Header bar only fades in, not out
     transition: /*background-color $t-time,*/ padding $t-time;
 }
@@ -104,8 +102,13 @@ Anything styling the header and it's contents.
 //  TABLET & BIGGER --------------------
 @media screen and (min-width: $mobile) {
 
+    .header-wrapper {
+        padding-bottom: px2rem(56);
+    }
+
     #header-big, #header-bar.hidden {
         padding: px2rem(56) 0; // This size isn't used anywhere else 
+        padding-bottom: 0; // Create space underneath header bar if big header is hidden
     }
 
     #header-big .logo, .header-menu {
@@ -125,6 +128,20 @@ Anything styling the header and it's contents.
 
     .header-menu-wrapper {
       display: none;
+    }
+    
+}
+
+//  MOBILE -------------------
+@media screen and (max-width: $mobile) {
+
+    #header-big, #header-bar.hidden {
+        padding: $small-gap 0; // For mobile, overridden elsewhere
+        padding-bottom: 0;
+    }
+
+    .header-wrapper {
+        padding-bottom: $small-gap;
     }
     
 }

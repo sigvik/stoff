@@ -1,7 +1,6 @@
 <?php
 
-$templDir = get_template_directory();
-$imgDir = $templDir . "/assets/images";
+require get_template_directory() . '/inc/directories.php';
 
 get_header();
 
@@ -80,41 +79,12 @@ HTML;
 
 <?php get_template_part('template-parts/menu-overlay'); ?>
 
-<div class="header-wrapper dark pattern-bg">
-
-    <div id="header-bar" class="hidden">
-        <div class="content">
-
-            <a class="logo" href="<?php echo get_home_url() ?>">
-                <?php echo file_get_contents( $imgDir . "/stoff.svg"); ?>
-            </a> 
-
-            <button id="hamburger">&#xe5d2;</button>
-
-        </div>
-    </div>
-
-    <div id="header-big"> 
-
-        <a class="logo" href="<?php echo get_home_url() ?>">
-            <?php echo file_get_contents( $imgDir . "/stoff.svg"); ?>
-        </a> 
-
-        <div class="header-menu-wrapper">
-            <div class="header-menu">
-                <a href="/samfunn" class="menu-item">Samfunn</a>
-                <a href="/kultur" class="menu-item">Kultur</a>
-                <a href="/debatt" class="menu-item">Debatt</a>
-                <a href="/bergensguide" class="menu-item">Bergensguiden</a>
-                <a href="/om-oss" class="menu-item">Om oss</a>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-
+<?php get_template_part('template-parts/header-part', false, 
+[
+    'classes' => 'dark pattern-bg', 
+    'big' => true,
+]);
+?>
 
 
 <div class="rad-gruppe">
@@ -124,7 +94,13 @@ HTML;
     <div class="rad three-split-alt">
 
         <?php 
-            sak("one-split","https://www.stoffmagasin.no/wp-content/uploads/2019/05/DePresno_MaikenLarsenSolholmvikogCamillaLouadahHermansen-16.jpg"); 
+
+            get_template_part('template-parts/sak', false, 
+            [
+                'size' => 'one-split',
+                'img' => 'https://www.stoffmagasin.no/wp-content/uploads/2019/05/DePresno_MaikenLarsenSolholmvikogCamillaLouadahHermansen-16.jpg',
+            ]);
+        
         ?>
 
         <div class="kolonne">

@@ -3,9 +3,9 @@
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
 Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 
-- Mekke artikkelside
-  - https://www.youtube.com/watch?v=-h7gOJbIpmo&list=LL&index=6
-  - begynde med template parts
+- del tinga hittil i template parts
+- mekk artikkelside
+- https://www.youtube.com/watch?v=-h7gOJbIpmo&list=LL&index=6
 
 -------
 
@@ -31,6 +31,8 @@ Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 - ei greie for å få lysare/mørkare versjona av noværande farge på link hover, theme basert
 - gjere 'dark' og 'link hover/excentuate' shit til theme colors
 - bug: dynamic titles funkakje, no idea why
+- gjere sak default values meir generiske just in case
+- css for creating space beneath missing big header is still janky for mobile
 
 ------------------------------------
 

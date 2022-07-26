@@ -1,7 +1,3 @@
-<?php 
-echo $args['big']; 
-?>
-
 <p>Når hvitløksmarinert scampi er noe av det beste man kan få, er det trist at økosystemet betaler en høy pris for hver reke vi putter i kjeften. Utstrakt bruk av antibiotika, sykdomsutbrudd, vannforurensing og ødeleggelse av verdifulle mangroveskoger er noen av de negative aspektene ved scampioppdrett.<br />
 Jeg vet om mange jenter som ville passet perfekt som tømrere, og mange gutter som hadde stortrivdes som sykepleiere.<br />
 Vi trodde kanskje på det som ble sagt i oppveksten. At jentene ikke kunne bære de tunge stolene fra kjelleren til klasserommet på ungdomsskolen. Eller at gutter ikke er omsorgsfulle nok til å ta vare på barn i barnehagen.<br />
