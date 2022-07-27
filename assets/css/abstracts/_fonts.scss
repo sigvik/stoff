@@ -30,6 +30,7 @@
     font-family: 'DIN_web';
     src: url("#{$fonts}/DIN/DIN-#{$name}.woff2") format("woff2");
     font-weight: $weight;
+    font-display: swap;
 }
 
 $DIN-vars: (

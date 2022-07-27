@@ -1,6 +1,7 @@
 <?php
 
 require get_template_directory() . '/inc/directories.php';
+require get_template_directory() . '/inc/helpers.php';
 
 get_header();
 
@@ -8,8 +9,11 @@ get_header();
 
 if ( have_posts() ){
 
+    $count = wp_count_posts();
+    $i = 0;
     while( have_posts() ){
 
+        $i++;
         the_post();
         the_post_thumbnail("small");
         the_title("<h3>","</h3>");
@@ -26,58 +30,12 @@ if ( have_posts() ){
 
 //------------------ PHP elements -----------------------------------
 
-function sak ($size="three-split", $img="https://engineroom.ie/images/Sean-Kingston3.jpg") {
-    
-    list($width, $height) = getimagesize($img); /* Might break accessing images on a remote server */
-    $orientation = ($width > $height and $height / $width < 0.8) ? 'landscape' : '';
-
-    $link = "/2022/06/30/testsak/";
-
-    echo <<<HTML
-        <div class="sak $size">
-
-            <a href="$link" class="bilde-wrapper $orientation">
-                <img class="bilde" src="$img">
-            </a>
-
-            <div class="tekstdel">
-
-                <a href="$link" class="overskrift">
-                    Nei, Helle-Valle; vi er en arbeids&shy;plass
-                </a>
-                <a href="$link" class="ingress">
-                    Kristin Helle-Valle, som leder Litteraturhuset i Bergen, vil ikke stille seg bak de overordnede retningslinjene som skal motvirke seksuell trakassering og overgrep i jobbsammenheng.
-                </a>
-                <div class="tags">
-                    <a href="/debatt" class="tag debatt">Kommentarstoff</a>
-                </div>
-
-            </div>
-            
-        </div>
-HTML;
-
-}
-
-function ad ($size="three-split", $img="https://engineroom.ie/images/Sean-Kingston3.jpg") {
-
+function ad() {
     $url = "https://subjekt.no/wp-content/uploads/2022/07/NM_Takeover_Flagg_2400x680-kopi.png";
-
-    echo <<<HTML
-         <div class="annonse-tag">Annonse</div>
-         <img class="ad" src="$url">
-HTML;
-
+    echo '<div class="annonse-tag">Annonse '. m_symbol('e5c5') .'</div>
+         <img class="ad" src="'. $url .'">';
 }
 
-?>
-
-
-
-
-<!---------------------- HTML -------------------------------------------->
-
-<?php 
 
 get_template_part('template-parts/header-part', false, 
 [
@@ -85,102 +43,84 @@ get_template_part('template-parts/header-part', false,
     'big' => true,
 ]);
 
-?>
 
+//------------------ The loop -----------------------------------
 
-<div class="rad-gruppe">
+if ( have_posts() ){
 
-    <div class="rad-overskrift"><span class="kultur">Kultur</span>stoff</div>
+    $posts_left = wp_count_posts();
+    $i = 0;
+   
+    function rad($r_type, $r_length){
 
-    <div class="rad three-split-alt">
+        $r = 0;
+        $three_split_alt = ($r_type == 'three-split-alt');
 
-        <?php 
+        // Don't build if not enough content
+        //if ($posts_left < $r_length) return;
 
-            get_template_part('template-parts/sak', false, 
-            [
-                'size' => 'one-split',
-                'img' => 'https://www.stoffmagasin.no/wp-content/uploads/2019/05/DePresno_MaikenLarsenSolholmvikogCamillaLouadahHermansen-16.jpg',
-            ]);
+        while ($r < $r_length) {
+
+            the_post();
+            if (is_sticky() and $i > 1) continue; // Skip some sticky posts for now
         
-        ?>
+            // Increment
+            $i++; $r++; $posts_left--;
 
-        <div class="kolonne">
+            // Start row
+            if ($r == 1) echo '<div class="rad '. $r_type .'">';
 
-            <?php 
-                sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/06/fb_header-1-scaled.jpg");
-                sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/05/140522_fs_mektigstekake-4-1-scaled.jpg");
-            ?>
+            if ($three_split_alt and $r == 2) echo '<div class="kolonne">';
 
-        </div>
+            // Build content
+            $sak_type = ($three_split_alt) ? (($r == 1) ? 'one-split' : 'three-split') : $r_type;
+            sak([
+                'size' => $sak_type,
+                'img' => ($sak_type == 'one-split') ? get_img('large') : get_img('small'),
+                'title' => get_the_title(),
+                'ingress' => ($three_split_alt and $r > 1) ? '' : get_the_excerpt(),
+                'link' => get_permalink(),
+            ]);
 
-    </div>
+        }   
 
-</div>
+        if ($three_split_alt) echo '</div>';
+        echo '</div>';
+        
+    }
 
-<div class="rad-gruppe"> 
-    <?php ad() ?> 
-</div>
+    function single_rad_gruppe($r_type, $r_length){
+        echo'<div class="rad-gruppe">';
+        rad($r_type, $r_length);
+        echo'</div>';
+    }
 
-<div class="rad-gruppe">
+    while( have_posts() ){
 
-    <div class="rad one-split">
-        <?php 
-            sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/06/trekule_55.jpg");
-        ?>
-    </div>
+        single_rad_gruppe('three-split-alt', 3);
 
-</div>
+        echo'<div class="rad-gruppe">';
+        ad();
+        echo'</div>';
+    
+        single_rad_gruppe('one-split', 1);
+    
+        single_rad_gruppe('two-split', 2);
+    
+        echo'<div class="rad-gruppe">';
+        echo'<div class="rad-overskrift"><span class="samfunn">Samfunns</span>stoff</div>';
+        rad('three-split', 3);
+        //rad('three-split-alt', 3);
+        //rad('three-split', 3);
+        echo'</div>';
 
-<div class="rad-gruppe">
+        break;
+    }
+    
 
-    <div class="rad two-split">
-        <?php 
-            sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/06/innleggthvbilde.jpg");
-            sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/05/kommentar_saskia-scaled.jpg");
-        ?>
-    </div>
-
-</div>
-
-
-<div class="rad-gruppe">
-
-    <div class="rad-overskrift"><span class="debatt">Kommentar</span>stoff</div>
-
-    <div class="rad three-split">
-        <?php 
-            sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/05/makt-quiz-uten-bakgrunn-scaled.jpg");
-            sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/02/endre.png");
-            sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/06/trekule_55.jpg");
-        ?>
-    </div>
-
-    <div class="rad three-split-alt">
-
-        <?php 
-            sak("one-split","https://www.stoffmagasin.no/wp-content/uploads/2021/12/211130_bb_niilas_002-scaled.jpg");
-        ?>
-
-        <div class="kolonne">
-
-            <?php 
-                sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/06/220519_ntf_sohhon_ingridborvik_001.jpg");
-                sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/05/140522_fs_mektigstekake-4-1-scaled.jpg");
-            ?>
-
-        </div>
-
-    </div>
-
-    <div class="rad three-split">
-        <?php 
-            sak(false,"https://www.stoffmagasin.no/wp-content/uploads/2022/05/nadja.jpeg");
-            sak(false,"https://cdn-icons-png.flaticon.com/128/5229/5229460.png");
-            sak(false, "https://www.stoffmagasin.no/wp-content/uploads/2022/05/211103_pmhw_sosialemedierhvordanpacc8avirkerdeoss_hannahjohansson_0031-1.jpg");
-        ?>
-    </div>
-
-</div>
+}
 
 
-<?php get_footer(); ?>
+get_footer(); 
+
+?>

@@ -11,14 +11,15 @@ add_action('init', 'remove_wp_css');
 
 function stoff_enqueue() {
     // Update stylesheet ver number here to update on live site
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/stoff.css', array (), 2.3 );
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/stoff.css', array (), 2.4 );
     wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.js', array (), 1.3, true);
 }
 add_action('wp_enqueue_scripts', 'stoff_enqueue');
 
 
 
-function stoff_theme_support(){
+function stoff_setup(){
+    //SER IKKJE UT TIL AT DINNE FUNKA
 
     $features = [
         ['title-tag'], 
@@ -52,7 +53,7 @@ function stoff_theme_support(){
     }
 
 }
-add_action('after_theme_setup', 'stoff_theme_support');
+add_action('after_setup_theme', 'stoff_setup');
 
 
 ?>

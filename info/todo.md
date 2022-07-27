@@ -4,19 +4,27 @@ Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikke
 Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 
 
+- Gjere tekstdel til en eigen del (under samme link)
+- Gjere forsida til loop
+
 - statisk artikkelside, html struktur og css classes
-- https://www.youtube.com/watch?v=-h7gOJbIpmo&list=LL&index=6
+  
 
 -------
 
 ## Seinare:
 
-- rydd opp i spacing underneath big header kode. meir php heavy, legge inn spacer?
+- eigen sak size 'cover' som e big, reordera og inkl byline
+- lage artikkelside
 
 -------------------------------------
 
 ## Backlog: 
 
+- ei sak heite 'content'
+- kan ta vekk default args og kjøre get_the_title() etc direkte i sak når 
+  sak alltid e i loop
+- rydd opp i spacing underneath big header kode. meir php heavy, legge inn spacer?
 - mindre padding på ad gruppe, og på mobil generelt
 - finne ut av bilde resizing. gjere rade til grids? nja)
 - fiks header osv, wordpress shite
@@ -31,6 +39,8 @@ Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 - bug: dynamic titles funkakje, no idea why
 - gjere sak default values meir generiske just in case
 - css for creating space beneath missing big header is still janky for mobile
+- korleis i sveise fe en material icons til å laine opp m tekst
+- source of truth for rad typa, enum
 
 ------------------------------------
 

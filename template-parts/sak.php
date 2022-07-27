@@ -8,16 +8,20 @@ $argument_defaults = [
     'img' => 'https://engineroom.ie/images/Sean-Kingston3.jpg',
     'size' => 'three-split',
     'link' => "/2022/06/30/testsak/",
-    'overskrift' => "Nei, Helle-Valle; vi er en arbeids&shy;plass",
+    'title' => "Nei, Helle-Valle; vi er en arbeids&shy;plass",
     'ingress' => "Kristin Helle-Valle, som leder Litteraturhuset i Bergen, vil ikke stille seg bak de overordnede retningslinjene som skal motvirke seksuell trakassering og overgrep i jobbsammenheng.",
     'tags' => ['debatt', 'forsidestoff'],
 ]; 
 $args = wp_parse_args($args, $argument_defaults);
 $link = $args['link'];
 
+// DEBUGGING: var_dump($args);
+
 // Variables
-list($width, $height) = getimagesize($args['img']); /* Might break accessing images on a remote server */
-$orientation = ($width > $height and $height / $width < 0.8) ? 'landscape' : '';
+if ($args['img']) {
+    list($width, $height) = getimagesize($args['img']); /* Might break accessing images on a remote server */
+    $orientation = ($width > $height and $height / $width < 0.8) ? 'landscape' : '';
+}
 
 
 // HTML
@@ -31,7 +35,7 @@ echo <<<HTML
             <div class="tekstdel">
 
                 <a href="$link" class="overskrift">
-                    {$args['overskrift']}
+                    {$args['title']}
                 </a>
                 <a href="$link" class="ingress">
                     {$args['ingress']}
