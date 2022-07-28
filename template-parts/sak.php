@@ -11,6 +11,9 @@ $argument_defaults = [
 $args = wp_parse_args($args, $argument_defaults);
 
 // Variables
+$title = get_the_title();
+$low_title = mb_strtolower($title, 'UTF-8');
+$title_words = explode(' ', $low_title);
 $link = get_permalink();
 $orientation = '';
 //if ($args['img']) {
@@ -31,7 +34,7 @@ $orientation = '';
     <div class="tekstdel">
 
         <a href="<?php echo $link ?>" class="overskrift">
-            <?php the_title() ?>
+            <?php echo $title ?>
         </a>
         <a href="<?php echo $link ?>" class="ingress">
             <?php echo get_the_excerpt() ?>
@@ -39,18 +42,20 @@ $orientation = '';
         <div class="tags">
 
             <?php
-            // Get two first categories
+            // Category tags
             $categories = get_the_category();
 
             $i = 1;
             foreach ($categories as $category) {
                 $name = mb_strtolower($category->name, 'UTF-8');
+                $name_words = explode(' ', $name);
                 $link = esc_url( get_category_link( $category->term_id ));
 
                 // Categories not to display
                 if ( preg_match('~[0-9]+~', $name)
                 || $name == 'nyheter'
                 || strlen($name) > 15
+                || ($name_words[0] == $title_words[0] and $name_words[1] == $title_words[1])
                 ) continue;
 
                 echo "<a href='$link' class='tag $name'>$name</a>";

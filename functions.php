@@ -17,9 +17,7 @@ function stoff_enqueue() {
 add_action('wp_enqueue_scripts', 'stoff_enqueue');
 
 
-
 function stoff_setup(){
-    //SER IKKJE UT TIL AT DINNE FUNKA
 
     $features = [
         ['title-tag'], 
@@ -54,6 +52,23 @@ function stoff_setup(){
 
 }
 add_action('after_setup_theme', 'stoff_setup');
+
+
+// Don't put sticky posts before others
+function ea_remove_sticky_from_main_loop( $query ) {
+	$query->set( 'ignore_sticky_posts', true );
+}
+add_action( 'pre_get_posts', 'ea_remove_sticky_from_main_loop' );
+
+
+// Allow importing media/posts from same domain, etc from test to www
+add_filter( 'http_request_host_is_external', '__return_true' );
+
+// Custom excerpt length
+add_filter( 'excerpt_length', function( $length ) { return 21; } );
+
+// Custom excerpt more style
+add_filter('excerpt_more', function( $more ) { return '...'; });
 
 
 ?>

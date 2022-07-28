@@ -3,10 +3,7 @@
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
 Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå. Gjer det enkelt, i same stil som andre.
 
-- Gjere sak en del av loopen
 - Samle tekstdel
-
-- Importer nyaste sakene. 
 - Lag artikkelsida. (egt berre coversize sak)
   
 
