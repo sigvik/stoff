@@ -39,8 +39,11 @@ $orientation = '';
         <div class="tags">
 
             <?php
-            foreach ($args['tags'] as &$tag) {
-                get_template_part('template-parts/tag', false, ['name' => $tag]);
+            foreach (get_the_category() as $category) {
+                $name = strtolower($category->name);
+                $link = esc_url( get_category_link( $category->term_id ));
+
+                echo "<a href='$link' class='tag $name'>$name</a>";
             };
             ?>
 
