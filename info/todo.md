@@ -1,19 +1,20 @@
 ## Todo:
 
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
-Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
+Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå. Gjer det enkelt, i same stil som andre.
 
+- Gjere sak en del av loopen
+- Samle tekstdel
 
-- Gjere tekstdel til en eigen del (under samme link)
-- Gjere forsida til loop
-
-- statisk artikkelside, html struktur og css classes
+- Importer nyaste sakene. 
+- Lag artikkelsida. (egt berre coversize sak)
   
 
 -------
 
 ## Seinare:
 
+- sake trenge height 100%?
 - eigen sak size 'cover' som e big, reordera og inkl byline
 - lage artikkelside
 
@@ -21,6 +22,9 @@ Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 
 ## Backlog: 
 
+- Tag kankje være opa css category, flytt inni noke
+- ikkje-landscape bilde i one-split trenge likevel litt høgde. 50% wrapper height.
+- padding til ingressa. 100px på store?
 - ei sak heite 'content'
 - kan ta vekk default args og kjøre get_the_title() etc direkte i sak når 
   sak alltid e i loop
@@ -46,6 +50,10 @@ Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå.
 
 ## Rescources:
 
+Template structure:
+https://wphierarchy.com/
+
+Followandrew:
 https://www.youtube.com/watch?v=-h7gOJbIpmo
 
 Om fleksibel layout:
@@ -84,6 +92,8 @@ advanced custom fields
 - å forkaste utgave-systemet vil ikkje ødelegge article links
 - utgavesystemet funka med vanlig php. GET[x] henta y fra url.com/?x=y. for å linke andre utgave laga det berre url.com/?x=y links
 - wp adminbar e i footer pga wp, og litt nede fordi han he styla den customly
+- for å få kategoriside til å ikkje ha /category/ først går du på permalink settings, sette custom structure til /%category%/%year%/%monthnum%/%day%/%postname%/ og category slug til .  (Må også ikkje ha side som overkjøre)
+- Det som slowa ned flywheel til helvete va getimagesize()
 
 ------------------------
 

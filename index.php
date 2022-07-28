@@ -5,30 +5,14 @@ require get_template_directory() . '/inc/helpers.php';
 
 get_header();
 
-/*
-
-if ( have_posts() ){
-
-    $count = wp_count_posts();
-    $i = 0;
-    while( have_posts() ){
-
-        $i++;
-        the_post();
-        the_post_thumbnail("small");
-        the_title("<h3>","</h3>");
-        the_excerpt();
-
-        echo("<br><br>");
-
-    }
-
-}
-*/
+get_template_part('template-parts/header-part', false, 
+[
+    'classes' => 'dark pattern-bg', 
+    'big' => true,
+]);
 
 
-
-//------------------ PHP elements -----------------------------------
+//------------------ PHP components -----------------------------------
 
 function ad() {
     $url = "https://subjekt.no/wp-content/uploads/2022/07/NM_Takeover_Flagg_2400x680-kopi.png";
@@ -37,20 +21,42 @@ function ad() {
 }
 
 
-get_template_part('template-parts/header-part', false, 
-[
-    'classes' => 'dark pattern-bg', 
-    'big' => true,
-]);
-
-
 //------------------ The loop -----------------------------------
 
 if ( have_posts() ){
 
-    $posts_left = wp_count_posts();
-    $i = 0;
-   
+    $posts_left = $wp_query->post_count;
+    $i = 1;
+    ?>
+
+    <div class="rad-gruppe">
+        <div class="rad-overskrift"> <?php single_cat_title() ?> </div><?php
+
+        while( have_posts() ){
+
+            // Vidare: Et system for forskjellige rad typa
+
+            the_post();
+
+            if ($i % 3 == 1) { echo '<div class="rad three-split">'; }
+
+            sak(['size' => 'three-split']);
+
+            if ($i % 3 == 0) { echo '</div>'; }
+
+            $i++;
+
+        }?>
+
+
+    </div>
+
+    
+    <?php
+    /*
+
+    LEGACY CODE
+
     function rad($r_type, $r_length){
 
         $r = 0;
@@ -62,14 +68,12 @@ if ( have_posts() ){
         while ($r < $r_length) {
 
             the_post();
-            if (is_sticky() and $i > 1) continue; // Skip some sticky posts for now
-        
-            // Increment
-            $i++; $r++; $posts_left--;
+            if (is_sticky() and $i > 1) continue; // Skip sticky posts for now
 
-            // Start row
+            // Start row on first
             if ($r == 1) echo '<div class="rad '. $r_type .'">';
 
+            // Column for three-split-alt
             if ($three_split_alt and $r == 2) echo '<div class="kolonne">';
 
             // Build content
@@ -81,6 +85,9 @@ if ( have_posts() ){
                 'ingress' => ($three_split_alt and $r > 1) ? '' : get_the_excerpt(),
                 'link' => get_permalink(),
             ]);
+
+            // Increment
+            $i++; $r++; $posts_left--;
 
         }   
 
@@ -94,6 +101,48 @@ if ( have_posts() ){
         rad($r_type, $r_length);
         echo'</div>';
     }
+
+    /*
+    if (is_front_page()) {
+        single_rad_gruppe('three-split-alt', 3);
+
+        echo'<div class="rad-gruppe">';
+        ad();
+        echo'</div>';
+    
+        single_rad_gruppe('one-split', 1);
+    
+        single_rad_gruppe('two-split', 2);
+    
+        echo'<div class="rad-gruppe">';
+        echo'<div class="rad-overskrift"><span class="samfunn">Samfunns</span>stoff</div>';
+        rad('three-split', 3);
+        //rad('three-split-alt', 3);
+        //rad('three-split', 3);
+        echo'</div>';
+
+    } else {
+
+        echo'<div class="rad-gruppe">';
+        echo'<div class="rad-overskrift">';
+        single_cat_title();
+        echo'</div>';
+
+        while( have_posts() ){
+
+            if ($posts_left > 3) {
+                rad('three-split', 3);
+            } else {
+                echo'</div>';
+                return;
+            }
+    
+        }
+
+        echo'</div>';
+
+    }
+    
 
     while( have_posts() ){
 
@@ -116,6 +165,8 @@ if ( have_posts() ){
 
         break;
     }
+
+    */
     
 
 }
