@@ -39,11 +39,25 @@ $orientation = '';
         <div class="tags">
 
             <?php
-            foreach (get_the_category() as $category) {
-                $name = strtolower($category->name);
+            // Get two first categories
+            $categories = get_the_category();
+
+            $i = 1;
+            foreach ($categories as $category) {
+                $name = mb_strtolower($category->name, 'UTF-8');
                 $link = esc_url( get_category_link( $category->term_id ));
 
+                // Categories not to display
+                if ( preg_match('~[0-9]+~', $name)
+                || $name == 'nyheter'
+                || strlen($name) > 15
+                ) continue;
+
                 echo "<a href='$link' class='tag $name'>$name</a>";
+
+                // Max 2 categories
+                $i++; 
+                if ($i > 2) break;
             };
             ?>
 

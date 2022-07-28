@@ -7,6 +7,12 @@ HEADER
 Arguments = ['big' => bool]
 */
 
+$argument_defaults = [
+    'big' => false,
+    'tags' => ['debatt', 'forsidestoff'],
+]; 
+$args = wp_parse_args($args, $argument_defaults);
+
 $logo = file_get_contents( $imgDir . "/stoff.svg");
 $home_url = get_home_url();
 $big = $args['big'];

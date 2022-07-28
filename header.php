@@ -1,4 +1,6 @@
-<?php require get_template_directory() . '/inc/directories.php' ?>
+<?php 
+require get_template_directory() . '/inc/directories.php'; 
+?>
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
