@@ -9,28 +9,25 @@ get_template_part('template-parts/header-part');
 
 ?>
 
+<?php 
 
+if ( have_posts() ){
 
-<div class="rad-gruppe artikkelside">
+  while( have_posts() ){
 
-  <?php 
-  
-  if ( have_posts() ){
+    the_post();
+    echo '<div class="rad-gruppe">';
+    sak([ 'size' => 'cover' ]);
+    echo '</div>';
 
-    while( have_posts() ){
-
-      the_post();
-      sak([ 'size' => 'cover' ]);
-      echo '<article>';
-      the_content(null,false);
-      '</article>';
-
-    }
+    echo '<div class="rad-gruppe article-wrap"><article>';
+    the_content(null,false);
+    '</article></div>';
 
   }
-  ?>
 
-</div>
+}
+?>
 
 
 <div class="rad-gruppe">

@@ -14,6 +14,14 @@
   max-height: 100%;
 }
 
+.cover .bilde {
+  width: auto;
+  max-height: 70vmin;
+}
+
+.cover .bilde-wrapper {
+  height: auto;
+}
 
 // DESKTOP ONLY ------------------------ 
 @media screen and (min-width: $tablet) {
@@ -30,26 +38,11 @@
     height: px2rem(400);
   }
 
-  .landscape .bilde {
+  .sak:not(.cover) .landscape .bilde {
     max-height: inherit;
     width: 100%;
   }
 }
 
 
-// TABLET & BIGGER ------------------------ 
-@media screen and (min-width: $mobile) {
 
-  .cover .bilde-wrapper{
-    height: px2rem(480);
-  }
-
-  .cover .bilde-wrapper.landscape{
-    height: auto;
-  }
-
-  .cover .landscape .bilde {
-    max-height: inherit;
-    width: 100%;
-  }
-}

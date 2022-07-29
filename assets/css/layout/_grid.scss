@@ -62,7 +62,6 @@ intertwined with the gird.
 }
 
 
-
 //  DESKTOP ONLY ------------------------ 
 @media screen and (min-width: $tablet) {
 
@@ -116,7 +115,11 @@ intertwined with the gird.
 }
 
 // TABLET & BIGGER ------------------------ 
-@media screen and (min-width: $tablet) {
+@media screen and (min-width: $mobile) {
+
+  .sak.cover {
+    padding: 0;
+  }
 
   .cover .ingress,
   .one-split .ingress {
@@ -157,6 +160,22 @@ intertwined with the gird.
   .two-split,
   .kolonne {
     flex-direction: column;
+  }
+
+  .rad,
+  .rad-gruppe {
+    gap: 0;
+    padding: 0;
+  }
+
+  .sak:not(.cover) {
+    gap: $small-gap;
+    padding: $small-gap 0;
+  }
+
+  .sak.cover {
+    // Probablhy because of shoddy solution with missing whitespace under small menu
+    padding: 3.5rem 0; 
   }
 
 }

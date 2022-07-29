@@ -3,6 +3,8 @@
 Slutt å kuke med style choices, stresse med knotete løysinge. Gjer ting skikkelig i ro og mak.
 Lær å avslutte i tide sjølom du ikkje e ferdig. Tenk først, kode etterpå. Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først.
 
+- Gjer innhold til ikkje-lenke om cover
+
 - Three split rad
 - Endre bildesize etter radtype (alltid max-height 80vh og wrapper med height auto?)
 - Farge overskrifta:

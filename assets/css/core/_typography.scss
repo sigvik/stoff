@@ -102,6 +102,15 @@ body {
   line-height: 1.4;
 }
 
+
+
+// Article page --------------------
+
+.cover .overskrift {
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  line-height: 1;
+}
+
 article {
   font-family: Sabon Lt Std;
   font-size: px2rem(20);
@@ -109,8 +118,14 @@ article {
 }
 
 article strong,
+article figcaption,
 article b {
   font-family: 'DIN_web';
+}
+
+article figcaption {
+  font-size: px2rem(14);
+  line-height: px2rem(20);
 }
 
 article .uthevet-sitat {
@@ -152,9 +167,11 @@ article .uthevet-sitat {
 // TABLET & BIGGER ------------------------ 
 @media screen and (min-width: $mobile) {
 
+  /*
   .cover .overskrift {
     --font-size: 4rem;
   }
+  */
 
   .cover .ingress {
     font-size: px2rem(20);
