@@ -61,6 +61,11 @@ body {
   line-height: var(--font-size);
 }
 
+.cover .overskrift {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .tag {
   @include spaced;
   @include sizeNline(px2rem(12));
@@ -97,6 +102,24 @@ body {
   line-height: 1.4;
 }
 
+article {
+  font-family: Sabon Lt Std;
+  font-size: px2rem(20);
+  line-height: px2rem(30);
+}
+
+article strong,
+article b {
+  font-family: 'DIN_web';
+}
+
+article .uthevet-sitat {
+  font-family: 'DIN_web';
+  font-size: px2rem(32);
+  line-height: px2rem(48);
+  text-transform: uppercase;
+}
+
 
 // DESKTOP ONLY ------------------------ 
 @media screen and (min-width: $tablet) {
@@ -121,6 +144,19 @@ body {
 
   .one-split .ingress,
   .two-split .ingress {
+    font-size: px2rem(20);
+  }
+}
+
+
+// TABLET & BIGGER ------------------------ 
+@media screen and (min-width: $mobile) {
+
+  .cover .overskrift {
+    --font-size: 4rem;
+  }
+
+  .cover .ingress {
     font-size: px2rem(20);
   }
 }

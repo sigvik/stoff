@@ -11,7 +11,7 @@ get_template_part('template-parts/header-part');
 
 
 
-<div class="rad-gruppe">
+<div class="rad-gruppe artikkelside">
 
   <?php 
   
@@ -21,7 +21,9 @@ get_template_part('template-parts/header-part');
 
       the_post();
       sak([ 'size' => 'cover' ]);
-      echo '<article>' . the_content() . '</article';
+      echo '<article>';
+      the_content(null,false);
+      '</article>';
 
     }
 

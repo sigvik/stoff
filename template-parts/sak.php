@@ -6,6 +6,7 @@
 // Set up template-part arguments
 $argument_defaults = ['size' => 'three-split']; 
 $args = wp_parse_args($args, $argument_defaults);
+$size = $args['size'];
 
 // Variables
 $link = get_permalink();
@@ -23,7 +24,7 @@ $orientation = 'landscape';
 
 
 
-<div class="sak <?php echo $args['size'] ?>">
+<div class="sak <?php echo $size ?>">
 
   <a class="innhold" href="<?php echo $link ?>">
 
@@ -36,9 +37,15 @@ $orientation = 'landscape';
       <div class="overskrift">
         <?php echo get_the_title(); ?>
       </div>
-      <div class="ingress">
-        <?php echo get_the_excerpt() ?>
-      </div>
+
+      <?php
+      // Don't show excerpt preview inside articles
+      if ( !($size == 'cover' and !has_excerpt()) ): ?>
+        <div class="ingress">
+          <?php echo get_the_excerpt() ?>
+        </div><?php
+      endif; 
+      ?>
 
     </div>
   </a>
@@ -46,7 +53,7 @@ $orientation = 'landscape';
   <?php 
   get_template_part('template-parts/tags'); 
 
-  if ($args['size'] == 'cover') echo get_the_date('j. F Y');
+  if ($size == 'cover') echo get_the_date('j. F Y');
   ?>
 
 </div>

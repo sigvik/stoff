@@ -1,0 +1,55 @@
+// ARTICLE (aka single.php)
+
+
+.artikkelside {
+  overflow: hidden;
+}
+
+.cover .overskrift {
+  color: var(--Kultur);
+}
+
+article {
+  width: clamp(px2rem(256), 100%, px2rem(752));
+  position: relative;
+}
+
+article .uthevet-sitat {
+  padding: $small-gap 0;
+}
+
+// Article images
+article figure {
+  max-width: 100%;
+  margin: 0;
+  padding: $small-gap 0;
+}
+
+.opp-ned {
+  transform: rotate(180deg) scaleX(-1);
+}
+
+
+// DESKTOP ONLY ------------------------ 
+@media screen and (min-width: $tablet) {
+  article img.alignright {
+    position: absolute;
+    left: 100%;
+    margin-left: $default-gap;
+  }
+}
+
+// TABLET & SMALLER ------------------------ 
+@media screen and (max-width: $tablet) {
+  article img.alignright {
+    width: 100%;
+  }
+}
+
+
+// MOBILE ONLY ------------------------ 
+@media screen and (max-width: $mobile) {
+  .cover .tekstdel {
+    text-align: left;
+  }
+}

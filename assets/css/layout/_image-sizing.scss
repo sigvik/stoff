@@ -35,3 +35,21 @@
     width: 100%;
   }
 }
+
+
+// TABLET & BIGGER ------------------------ 
+@media screen and (min-width: $mobile) {
+
+  .cover .bilde-wrapper{
+    height: px2rem(480);
+  }
+
+  .cover .bilde-wrapper.landscape{
+    height: auto;
+  }
+
+  .cover .landscape .bilde {
+    max-height: inherit;
+    width: 100%;
+  }
+}

@@ -68,6 +68,8 @@ intertwined with the gird.
 
   // ---- one-split ----
 
+  .cover .innhold,
+  .cover .tekstdel,
   .one-split .innhold,
   .one-split .tekstdel {
     gap: $default-gap;
@@ -78,8 +80,10 @@ intertwined with the gird.
 
   .two-split,
   .one-split,
+  .cover,
   .two-split .innhold,
   .one-split .innhold,
+  .cover .innhold,
   .three-split-alt,
   .three-split-alt .one-split {
     gap: px2rem(48);
@@ -114,6 +118,7 @@ intertwined with the gird.
 // TABLET & BIGGER ------------------------ 
 @media screen and (min-width: $tablet) {
 
+  .cover .ingress,
   .one-split .ingress {
     padding: 0 20%;
   }

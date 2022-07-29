@@ -4,6 +4,7 @@
 - Enkeltside (om oss, etc)
 - Søkefunksjon
 - Dropdown kategoria i menyen (og links på dei)
+- 404 side
 - Theme customizing (colors, front page, ad)
 
 - Image lazy loading
@@ -15,6 +16,7 @@
 
 ## Backlog: 
 
+- Fjerne ingress i cover når den ikkje he en
 - farge + stoff på kategorioverskrifte. gjere overskrift til eigen part som regna ut med same som tags?
 - finne måte å få inn image ratio finding igjen
 - bug: svart logo på mobil
