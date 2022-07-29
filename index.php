@@ -23,150 +23,167 @@ function ad() {
 
 //------------------ The loop -----------------------------------
 
+$row_types = [
+  ['r'=> 'cover', 'len' => 1], // 0 - Full width & info, for the top of articles
+  ['r'=> 'one-split', 'len' => 1], // 1 - One big on a line
+  ['r'=> 'two-split', 'len' => 2], // 2 - Two share a line
+  ['r'=> 'three-split', 'len' => 3], // 3 - Three share a line
+  ['r'=> 'three-split-alt', 'len' => 3], // 4 - One big, two small
+];
+
+
 if ( have_posts() ){
 
-    $posts_left = $wp_query->post_count;
-    $i = 1;
-    ?>
+  $posts_left = $wp_query->post_count;
+  $i = 1;
+  $r = 1;
+  $row = $row_types[2]; // (radene fucka sej på one)
 
-    <div class="rad-gruppe">
-        <div class="rad-overskrift"> <?php single_cat_title() ?> </div><?php
+    while( have_posts() ){ the_post();
 
-        while( have_posts() ){
+      // Start row
+      if ($r == 1) { ?>
+        <div class="rad-gruppe"> <?php
+          if ($i == 1) { ?>
+            <div class="rad-overskrift <?php single_cat_title() ?>"><?php single_cat_title() ?></div><?php
+          }?>
+        <div class="rad <?php echo $row['r'] ?>">
+        <?php
+      }
 
-            // Vidare: Et system for forskjellige rad typa
+      sak(['size' => $row['r']]);
+      $i++; $r++;
 
-            the_post();
+      // End row
+      if ($r > $row['len']) { 
+        echo '</div></div>'; 
+        $r = 1;
 
-            if ($i % 3 == 1) { echo '<div class="rad three-split">'; }
-
-            sak(['size' => 'three-split']);
-
-            if ($i % 3 == 0) { echo '</div>'; }
-
-            $i++;
-
-        }?>
+        //Alternate rows
+        if ($row === $row_types[1]) $row = $row_types[2];
+        else if ($row === $row_types[3]) $row = $row_types[1];
+        else if ($row === $row_types[2]) $row = $row_types[3];
+      }
+    }?>
 
 
-    </div>
 
-    
-    <?php
-    /*
+  
+  <?php
+  /*
 
-    LEGACY CODE
+  LEGACY CODE
 
-    function rad($r_type, $r_length){
+  function rad($r_type, $r_length){
 
-        $r = 0;
-        $three_split_alt = ($r_type == 'three-split-alt');
+      $r = 0;
+      $three_split_alt = ($r_type == 'three-split-alt');
 
-        // Don't build if not enough content
-        //if ($posts_left < $r_length) return;
+      // Don't build if not enough content
+      //if ($posts_left < $r_length) return;
 
-        while ($r < $r_length) {
+      while ($r < $r_length) {
 
-            the_post();
-            if (is_sticky() and $i > 1) continue; // Skip sticky posts for now
+          the_post();
+          if (is_sticky() and $i > 1) continue; // Skip sticky posts for now
 
-            // Start row on first
-            if ($r == 1) echo '<div class="rad '. $r_type .'">';
+          // Start row on first
+          if ($r == 1) echo '<div class="rad '. $r_type .'">';
 
-            // Column for three-split-alt
-            if ($three_split_alt and $r == 2) echo '<div class="kolonne">';
+          // Column for three-split-alt
+          if ($three_split_alt and $r == 2) echo '<div class="kolonne">';
 
-            // Build content
-            $sak_type = ($three_split_alt) ? (($r == 1) ? 'one-split' : 'three-split') : $r_type;
-            sak([
-                'size' => $sak_type,
-                'img' => ($sak_type == 'one-split') ? get_img('large') : get_img('small'),
-                'title' => get_the_title(),
-                'ingress' => ($three_split_alt and $r > 1) ? '' : get_the_excerpt(),
-                'link' => get_permalink(),
-            ]);
+          // Build content
+          $sak_type = ($three_split_alt) ? (($r == 1) ? 'one-split' : 'three-split') : $r_type;
+          sak([
+              'size' => $sak_type,
+              'img' => ($sak_type == 'one-split') ? get_img('large') : get_img('small'),
+              'title' => get_the_title(),
+              'ingress' => ($three_split_alt and $r > 1) ? '' : get_the_excerpt(),
+              'link' => get_permalink(),
+          ]);
 
-            // Increment
-            $i++; $r++; $posts_left--;
+          // Increment
+          $i++; $r++; $posts_left--;
 
-        }   
+      }   
 
-        if ($three_split_alt) echo '</div>';
-        echo '</div>';
-        
-    }
+      if ($three_split_alt) echo '</div>';
+      echo '</div>';
+      
+  }
 
-    function single_rad_gruppe($r_type, $r_length){
-        echo'<div class="rad-gruppe">';
-        rad($r_type, $r_length);
-        echo'</div>';
-    }
+  function single_rad_gruppe($r_type, $r_length){
+      echo'<div class="rad-gruppe">';
+      rad($r_type, $r_length);
+      echo'</div>';
+  }
 
-    /*
-    if (is_front_page()) {
-        single_rad_gruppe('three-split-alt', 3);
+  /*
+  if (is_front_page()) {
+      single_rad_gruppe('three-split-alt', 3);
 
-        echo'<div class="rad-gruppe">';
-        ad();
-        echo'</div>';
-    
-        single_rad_gruppe('one-split', 1);
-    
-        single_rad_gruppe('two-split', 2);
-    
-        echo'<div class="rad-gruppe">';
-        echo'<div class="rad-overskrift"><span class="samfunn">Samfunns</span>stoff</div>';
-        rad('three-split', 3);
-        //rad('three-split-alt', 3);
-        //rad('three-split', 3);
-        echo'</div>';
+      echo'<div class="rad-gruppe">';
+      ad();
+      echo'</div>';
+  
+      single_rad_gruppe('one-split', 1);
+  
+      single_rad_gruppe('two-split', 2);
+  
+      echo'<div class="rad-gruppe">';
+      echo'<div class="rad-overskrift"><span class="samfunn">Samfunns</span>stoff</div>';
+      rad('three-split', 3);
+      //rad('three-split-alt', 3);
+      //rad('three-split', 3);
+      echo'</div>';
 
-    } else {
+  } else {
 
-        echo'<div class="rad-gruppe">';
-        echo'<div class="rad-overskrift">';
-        single_cat_title();
-        echo'</div>';
+      echo'<div class="rad-gruppe">';
+      echo'<div class="rad-overskrift">';
+      single_cat_title();
+      echo'</div>';
 
-        while( have_posts() ){
+      while( have_posts() ){
 
-            if ($posts_left > 3) {
-                rad('three-split', 3);
-            } else {
-                echo'</div>';
-                return;
-            }
-    
-        }
+          if ($posts_left > 3) {
+              rad('three-split', 3);
+          } else {
+              echo'</div>';
+              return;
+          }
+  
+      }
 
-        echo'</div>';
+      echo'</div>';
 
-    }
-    
+  }
+  
 
-    while( have_posts() ){
+  while( have_posts() ){
 
-        single_rad_gruppe('three-split-alt', 3);
+      single_rad_gruppe('three-split-alt', 3);
 
-        echo'<div class="rad-gruppe">';
-        ad();
-        echo'</div>';
-    
-        single_rad_gruppe('one-split', 1);
-    
-        single_rad_gruppe('two-split', 2);
-    
-        echo'<div class="rad-gruppe">';
-        echo'<div class="rad-overskrift"><span class="samfunn">Samfunns</span>stoff</div>';
-        rad('three-split', 3);
-        //rad('three-split-alt', 3);
-        //rad('three-split', 3);
-        echo'</div>';
+      echo'<div class="rad-gruppe">';
+      ad();
+      echo'</div>';
+  
+      single_rad_gruppe('one-split', 1);
+  
+      single_rad_gruppe('two-split', 2);
+  
+      echo'<div class="rad-gruppe">';
+      echo'<div class="rad-overskrift"><span class="samfunn">Samfunns</span>stoff</div>';
+      rad('three-split', 3);
+      //rad('three-split-alt', 3);
+      //rad('three-split', 3);
+      echo'</div>';
 
-        break;
-    }
+      break;
+  }
 
-    */
+  */
     
 
 }
@@ -175,3 +192,4 @@ if ( have_posts() ){
 get_footer(); 
 
 ?>
+

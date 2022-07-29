@@ -19,7 +19,7 @@ MAIN STYLESHEET
 This Sass-file is compiled into CSS using the Wordpress plugin WP-SCSS.
 
 Classes should be sorted by appearance in the layout structure, which can be
-found in this directory.
+found in the info directory.
 
 */
 
@@ -30,7 +30,7 @@ button {
   user-select: none;
 
   &:hover {
-    $hoverClr: var(--essay);
+    $hoverClr: var(--Essay);
     color: $hoverClr;
     fill: $hoverClr;
   }

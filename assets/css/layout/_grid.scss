@@ -3,6 +3,8 @@
 GRID
 
 Sizing and placement in the overall page structure of rows and columns.
+The sak (content) component also resides here, as it is very
+intertwined with the gird.
 
 */
 
@@ -32,9 +34,15 @@ Sizing and placement in the overall page structure of rows and columns.
 .sak {
   display: flex;
   flex-direction: column;
-  gap: $small-gap;
   padding: $default-gap 0;
   width: 100%;
+  gap: $small-gap;
+
+  .innhold {
+    display: flex;
+    flex-direction: column;
+    gap: $small-gap;
+  }
 }
 
 .tekstdel {
@@ -60,6 +68,7 @@ Sizing and placement in the overall page structure of rows and columns.
 
   // ---- one-split ----
 
+  .one-split .innhold,
   .one-split .tekstdel {
     gap: $default-gap;
   }
@@ -67,8 +76,10 @@ Sizing and placement in the overall page structure of rows and columns.
 
   // ---- two-split & one-split ----
 
-  .two-split .sak,
-  .one-split .sak,
+  .two-split,
+  .one-split,
+  .two-split .innhold,
+  .one-split .innhold,
   .three-split-alt,
   .three-split-alt .one-split {
     gap: px2rem(48);
@@ -96,6 +107,24 @@ Sizing and placement in the overall page structure of rows and columns.
 
   .kolonne .ingress {
     display: none;
+  }
+
+}
+
+// TABLET & BIGGER ------------------------ 
+@media screen and (min-width: $tablet) {
+
+  .one-split .ingress {
+    padding: 0 20%;
+  }
+
+}
+
+// TABLET  ------------------------ 
+@media screen and (max-width: $tablet) and (min-width: $mobile) {
+
+  .three-split .ingress {
+    padding: 0 20%;
   }
 
 }

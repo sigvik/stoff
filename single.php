@@ -13,24 +13,20 @@ get_template_part('template-parts/header-part');
 
 <div class="rad-gruppe">
 
-    <?php 
+  <?php 
+  
+  if ( have_posts() ){
 
-    if ( have_posts() ){
-        while( have_posts() ){
+    while( have_posts() ){
 
-            the_post();
-    
-            sak([
-                'size' => 'one-split',
-                'img' => get_the_post_thumbnail_url(),
-                'title' => get_the_title(),
-                'ingress' => get_the_excerpt(),
-            ]);
-            
-            echo '<article>' . the_content() . '</article';
-        }
+      the_post();
+      sak([ 'size' => 'cover' ]);
+      echo '<article>' . the_content() . '</article';
+
     }
-    ?>
+
+  }
+  ?>
 
 </div>
 

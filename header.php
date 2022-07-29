@@ -13,6 +13,8 @@ require get_template_directory() . '/inc/directories.php';
 
 	<?php wp_head(); ?>
 
+  <?php // require $templDir . '/inc/category-clr.php' ?>
+
 </head>
 
 <body <?php body_class(""); ?>>

@@ -18,7 +18,11 @@
 // DESKTOP ONLY ------------------------ 
 @media screen and (min-width: $tablet) {
 
-  .one-split .landscape {
+  .one-split .bilde-wrapper {
+    height: px2rem(480);
+  }
+
+  .one-split .bilde-wrapper.landscape {
     height: auto;
   }
 

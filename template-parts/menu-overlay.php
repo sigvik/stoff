@@ -12,9 +12,9 @@
         </div>
 
         <div class="large-categories">
-            <button class="category samfunn extends"> Samfunn </button> <!-- <div class="icon">&#xe5c5;</div> -->
-            <button class="category kultur extends"> Kultur </button>
-            <button class="category debatt extends"> Debatt </button>
+            <button class="category Samfunn extends"> Samfunn </button> <!-- <div class="icon">&#xe5c5;</div> -->
+            <button class="category Kultur extends"> Kultur </button>
+            <button class="category Debatt extends"> Debatt </button>
             <button class="category extends"> Arkiv </button>
         </div>
 

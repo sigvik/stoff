@@ -29,24 +29,28 @@ body {
   --white: #FFF;
   --almost-black: #1b1a1c; // For dark mode 
   --almost-white: #C1CADF; // For dark mode
-  --innhold: #939598;
-  --samfunn: #F48026;
-  --kultur: #ED028C;
-  --debatt: #2F94AB;
-  --foto: #00AFA0;
-  --quiz: #EE1D23;
-  --essay: #FFEC18;
+  --Innhold: #939598;
+  --Essay: #FFEC18;
+  
+  // NOTE: Can be replaced by approach in inc/category-clr.php
+  --Samfunn: #F48026;
+  --Kultur: #ED028C;
+  --Debatt: #2F94AB;
+  --Foto: #00AFA0;
+  --Quiz: #EE1D23;
 }
 
 
 // ---------------------------------------------------------------
+
 // Creates classes that color text to corresponding category color
+// NOTE: Can be replaced by approach in inc/category-clr.php
 
 @mixin clr-category($name) {
   color: var(--#{$name});
 }
 
-$clr-categories: "samfunn", "kultur", "debatt";
+$clr-categories: "Samfunn", "Kultur", "Debatt", "Quiz", "Foto", "Essay";
 
 @each $name in $clr-categories {
   .#{$name} {
