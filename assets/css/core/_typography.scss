@@ -4,122 +4,123 @@
 
 
 @mixin material-symbol() {
-    line-height: 1;
-    font-variation-settings: 'FILL' 1;
+  line-height: 1;
+  font-variation-settings: 'FILL' 1;
 }
 
 @mixin spaced() {
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-@mixin sizeNline($size){
-    font-size: $size;
-    line-height: $size;
+@mixin sizeNline($size) {
+  font-size: $size;
+  line-height: $size;
 }
 
 body {
-    font-family: "DIN_web", -apple-system, BlinkMacSystemFont, 'Helvetica', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "DIN_web", -apple-system, BlinkMacSystemFont, 'Helvetica', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif, 'Social_Icons', 'Material_Symbols';
 }
 
 #hamburger {
-    @include material-symbol;
-    font-variation-settings: 'FILL' 1; // 'wght' 700;
+  @include material-symbol;
+  font-variation-settings: 'FILL' 1; // 'wght' 700;
 }
 
 .menu-item {
-    @include spaced;
-    @include sizeNline(px2rem(16));
-    font-weight: bold;
+  @include spaced;
+  @include sizeNline(px2rem(16));
+  font-weight: bold;
 }
 
 .rad-overskrift {
-    @include spaced;
-    @include sizeNline(px2rem(24));
+  @include spaced;
+  @include sizeNline(px2rem(24));
 }
 
 .annonse-tag {
-    @include sizeNline(px2rem(12));
+  @include sizeNline(px2rem(12));
 }
 
 .tekstdel {
-    text-align: center;
-    
-    // Use &shy; to mark good places to break text. E.g. "train&shy;station"
-    word-wrap: break-word;
-    -webkit-hyphens: manual;
-    -ms-hyphens: manual;
-    hyphens: manual;
+  text-align: center;
+
+  // Use &shy; to mark good places to break text. E.g. "train&shy;station"
+  word-wrap: break-word;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
 }
 
 .overskrift {
-    // Variable size for resizing in smaller viewports.
-    --font-size: 2rem;
-    font-size: var(--font-size);
-    line-height: var(--font-size);
+  // Variable size for resizing in smaller viewports.
+  --font-size: 2rem;
+  font-size: var(--font-size);
+  line-height: var(--font-size);
 }
 
 .tag {
-    @include spaced;
-    @include sizeNline(px2rem(12));
-    font-weight: bold;
+  @include spaced;
+  @include sizeNline(px2rem(12));
+  font-weight: bold;
 }
 
 .menu .icon {
-    @include material-symbol();
-    font-size: 2rem;
-    font-variation-settings: 'FILL' 1, 'wght' 300;   
+  @include material-symbol();
+  font-size: 2rem;
+  font-variation-settings: 'FILL' 1, 'wght' 300;
 }
 
 #search-input {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .large-categories .category {
-    $font-size: px2rem(40);
+  $font-size: px2rem(40);
 
+  @include sizeNline($font-size);
+  padding: px2rem(6) 0;
+
+  .icon {
     @include sizeNline($font-size);
-    padding: px2rem(6) 0;
-    
-    .icon {
-        @include sizeNline($font-size);
-    }
-}            
+  }
+}
 
 .menu .social-icons .icon {
-    @include sizeNline(px2rem(24));
+  @include sizeNline(px2rem(24));
 }
 
 .menu .text {
-    font-weight: bold;
-    line-height: 1.4;
+  font-weight: bold;
+  line-height: 1.4;
 }
 
 
 // DESKTOP ONLY ------------------------ 
 @media screen and (min-width: $tablet) {
 
-    // ---- one-split ----
+  // ---- one-split ----
 
-    .one-split .overskrift {
-        --font-size: 4rem;
-    }
-    
-    .dark .one-split .overskrift {
-        // Some bold headlines in dark mode 
-        font-weight: bold;
-    }
+  .one-split .overskrift {
+    --font-size: 4rem;
+  }
+
+  .dark .one-split .overskrift {
+    // Some bold headlines in dark mode 
+    font-weight: bold;
+  }
 
 
-    // ---- two-split & one-split ----
+  // ---- two-split & one-split ----
 
-    .two-split .overskrift {
-        --font-size: 2.5rem;
-    }
-    
-    .one-split .ingress, .two-split .ingress {
-        font-size: px2rem(20);
-    }
+  .two-split .overskrift {
+    --font-size: 2.5rem;
+  }
+
+  .one-split .ingress,
+  .two-split .ingress {
+    font-size: px2rem(20);
+  }
 }

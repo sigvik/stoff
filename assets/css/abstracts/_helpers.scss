@@ -1,5 +1,6 @@
 // HELPER FUNCTIONS
 
 // px2rem - Converts px to rem
-@function px2rem($px) { @return ($px / 16) + rem }
-
+@function px2rem($px) {
+  @return ($px / 16)+rem
+}

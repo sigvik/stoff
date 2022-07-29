@@ -10,78 +10,79 @@ Constants, classes and themes that dictate color.
 
 
 body {
-    // Color options -------------------
-    --theme-light: var(--white);
-    --theme-dark: var(--black);
-  
-    --background-color: var(--theme-light);
-    --text-color: var(--theme-dark);
-  
-    background-color: var(--background-color);
-    color: var(--text-color);
-    fill: var(--text-color);
-  
+  // Color options -------------------
+  --theme-light: var(--white);
+  --theme-dark: var(--black);
 
-    // Color constants -----------------
-    --invisible: rgba(0, 0, 0, 0.15)
-    --opaque: rgba(128, 128, 128, 0.15);
-    --old-stoff-bg: #F9F7F1;
-    --black: #000;
-    --white: #FFF;
-    --almost-black: #1b1a1c; // For dark mode 
-    --almost-white: #C1CADF; // For dark mode
-    --innhold: #939598;
-    --samfunn: #F48026;
-    --kultur: #ED028C;
-    --debatt: #2F94AB;
-    --foto: #00AFA0;
-    --quiz: #EE1D23;
-    --essay: #FFEC18;
+  --background-color: var(--theme-light);
+  --text-color: var(--theme-dark);
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  fill: var(--text-color);
+
+
+  // Color constants -----------------
+  --invisible: rgba(0, 0, 0, 0.15) --opaque: rgba(128, 128, 128, 0.15);
+  --old-stoff-bg: #F9F7F1;
+  --black: #000;
+  --white: #FFF;
+  --almost-black: #1b1a1c; // For dark mode 
+  --almost-white: #C1CADF; // For dark mode
+  --innhold: #939598;
+  --samfunn: #F48026;
+  --kultur: #ED028C;
+  --debatt: #2F94AB;
+  --foto: #00AFA0;
+  --quiz: #EE1D23;
+  --essay: #FFEC18;
 }
 
 
 // ---------------------------------------------------------------
 // Creates classes that color text to corresponding category color
 
-@mixin clr-category($name) { 
-    color: var(--#{$name}); 
+@mixin clr-category($name) {
+  color: var(--#{$name});
 }
 
 $clr-categories: "samfunn", "kultur", "debatt";
 
 @each $name in $clr-categories {
-    .#{$name} {
-        @include clr-category($name);
-    }
+  .#{$name} {
+    @include clr-category($name);
+  }
 }
+
 // ---------------------------------------------------------------
 
 .dark-mode {
-    // Apply this class to body for dark mode
-    --background-color: var(--theme-dark);
-    --text-color: var(--theme-light);
-  
-    --theme-light: var(--almost-white);
-    --theme-dark: var(--almost-black);
+  // Apply this class to body for dark mode
+  --background-color: var(--theme-dark);
+  --text-color: var(--theme-light);
+
+  --theme-light: var(--almost-white);
+  --theme-dark: var(--almost-black);
 }
-  
+
 .dark {
-    // For dark background and light text regardless of dark/light mode
-    --background-color: var(--theme-dark);
-    --text-color: var(--theme-light);
-  
-    background-color: var(--background-color);
-    color: var(--text-color);
-    fill: var(--text-color);
+  // For dark background and light text regardless of dark/light mode
+  --background-color: var(--theme-dark);
+  --text-color: var(--theme-light);
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  fill: var(--text-color);
 }
 
 .pattern-bg {
-    background-image: url("#{$images}/pattern.png");
-    background-repeat: repeat;
+  background-image: url("#{$images}/pattern.png");
+  background-repeat: repeat;
 }
-  
-.dark-mode .pattern-bg #header-big, .dark-mode .pattern-bg .hidden #hamburger {
-    --text-color: var(--theme-dark);
-    color: var(--text-color);
-    fill: var(--text-color);
+
+.dark-mode .pattern-bg #header-big,
+.dark-mode .pattern-bg .hidden #hamburger {
+  --text-color: var(--theme-dark);
+  color: var(--text-color);
+  fill: var(--text-color);
 }

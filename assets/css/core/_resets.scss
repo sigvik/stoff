@@ -7,20 +7,23 @@ Removes built in styling for DOM elements.
 */
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
-a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
-	all: unset;
-	cursor: pointer;
+  all: unset;
+  cursor: pointer;
 }
 
 input {
-	all: unset;
-    min-width: 0;
+  all: unset;
+  min-width: 0;
 }

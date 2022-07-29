@@ -4,119 +4,117 @@ $min-padding: px2rem(56);
 
 
 #menu-overlay {
-    pointer-events: none;
+  pointer-events: none;
 
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .menu {
-    position: absolute;
-    top: 0;
-    right: -100%;
+  position: absolute;
+  top: 0;
+  right: -100%;
 
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  padding: $min-padding px2rem(64) 1.5rem;
+
+  width: clamp(1rem, px2rem(640), 100%);
+  height: 100%;
+
+  transition: right 0.5s;
+  overflow: scroll;
+
+
+  @mixin flex-col($gap) {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: inherit;
+    gap: $gap;
+  }
+
+  .icons {
+    display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
+    gap: $small-gap;
+  }
 
-    padding: $min-padding px2rem(64) 1.5rem;
+  #search-input {
+    width: 100%;
+  }
 
-    width: clamp(1rem, px2rem(640), 100%);
-    height: 100%;
+  .large-categories {
+    @include flex-col(px2rem(16));
 
-    transition: right 0.5s;
-    overflow: scroll;
+    .category {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 
+  .small-menu-items {
+    @include flex-col(px2rem(24));
+    padding: px2rem(24) 0;
+  }
 
-    @mixin flex-col($gap) {
-        display: flex;
-        flex-direction: inherit;
-        gap: $gap;
+  .menu-footer {
+    // @include divider-top();
+
+    .social-icons {
+      display: flex;
+      gap: px2rem(16);
+      padding: 1rem 0 $default-gap;
+      flex: 1;
     }
 
-    .icons {
-        display: flex;
-        justify-content: space-between;
-        gap: $small-gap;
+    .row {
+      display: flex;
+      gap: $default-gap;
     }
 
-    #search-input {
-        width: 100%;
+    .row>* {
+      flex: 1;
     }
 
-    .large-categories {
-        @include flex-col(px2rem(16));
-
-        .category {
-            display: flex;
-            justify-content: space-between;
-        }
+    .vt-logo svg {
+      width: 100%;
+      max-width: 9rem;
+      height: auto;
     }
-
-    .small-menu-items {
-        @include flex-col(px2rem(24));
-        padding: px2rem(24) 0;
-    }
-
-    .menu-footer {
-        // @include divider-top();
-
-        .social-icons {
-            display: flex;
-            gap: px2rem(16);
-            padding: 1rem 0 $default-gap;
-            flex: 1;
-        }
-
-        .row {
-            display: flex;
-            gap: $default-gap;
-        }
-
-        .row > * {
-            flex: 1;
-        }
-
-        .vt-logo svg {
-            width: 100%;
-            max-width: 9rem;
-            height: auto;
-        }
-    }
+  }
 }
 
 #menu-overlay-bg {
-    pointer-events: inherit;
-    width: inherit;
-    height: inherit;
+  pointer-events: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 #menu-overlay.active {
 
-    pointer-events: all;
+  pointer-events: all;
 
-    .menu {
-        right: 0;
-    }
+  .menu {
+    right: 0;
+  }
 }
 
 
 // MOBILE ------------------------ 
 @media screen and (max-width: $mobile) {
-  
-    .menu {
-        padding: 1.5rem;
-        transition: right 0.25s;
 
-        .row {
-            flex-direction: column-reverse;
-            padding-top: 1rem;
-        }
+  .menu {
+    padding: 1.5rem;
+    transition: right 0.25s;
+
+    .row {
+      flex-direction: column-reverse;
+      padding-top: 1rem;
     }
+  }
 }
-
-

@@ -7,18 +7,18 @@ Common style elements to be used by other stylesheets.
 */
 
 @mixin centered() {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 @mixin centered-content() {
-    @include centered();
-    width: $content-width;
+  @include centered();
+  width: $content-width;
 }
 
 @mixin divider-top() {
-    border-top: $divider-height solid var(--text-color);
+  border-top: $divider-height solid var(--text-color);
 }
 
 @mixin divider-btm() {
-    border-bottom: $divider-height solid var(--text-color);
+  border-bottom: $divider-height solid var(--text-color);
 }

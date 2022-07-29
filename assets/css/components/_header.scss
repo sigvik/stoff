@@ -8,93 +8,99 @@ Anything styling the header and it's contents.
 
 #header-bar {
 
-    position: fixed;
-    width: 100%;
-    height: 1.5rem;
-    padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  height: 1.5rem;
+  padding: 1rem 0;
 
-    background-color: var(--background-color);
-    color: var(--text-color);
-    fill: var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  fill: var(--text-color);
 
-    z-index: 1;
+  z-index: 1;
 
-    .content {
-        @include centered-content();
-        position: relative;
+  .content {
+    @include centered-content();
+    position: relative;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      width: 0; // Hacky, probably proper flexbox way to avoid container filling whole space
+
+      svg {
         height: 100%;
-
-        display: flex;
-        justify-content: space-between;
-
-        .logo {
-            width: 0; // Hacky, probably proper flexbox way to avoid container filling whole space
-            svg {
-                height: 100%;
-                width: auto;
-                // transition: opacity $t-time;
-            }
-        }
+        width: auto;
+        // transition: opacity $t-time;
+      }
     }
+  }
 }
 
 #header-bar.hidden {
-    background-color: var(--invisible);
-    color: inherit;
-    pointer-events: none;
+  background-color: var(--invisible);
+  color: inherit;
+  pointer-events: none;
 
-    .logo svg{
-        opacity: 0;
-    }
+  .logo svg {
+    opacity: 0;
+  }
 }
 
-#header-big, #header-bar.hidden {
-    // Header bar only fades in, not out
-    transition: /*background-color $t-time,*/ padding $t-time;
+#header-big,
+#header-bar.hidden {
+  // Header bar only fades in, not out
+  transition:
+    /*background-color $t-time,*/
+    padding $t-time;
 }
 
-#header-big, #header-bar {
-    transition: background-color $t-time, padding $t-time;
+#header-big,
+#header-bar {
+  transition: background-color $t-time, padding $t-time;
 }
 
 
 #hamburger {
-    pointer-events: all;
-    font-size: 2rem;
+  pointer-events: all;
+  font-size: 2rem;
 }
 
 
 #header-big {
-    @include centered-content();
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: $default-gap;
+  @include centered-content();
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $default-gap;
 }
-  
-#header-big .logo, .header-menu {
-    // Header menu has same size as logo
-    width: clamp(8rem, 60%, px2rem(560));
-}
-  
-.header-menu-wrapper {
-    @include divider-top();
-    width: 100%;
-    padding-top: 0.5rem;
-}
-  
-.header-menu {
-    display: flex;
-    justify-content: center; 
-    flex-wrap: wrap;
 
-    .menu-item {
-        flex-grow: 0.2;
-        padding: 0.5rem;
-        text-align: center;
-    }
+#header-big .logo,
+.header-menu {
+  // Header menu has same size as logo
+  width: clamp(8rem, 60%, px2rem(560));
 }
-  
+
+.header-menu-wrapper {
+  @include divider-top();
+  width: 100%;
+  padding-top: 0.5rem;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .menu-item {
+    flex-grow: 0.2;
+    padding: 0.5rem;
+    text-align: center;
+  }
+}
+
 
 
 
@@ -102,23 +108,25 @@ Anything styling the header and it's contents.
 //  TABLET & BIGGER --------------------
 @media screen and (min-width: $mobile) {
 
-    .header-wrapper {
-        padding-bottom: px2rem(56);
-    }
+  .header-wrapper {
+    padding-bottom: px2rem(56);
+  }
 
-    #header-big, #header-bar.hidden {
-        padding: px2rem(56) 0; // This size isn't used anywhere else 
-        padding-bottom: 0; // Create space underneath header bar if big header is hidden
-    }
+  #header-big,
+  #header-bar.hidden {
+    padding: px2rem(56) 0; // This size isn't used anywhere else 
+    padding-bottom: 0; // Create space underneath header bar if big header is hidden
+  }
 
-    #header-big .logo, .header-menu {
-        @include centered();
-    }
+  #header-big .logo,
+  .header-menu {
+    @include centered();
+  }
 
-    #header-bar.hidden #hamburger{
-        font-size: 3.5rem;
-        font-variation-settings: 'FILL' 1, 'wght' 700;   
-    }
+  #header-bar.hidden #hamburger {
+    font-size: 3.5rem;
+    font-variation-settings: 'FILL' 1, 'wght' 700;
+  }
 
 }
 
@@ -126,22 +134,23 @@ Anything styling the header and it's contents.
 //  TABLET & SMALLER -------------------
 @media screen and (max-width: $tablet) {
 
-    .header-menu-wrapper {
-      display: none;
-    }
-    
+  .header-menu-wrapper {
+    display: none;
+  }
+
 }
 
 //  MOBILE -------------------
 @media screen and (max-width: $mobile) {
 
-    #header-big, #header-bar.hidden {
-        padding: $small-gap 0; // For mobile, overridden elsewhere
-        padding-bottom: 0;
-    }
+  #header-big,
+  #header-bar.hidden {
+    padding: $small-gap 0; // For mobile, overridden elsewhere
+    padding-bottom: 0;
+  }
 
-    .header-wrapper {
-        padding-bottom: $small-gap;
-    }
-    
+  .header-wrapper {
+    padding-bottom: $small-gap;
+  }
+
 }
