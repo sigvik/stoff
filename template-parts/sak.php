@@ -66,10 +66,23 @@ $img_sizes = [
       endif; 
       
       if ($size == 'cover') {?>
-        <div class="byline">
-          <b>Tekst </b>Ingrid Borvik<br>
-          <b>Foto </b>Nina Thuestad<br>
-          <b>Illustrasjon </b>Marie Haugen
+
+        <div class="byline"><?php
+          if (get_field('journalist')): ?>
+            <div class="credit">
+              <b>Tekst </b><?php the_field('journalist') ?>
+            </div><?php
+          endif;
+          if (get_field('foto')): ?>
+            <div class="credit">
+              <b>Foto </b><?php the_field('foto') ?>
+            </div><?php
+          endif;
+          if (get_field('illustrasjon')): ?>
+            <div class="credit">
+              <b>Illustrasjon </b><?php the_field('illustrasjon') ?>
+            </div><?php
+          endif; ?>
         </div><?php
 
         echo get_the_date('j. F Y');
