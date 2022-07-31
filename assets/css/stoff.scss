@@ -28,11 +28,11 @@ found in the info directory.
 
 a,
 button {
-  transition: color 0.1s, fill 0.1s;
+  transition: color $q-t-time, fill $q-t-time;
   user-select: none;
 
   &:hover {
-    $hoverClr: var(--Essay);
+    $hoverClr: var(--gray);
     color: $hoverClr;
     fill: $hoverClr;
   }

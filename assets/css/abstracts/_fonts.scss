@@ -23,26 +23,42 @@
   src: url("#{$fonts}/Social-Icons/icons.woff2") format("woff2");
 }
 
+// --------------- FONT FAMILIES ------------------------
 
-// ----- DIN --------
-
-@mixin DIN($name, $weight) {
-  font-family: 'DIN_web';
-  src: url("#{$fonts}/DIN/DIN-#{$name}.woff2") format("woff2");
+@mixin font($fam, $var, $weight) {
+  font-family: $fam + '_web';
+  src: url("#{$fonts}/#{$fam}/#{$fam}-#{$var}.woff2") format("woff2");
   font-weight: $weight;
   font-display: swap;
+  @if (str-index($var, 'Italic')) {
+    font-style: italic;
+  }
 }
 
+@mixin font-fam($family, $vars) {
+  @each $var, $weight in $vars {
+    @font-face {
+      @include font($family, $var, $weight);
+    }
+  }
+}
+
+// ----- DIN --------
 $DIN-vars: (
   "Light": 300,
   "Regular": 400,
   "Bold": 700,
   "Black": 900,
 );
+@include font-fam('DIN', $DIN-vars);
 
-@each $name,
-$weight in $DIN-vars {
-  @font-face {
-    @include DIN($name, $weight);
-  }
-}
+
+// ----- SabonLtStd --------
+$Sabon-vars: (
+  "Roman": 400,
+  "Italic": 400,
+  "Bold": 700,
+  "BoldItalic": 700
+);
+@include font-fam('SabonLtStd', $Sabon-vars);
+

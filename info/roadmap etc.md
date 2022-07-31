@@ -16,6 +16,8 @@
 
 ## Backlog: 
 
+- Gjere listepunkt i quiz-sake store
+- Fkn fiks dens shoddy top spacing under meny driten, kanskje fjern big meny altogether på mobil
 - Fjerne ingress i cover når den ikkje he en
 - farge + stoff på kategorioverskrifte. gjere overskrift til eigen part som regna ut med same som tags?
 - finne måte å få inn image ratio finding igjen
@@ -75,6 +77,7 @@ advanced custom fields
 - wp adminbar e i footer pga wp, og litt nede fordi han he styla den customly
 - for å få kategoriside til å ikkje ha /category/ først går du på permalink settings, sette custom structure til /%category%/%year%/%monthnum%/%day%/%postname%/ og category slug til .  (Må også ikkje ha side som overkjøre)
 - Det som slowa ned flywheel til helvete va getimagesize()
+- For bakgrunnsfarge på ei radgruppe, wrap den i en div og gi den fargen
 
 ------------------------
 
@@ -91,6 +94,11 @@ advanced custom fields
 - D2, Subjekt
 - MIC, Elite Daily
 - K7bulletin, Samviten
+
+Artikkel:
+-https://www.dn.no/d2/mote/klar/nordmarka/signe-veiteberg/en-hyllest-til-nordmarka/7-1-sfjciek3i6
+-https://www.dn.no/d2/klokke/klokker/erling-braut-haaland/norske-micromilspec-lager-klokker-for-militare-spesialstyrker-og-erling-braut-haaland/7-1-vlc9wudkw7
+
 
 -------------------------
 

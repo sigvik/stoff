@@ -27,35 +27,39 @@ body {
   --old-stoff-bg: #F9F7F1;
   --black: #000;
   --white: #FFF;
+  --gray: rgb(100, 100, 100);
   --almost-black: #1b1a1c; // For dark mode 
   --almost-white: #C1CADF; // For dark mode
   --Innhold: #939598;
   --Essay: #FFEC18;
-  
+
+
+  // Color categories ---------------------------------------------------------------
+
+  // Creates classes that color text to corresponding category color
   // NOTE: Can be replaced by approach in inc/category-clr.php
-  --Samfunn: #F48026;
-  --Kultur: #ED028C;
-  --Debatt: #2F94AB;
-  --Foto: #00AFA0;
-  --Quiz: #EE1D23;
-}
 
+  $clr-categories: (
+    "Samfunn": '#F48026',
+    "Kultur": '#ED028C',
+    "Debatt": '#2F94AB',
+    "Quiz": '#EE1D23',
+    "Foto": '#00AFA0',
+  );
 
-// ---------------------------------------------------------------
-
-// Creates classes that color text to corresponding category color
-// NOTE: Can be replaced by approach in inc/category-clr.php
-
-@mixin clr-category($name) {
-  color: var(--#{$name});
-}
-
-$clr-categories: "Samfunn", "Kultur", "Debatt", "Quiz", "Foto", "Essay";
-
-@each $name in $clr-categories {
-  .#{$name} {
-    @include clr-category($name);
+  @each $name, $code in $clr-categories {
+    --#{$name}: #{$code}; 
+    --#{$name}-light: color.adjust(#{$code}, $lightness: 30%);
+    
+    .#{$name} {
+      color: var(--#{$name});
+      &:hover {
+        //color: var(--#{$name}-light); // Todo: Can't get sass:color to work
+      }
+    }
   }
+
+  
 }
 
 // ---------------------------------------------------------------

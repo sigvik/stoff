@@ -10,4 +10,5 @@ $tablet: px2rem(1024);
 $mobile: px2rem(600);
 
 // Times
-$t-time: 0.25s ease;
+$t-time: 0.25s ease; // Transition time
+$q-t-time: 0.2s ease; // Quick transition time (link hover)

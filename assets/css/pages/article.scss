@@ -2,7 +2,9 @@
 
 
 .article-wrap {
+  @include divider-top();
   overflow: hidden;
+  margin-top: $default-gap;
 }
 
 .cover .overskrift {
@@ -39,6 +41,22 @@ article figure {
   }
 }
 
+// TABLET & BIGGER ------------------------ 
+@media screen and (min-width: $mobile) {
+  .cover {
+    gap: 3rem;
+  }
+
+  .cover:not(.landscape) {
+    flex-direction: row-reverse;
+
+    .tekstdel {
+      justify-content: center;
+    }
+  }
+}
+
+
 // TABLET & SMALLER ------------------------ 
 @media screen and (max-width: $tablet) {
   article img.alignright {
@@ -49,7 +67,14 @@ article figure {
 
 // MOBILE ONLY ------------------------ 
 @media screen and (max-width: $mobile) {
-  .cover .tekstdel {
+  .article-wrap {
+    margin-top: 0;
+  }
+  .sak {
     text-align: left;
+  }
+  .tags {
+    justify-content: left;
+    gap: 1rem;
   }
 }

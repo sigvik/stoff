@@ -2,6 +2,8 @@
 
 // TEXT STYLES AND SIZES
 
+$main-font: 'DIN_web';
+
 
 @mixin material-symbol() {
   line-height: 1;
@@ -19,7 +21,7 @@
 }
 
 body {
-  font-family: "DIN_web", -apple-system, BlinkMacSystemFont, 'Helvetica', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: $main-font, -apple-system, BlinkMacSystemFont, 'Helvetica', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif, 'Social_Icons', 'Material_Symbols';
 }
@@ -44,7 +46,7 @@ body {
   @include sizeNline(px2rem(12));
 }
 
-.tekstdel {
+.sak {
   text-align: center;
 
   // Use &shy; to mark good places to break text. E.g. "train&shy;station"
@@ -112,7 +114,7 @@ body {
 }
 
 article {
-  font-family: Sabon Lt Std;
+  font-family: "SabonLtStd_web";
   font-size: px2rem(20);
   line-height: px2rem(30);
 }
@@ -120,7 +122,7 @@ article {
 article strong,
 article figcaption,
 article b {
-  font-family: 'DIN_web';
+  font-family: $main-font;
 }
 
 article figcaption {
@@ -129,7 +131,7 @@ article figcaption {
 }
 
 article .uthevet-sitat {
-  font-family: 'DIN_web';
+  font-family: $main-font;
   font-size: px2rem(32);
   line-height: px2rem(48);
   text-transform: uppercase;
@@ -166,13 +168,6 @@ article .uthevet-sitat {
 
 // TABLET & BIGGER ------------------------ 
 @media screen and (min-width: $mobile) {
-
-  /*
-  .cover .overskrift {
-    --font-size: 4rem;
-  }
-  */
-
   .cover .ingress {
     font-size: px2rem(20);
   }

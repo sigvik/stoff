@@ -68,4 +68,12 @@ add_filter( 'excerpt_length', function( $length ) { return 21; } );
 // Custom excerpt more style
 add_filter('excerpt_more', function( $more ) { return '...'; });
 
+
+// Remove width & height attributes from images
+function remove_img_attr ($html) {
+  return preg_replace('/(width|height)="\d+"\s/', "", $html);
+}
+add_filter( 'post_thumbnail_html', 'remove_img_attr' );
+
+
 ?>
