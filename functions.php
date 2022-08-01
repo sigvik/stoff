@@ -53,6 +53,54 @@ function stoff_setup(){
 add_action('after_setup_theme', 'stoff_setup');
 
 
+	
+function stoff_customize_register( $wp_customize ) {
+  // https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls
+
+  // Add Section
+  $wp_customize->add_section('header', array(
+    'title'     => __('Header', 'name-theme'), 
+    'priority'  => 70,
+  )); 
+
+  // Add Settings
+  $wp_customize->add_setting('dark_header', array(
+    'transport' => 'refresh',
+    'height'    => 325,
+  ));
+    $wp_customize->add_setting('header_bg', array(
+    'transport' => 'refresh',
+    'height'    => 325,
+  ));
+  $wp_customize->add_setting('ad_setting_two', array(
+    'transport' => 'refresh',
+    'height'    => 325,
+  ));
+
+  // Add Controls
+  $wp_customize->add_control( 'dark_header', array(
+    'label' => __( 'Mørk header' ),
+    'type' => 'checkbox',
+    'section' => 'header',
+    'settings'  => 'dark_header',  
+  ) );
+  $wp_customize->add_control( 'header_bg', array(
+    'label' => __( 'Header-bakgrunn' ),
+    'type' => 'checkbox',
+    'section' => 'header',
+    'settings'  => 'header_bg',  
+  ) );
+  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color_control', array(
+    'label' => __( 'Accent Color', 'theme_textdomain' ),
+    'section' => 'header',
+    'settings'  => 'ad_setting_two',  
+  )));
+
+}
+add_action( 'customize_register', 'stoff_customize_register' );
+
+
+
 // Don't put sticky posts before others
 function ea_remove_sticky_from_main_loop( $query ) {
 	$query->set( 'ignore_sticky_posts', true );

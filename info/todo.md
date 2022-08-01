@@ -5,6 +5,7 @@ Lær å avslutte i tide sjølom du ikkje e ferdig, også når ting går bra. Ten
 Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først.
 
 - Some delerad fikse styling og lage links
+  - position absolute til sida med 1 linje under
 - Farge overskrifta:
   - Dele-funksjona for å finne kategoriclass, eller classen til overkategorien
 

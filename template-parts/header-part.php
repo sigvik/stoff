@@ -16,7 +16,9 @@ $args = wp_parse_args($args, $argument_defaults);
 $logo = file_get_contents( $imgDir . "/stoff.svg");
 $home_url = get_home_url();
 $big = $args['big'];
-$classes = 'dark '; //pattern-bg
+$classes = ''; //pattern-bg
+if (get_theme_mod('dark_header')) $classes = $classes . ' dark';
+if (get_theme_mod('header_bg')) $classes = $classes . ' pattern-bg';
 
 // The menu overlay comes with the header, as you need the header to open it
 get_template_part('template-parts/menu-overlay');

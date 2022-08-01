@@ -7,7 +7,6 @@
 - 404 side
 - Theme customizing (colors, front page, ad)
 
-- Image lazy loading
 - Endless scroll / Les også
 
 - Implementering (wp admin, plugin og categories fixing)
@@ -37,24 +36,20 @@ Row group system:
     end row
     row_gr_started = 0
 
-
+- add session storage to dark/light mode
 - Gjere listepunkt i quiz-sake store
 - Fkn fiks dens shoddy top spacing under meny driten, kanskje fjern big meny altogether på mobil
 - Fjerne ingress i cover når den ikkje he en
 - farge + stoff på kategorioverskrifte. gjere overskrift til eigen part som regna ut med same som tags?
-- finne måte å få inn image ratio finding igjen
 - bug: svart logo på mobil
-- mobile: 1.5gap og padding på alt, fjern padding på grupper
 - Tag kankje være opa css category, flytt inni noke
 - ikkje-landscape bilde i one-split trenge likevel litt høgde. 50% wrapper height.
 - padding til ingressa. 100px på store?
 - ei sak heite 'content'
 - rydd opp i spacing underneath big header kode. meir php heavy, legge inn spacer? janky på mob og?
 - mindre padding på ad gruppe, og på mobil generelt
-- finne ut av bilde resizing. gjere rade til grids? nja)
 - landscape photos på full width på mobile og?
 - bug: det e mulig å size vinduet akkurat til breakpointet og kuke reglane
-- add session storage to dark/light mode
 - Link hovers:
   - ei greie for å få lysare/mørkare versjona av noværande farge på link hover, theme basert
   - gjere 'dark' og 'link hover/excentuate' shit til theme colors
