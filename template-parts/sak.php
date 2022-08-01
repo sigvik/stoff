@@ -96,7 +96,7 @@ $img_sizes = [
   endif; ?>
 
   <?php 
-  if (!$cover) get_template_part('template-parts/tags'); 
+  if (is_front_page()) get_template_part('template-parts/tags'); 
   ?>
 
 </div>

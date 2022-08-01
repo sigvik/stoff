@@ -55,7 +55,7 @@ body (dark-mode) {
   rad-gruppe [0..x] {
 
     rad-overskrift [0..1]
-    -> annonse.php{
+    -> ad.php{
     annonse-tag [0..1]
     ad [0..1]
     }

@@ -12,15 +12,6 @@ get_template_part('template-parts/header-part', false,
 ]);
 
 
-//------------------ PHP components -----------------------------------
-
-function ad() {
-    $url = "https://subjekt.no/wp-content/uploads/2022/07/NM_Takeover_Flagg_2400x680-kopi.png";
-    echo '<div class="annonse-tag">Annonse '. m_symbol('e5c5') .'</div>
-         <img class="ad" src="'. $url .'">';
-}
-
-
 //------------------ The loop -----------------------------------
 
 $row_types = [
@@ -31,40 +22,56 @@ $row_types = [
   ['r'=> 'three-split-alt', 'len' => 3], // 4 - One big, two small
 ];
 
-
 if ( have_posts() ){
 
   $posts_left = $wp_query->post_count;
-  $i = 1;
-  $r = 1;
-  $row = $row_types[2]; // (radene fucka sej på one)
+  $i = 1; //
+  $s = 1;
+  $row = (is_front_page()) ? $row_types[4] : $row_types[3];
 
-    while( have_posts() ){ the_post();
+  while( have_posts() ){ the_post();
 
-      // Start row
-      if ($r == 1) { ?>
-        <div class="rad-gruppe"> <?php
-          if ($i == 1) { ?>
-            <div class="rad-overskrift <?php single_cat_title() ?>"><?php single_cat_title() ?></div><?php
-          }?>
-        <div class="rad <?php echo $row['r'] ?>">
-        <?php
+    // Start row
+    if ($s == 1) { ?>
+      <div class="rad-gruppe"> <?php
+      if ($i == 1) { ?>
+        <div class="rad-overskrift <?php single_cat_title() ?>"><?php single_cat_title() ?></div><?php
+      }?>
+        <div class="rad <?php echo $row['r'] ?>"><?php
+    }
+
+    $size = $row['r'];
+    // Variable sizing for three-split-alt
+    if ($row == $row_types[4]) {
+      if ($s == 1) {
+        $size = $row_types[1]['r']; 
+      } else {
+        $size = $row_types[3]['r'];
+        if ($s == 2) {?>
+          <div class="kolonne"><?php
+        }
       }
+    }
 
-      sak(['size' => $row['r']]);
-      $i++; $r++;
+    sak(['size' => $size]);
+    $i++; $s++;
 
-      // End row
-      if ($r > $row['len']) { 
-        echo '</div></div>'; 
-        $r = 1;
+    // End row
+    if ($s > $row['len']) { 
+      if ($s == 1) echo '</div>';
+      echo '</div></div>'; 
+      $s = 1;
 
-        //Alternate rows
-        if ($row === $row_types[1]) $row = $row_types[2];
+      //Alternate row types on front page
+      if (is_front_page()) {
+        if ($row === $row_types[4]) { get_template_part('template-parts/ad'); $row = $row_types[2]; }
+        else if ($row === $row_types[2]) $row = $row_types[3]; 
         else if ($row === $row_types[3]) $row = $row_types[1];
-        else if ($row === $row_types[2]) $row = $row_types[3];
+        else if ($row === $row_types[1]) $row = $row_types[4];
       }
-    }?>
+
+    }
+  }?>
 
 
 
@@ -76,30 +83,30 @@ if ( have_posts() ){
 
   function rad($r_type, $r_length){
 
-      $r = 0;
+      $s = 0;
       $three_split_alt = ($r_type == 'three-split-alt');
 
       // Don't build if not enough content
       //if ($posts_left < $r_length) return;
 
-      while ($r < $r_length) {
+      while ($s < $r_length) {
 
           the_post();
           if (is_sticky() and $i > 1) continue; // Skip sticky posts for now
 
           // Start row on first
-          if ($r == 1) echo '<div class="rad '. $r_type .'">';
+          if ($s == 1) echo '<div class="rad '. $r_type .'">';
 
           // Column for three-split-alt
-          if ($three_split_alt and $r == 2) echo '<div class="kolonne">';
+          if ($three_split_alt and $s == 2) echo '<div class="kolonne">';
 
           // Build content
-          $sak_type = ($three_split_alt) ? (($r == 1) ? 'one-split' : 'three-split') : $r_type;
+          $sak_type = ($three_split_alt) ? (($s == 1) ? 'one-split' : 'three-split') : $r_type;
           sak([
               'size' => $sak_type,
               'img' => ($sak_type == 'one-split') ? get_img('large') : get_img('small'),
               'title' => get_the_title(),
-              'ingress' => ($three_split_alt and $r > 1) ? '' : get_the_excerpt(),
+              'ingress' => ($three_split_alt and $s > 1) ? '' : get_the_excerpt(),
               'link' => get_permalink(),
           ]);
 

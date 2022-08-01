@@ -16,6 +16,28 @@
 
 ## Backlog: 
 
+---------------------------
+Row group system:
+
+  Row group system sketch:
+
+  row_gr_started = 0
+
+  if row_gr_started == 0
+    lag row gr
+
+  når row endast: row_gr_started = 0
+
+  ------------------------
+  i starten, sett: 
+  kor monge rows i gruppa = 1
+  group row counter = 0
+  +1 på slutten av ei rad
+  om group row counter = rows i gruppa:
+    end row
+    row_gr_started = 0
+
+
 - Gjere listepunkt i quiz-sake store
 - Fkn fiks dens shoddy top spacing under meny driten, kanskje fjern big meny altogether på mobil
 - Fjerne ingress i cover når den ikkje he en
