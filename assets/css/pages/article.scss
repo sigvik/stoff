@@ -2,13 +2,23 @@
 
 
 .article-wrap {
-  @include divider-top();
   overflow: hidden;
-  margin-top: $default-gap;
 }
 
 .cover .overskrift {
   color: var(--Kultur);
+}
+
+.share-icons {
+  @include centered-content();
+  @include divider-top();
+  @include divider-btm();
+  display: flex;
+  justify-content: flex-end;
+
+  .social-icons {
+    margin: 1rem;
+  }
 }
 
 article {

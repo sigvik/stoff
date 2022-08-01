@@ -20,6 +20,14 @@ if ( have_posts() ){
       sak([ 'size' => 'cover' ]); ?>
     </div>
 
+    <div class="share-icons">
+      <div class="social-icons">
+        <div class="icon facebook"></div>
+        <div class="icon twitter"></div>
+        <div class="icon copy"><?php echo m_symbol('e14d') ?></div>
+      </div>
+    </div>
+
     <div class="rad-gruppe article-wrap">
       <article><?php
         the_content(null,false); ?>

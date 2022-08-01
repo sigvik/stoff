@@ -66,8 +66,6 @@ $min-padding: px2rem(56);
     // @include divider-top();
 
     .social-icons {
-      display: flex;
-      gap: px2rem(16);
       padding: 1rem 0 $default-gap;
       flex: 1;
     }
@@ -88,6 +86,7 @@ $min-padding: px2rem(56);
     }
   }
 }
+
 
 #menu-overlay-bg {
   pointer-events: inherit;

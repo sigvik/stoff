@@ -37,3 +37,8 @@ button {
     fill: $hoverClr;
   }
 }
+
+.social-icons {
+  display: flex;
+  gap: px2rem(16);
+}
