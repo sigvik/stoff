@@ -18,4 +18,4 @@ jobs:
         username: ${{ secrets.stoff_username }}
         password: ${{ secrets.stoff_password }}
         protocol: ftp
-        server-dir: /test/wp-content/themes/stoff
+        server-dir: /test/wp-content/themes/stoff/
