@@ -53,7 +53,6 @@ if (elem('header-big')) {
   }
 
   window.addEventListener('scroll', function (e) {
-    console.log("called")
     lastScrollPos = window.scrollY
 
     if (!ticking) {

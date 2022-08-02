@@ -10,8 +10,12 @@ add_action('init', 'remove_wp_css');
 
 function stoff_enqueue() {
   // Update stylesheet ver number here to update on live site
-  wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/stoff.css', array (), 2.7 );
+
+  // Currently cheats by setting the version number to the datetime of css file creation
+  $csspath = get_template_directory_uri() . '/assets/css/stoff.css';
+  wp_enqueue_style( 'style', $csspath, array (), filemtime( get_template_directory() . '/assets/css/stoff.css' ) );
   wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.js', array (), 1.6, true);
+
 }
 add_action('wp_enqueue_scripts', 'stoff_enqueue');
 
