@@ -1,5 +1,8 @@
 ## Roadmap:
 
+- Farge overskrifta:
+  - Dele-funksjona for å finne kategoriclass, eller classen til overkategorien
+
 - Artikkelside
 - Enkeltside (om oss, etc)
 - Søkefunksjon
