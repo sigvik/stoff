@@ -59,6 +59,7 @@ Row group system:
 - korleis i sveise fe en material icons til å laine opp m tekst
 - source of truth for rad typa, enum
 - farge transition mixing å legge på alle ting, in case dark mode
+- legg til artikkelside (og andre sider?) i layout struktur
 
 ------------------------------------
 
