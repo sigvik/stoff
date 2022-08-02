@@ -5,7 +5,27 @@ Lær å avslutte i tide sjølom du ikkje e ferdig, også når ting går bra. Ten
 Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først. Hugg også opp i bita til 
 ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i mål.
 
-- Github deploy setup
-- SoMe delerad fikse styling og lage links
-  - position absolute til sida med 1 linje under
+- Farge overskrifta:
+  - Dele-funksjona for å finne kategoriclass, eller classen til overkategorien
+
+---------------------------
+Row group system:
+
+  Row group system sketch:
+
+  row_gr_started = 0
+
+  if row_gr_started == 0
+    lag row gr
+
+  når row endast: row_gr_started = 0
+
+  ------------------------
+  i starten, sett: 
+  kor monge rows i gruppa = 1
+  group row counter = 0
+  +1 på slutten av ei rad
+  om group row counter = rows i gruppa:
+    end row
+    row_gr_started = 0
   

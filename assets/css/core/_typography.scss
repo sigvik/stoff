@@ -74,6 +74,7 @@ body {
   font-weight: bold;
 }
 
+.social-icons .icon,
 .menu .icon {
   @include material-symbol();
   font-size: 2rem;

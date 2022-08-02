@@ -1,8 +1,5 @@
 ## Roadmap:
 
-- Farge overskrifta:
-  - Dele-funksjona for å finne kategoriclass, eller classen til overkategorien
-
 - Artikkelside
 - Enkeltside (om oss, etc)
 - Søkefunksjon
@@ -17,27 +14,6 @@
 -------------------------------------
 
 ## Backlog: 
-
----------------------------
-Row group system:
-
-  Row group system sketch:
-
-  row_gr_started = 0
-
-  if row_gr_started == 0
-    lag row gr
-
-  når row endast: row_gr_started = 0
-
-  ------------------------
-  i starten, sett: 
-  kor monge rows i gruppa = 1
-  group row counter = 0
-  +1 på slutten av ei rad
-  om group row counter = rows i gruppa:
-    end row
-    row_gr_started = 0
 
 - add session storage to dark/light mode
 - Gjere listepunkt i quiz-sake store
@@ -59,6 +35,7 @@ Row group system:
 - korleis i sveise fe en material icons til å laine opp m tekst
 - source of truth for rad typa, enum
 - farge transition mixing å legge på alle ting, in case dark mode
+- legg til artikkelside (og andre sider?) i layout struktur
 
 ------------------------------------
 
