@@ -1,9 +1,14 @@
 <?php
+require_once get_template_directory() . '/inc/helpers.php'; // filtered_tags
 
-// SAK -- (English: Content) Articles that appear on the front page grid
+/**
+ * SAK (English: Content)
+ * Articles that appear on the front page grid, or at the top of articles
+ */
 
 
-// Set up template-part arguments
+
+// Template-part arguments
 $argument_defaults = ['size' => 'three-split']; 
 $args = wp_parse_args($args, $argument_defaults);
 $size = $args['size'];
@@ -11,7 +16,13 @@ $cover = $size == 'cover';
 
 // Variables
 $link = get_permalink();
+$tags = filtered_tags();
 
+// Color to give the headline, using first tag
+$headlie_css = '';
+if (count($tags) > 0) $headline_css = $tags[0]['css_class'];
+
+// Image orientation
 $orientation = '';
 $post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
 $imgmeta = wp_get_attachment_metadata( $post_thumbnail_id );
@@ -24,8 +35,7 @@ if ($imgmeta) {
   }
 }
 
-
-// Hardcoded default image sizes (Ignore wordpress defualts)
+// Hardcoded default image sizes (Ignore wordpress sizes)
 $img_sizes = [
   'cover' => 'full',
   'one-split' => [1200, 600],
@@ -37,35 +47,40 @@ $img_sizes = [
 
 
 
+<!------------------------  HTML  ---------------------------->
+
 <div class="sak <?php echo $size . ' ' . $orientation ?>"><?php
 
+  // Create link if not inside article
   if (!$cover): 
     ?><a class="innhold" href="<?php echo $link ?>"><?php
   endif; ?>
 
+    <!-- Image -->
     <div class="bilde-wrapper">
       <?php echo the_post_thumbnail($img_sizes[$size]) ?>
     </div>
 
     <div class="tekstdel">
 
-      <?php 
-      if ($cover) get_template_part('template-parts/tags');  
-      ?>
+      <!-- Tags, at top inside articles -->
+      <?php if ($cover) build_tags($tags); ?>
 
-      <div class="overskrift">
+      <!-- Title -->
+      <div class="overskrift <?php if ($cover) echo $headline_css ?>">
         <?php echo get_the_title(); ?>
       </div>
 
       <?php
-      // Don't show excerpt preview inside articles
+      // Excerpt, but not a preview of it inside articles
       if ( !($size == 'cover' and !has_excerpt()) ): ?>
         <div class="ingress">
           <?php echo get_the_excerpt() ?>
         </div><?php
       endif; 
       
-      if ($size == 'cover') {?>
+      // Credits & date inside articles
+      if ($size == 'cover' && is_single()) {?>
 
         <div class="byline"><?php
           if (get_field('journalist')): ?>
@@ -93,10 +108,10 @@ $img_sizes = [
     
   if (!$cover): 
     ?></a><?php
-  endif; ?>
+  endif;
 
-  <?php 
-  if (is_front_page()) get_template_part('template-parts/tags'); 
+  // Tags, at bottom on front page
+  if (is_front_page()) build_tags($tags);
   ?>
 
 </div>
