@@ -5,8 +5,8 @@ Lær å avslutte i tide sjølom du ikkje e ferdig, også når ting går bra. Ten
 Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først. Hugg også opp i bita til 
 ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i mål.
 
-- Farge overskrifta:
-  - Dele-funksjona for å finne kategoriclass, eller classen til overkategorien
+- Farge side kategorioverskrifte (og legge til stoff)
+- farge quiz nummer og gjer dei større
 
 ---------------------------
 Row group system:

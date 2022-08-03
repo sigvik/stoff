@@ -37,6 +37,7 @@
 - farge transition mixing å legge på alle ting, in case dark mode
 - legg til artikkelside (og andre sider?) i layout struktur
 - straight up ikkje vis stor header på mobil
+- fyll bildecontainer med nåke anna mens bilde lazyloada
 
 ------------------------------------
 

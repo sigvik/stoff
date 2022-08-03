@@ -1,1 +1,2 @@
 07/31/22 3:41:14: stoff.scss - parse error: failed at `@use "sass:color";` C:\Users\banan\Documents\Stoff\Web\local site\app\public\wp-content\themes\stoff\assets\css\abstracts/_colors.scss on line 1, at column 0
+08/03/22 3:03:00: stoff.scss - parse error: failed at `background-color: ;` C:\Users\banan\Documents\Stoff\Web\local site\app\public\wp-content\themes\stoff\assets\css\pages/article.scss on line 43, at column 3

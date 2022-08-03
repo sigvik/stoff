@@ -32,6 +32,7 @@ function topmost_category_name($category){
 // Filter out what tags to display, with css class. (Must happen in the loop)
 function filtered_tags(){
   $tags = [];
+  $title_words = explode(' ', get_the_title());
 
   $i = 1;
   $categories = get_the_category();

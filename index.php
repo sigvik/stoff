@@ -33,8 +33,13 @@ if ( have_posts() ){
     // Start row
     if ($s == 1) { ?>
       <div class="rad-gruppe"> <?php
-      if ($i == 1) { ?>
-        <div class="rad-overskrift <?php single_cat_title() ?>"><?php single_cat_title() ?></div><?php
+      // Category page title
+      if ($i == 1) { 
+        $headline_css = single_cat_title(false, false);
+        $page_category = $wp_query->get_queried_object();
+        if ($page_category) $headline_css = topmost_category_name($page_category);
+      ?>
+        <div class="rad-overskrift <?php echo $headline_css ?>"><?php single_cat_title() ?></div><?php
       }?>
         <div class="rad <?php echo $row['r'] ?>"><?php
     }

@@ -120,10 +120,27 @@ article {
   line-height: px2rem(30);
 }
 
+article figcaption {
+  font-family: $main-font;
+}
+
+article li::marker,
 article strong,
-article figcaption,
 article b {
   font-family: $main-font;
+  font-weight: bold;
+}
+
+// Quiz
+article li {
+  // Space for marker
+  margin: 3rem;
+  padding: 0.5rem;
+}
+article li::marker {
+  font-size: 3rem;
+  color: var(--Quiz);
+  top: 10%;
 }
 
 article figcaption {
