@@ -5,10 +5,6 @@
   overflow: hidden;
 }
 
-.cover .overskrift {
-  color: var(--Kultur);
-}
-
 .share-icons {
   @include centered-content();
   @include divider-top();

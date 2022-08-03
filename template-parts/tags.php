@@ -1,21 +1,20 @@
 <?php
+require_once get_template_directory() . '/inc/helpers.php'; // topmost_category_name
+
 // Variables
 $title = get_the_title();
-$title_words = explode(' ', $title);
-?>
+$title_words = explode(' ', $title); ?>
 
 <div class="tags">
 
   <?php
   // Category tags
-  $categories = get_the_category();
-
   $i = 1;
+  $categories = get_the_category();
   foreach ($categories as $category) {
     
     $name = $category->name;
     $name_words = explode(' ', $name);
-    $link = esc_url( get_category_link( $category->term_id ));
 
     // Categories not to display
     if ( preg_match('~[0-9]+~', $name)
@@ -24,18 +23,12 @@ $title_words = explode(' ', $title);
     || ($name_words[0] == $title_words[0] and $name_words[1] == $title_words[1])
     ) continue;
 
-    // If category has a parent category, give this matching color
-    $parent_ctgrys = get_ancestors( $category->term_id, 'category');
-    $parent_ctgry = false;
-    if (count($parent_ctgrys) > 0) {
-      $parent_ctgry = get_category($parent_ctgrys[0])->name;
-    }
-
-    ($parent_ctgry) ? $css_class = $parent_ctgry : $css_class = $name;
-
+    // Create tag
+    $link = esc_url( get_category_link( $category->term_id ));
+    $css_class = topmost_category_name($category);
     echo "<a href='$link' class='tag $css_class'>$name</a>";
 
-    // Max 2 categories
+    // Max 2 tags
     $i++; 
     if ($i > 2) break;
     

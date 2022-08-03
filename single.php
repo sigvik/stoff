@@ -1,5 +1,5 @@
 <?php
-require get_template_directory() . '/inc/helpers.php';
+require_once get_template_directory() . '/inc/helpers.php';
 
 // SINGLE - Default page for articles
 

@@ -1,7 +1,6 @@
 <?php
-
 require get_template_directory() . '/inc/directories.php';
-require get_template_directory() . '/inc/helpers.php';
+require_once get_template_directory() . '/inc/helpers.php';
 
 get_header();
 
