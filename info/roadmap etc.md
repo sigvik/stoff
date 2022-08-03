@@ -38,6 +38,7 @@
 - legg til artikkelside (og andre sider?) i layout struktur
 - straight up ikkje vis stor header på mobil
 - fyll bildecontainer med nåke anna mens bilde lazyloada
+- cover types dont work on front page rn
 
 ------------------------------------
 

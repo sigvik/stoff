@@ -25,6 +25,10 @@ menuExit.onclick = () => menuClose()
 const UIbtn = elem('ui-mode-toggle')
 const UIicons = { light: '&#xe518;', dark: '&#xe51c;' }
 let darkMode = false
+if (document.body.classList.contains('dark-mode')) {
+  darkMode = true
+  UIbtn.innerHTML = UIicons.light
+}
 
 UIbtn.onclick = () => {
 

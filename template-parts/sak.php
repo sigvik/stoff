@@ -52,7 +52,7 @@ $img_sizes = [
 <div class="sak <?php echo $size . ' ' . $orientation ?>"><?php
 
   // Create link if not inside article
-  if (!$cover): 
+  if (!is_single()): 
     ?><a class="innhold" href="<?php echo $link ?>"><?php
   endif; ?>
 
@@ -64,10 +64,10 @@ $img_sizes = [
     <div class="tekstdel">
 
       <!-- Tags, at top inside articles -->
-      <?php if ($cover) build_tags($tags); ?>
+      <?php if ($cover && is_single()) build_tags($tags); ?>
 
       <!-- Title -->
-      <div class="overskrift <?php if ($cover) echo $headline_css ?>">
+      <div class="overskrift <?php if ($cover || (!get_theme_mod('dark_header') && !get_theme_mod('header_bg'))) echo $headline_css ?>">
         <?php echo get_the_title(); ?>
       </div>
 

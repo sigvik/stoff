@@ -132,12 +132,12 @@ article b {
 }
 
 // Quiz
-article li {
+.Quiz-article article li {
   // Space for marker
   margin: 3rem;
   padding: 0.5rem;
 }
-article li::marker {
+.Quiz-article article li::marker {
   font-size: 3rem;
   color: var(--Quiz);
   top: 10%;
@@ -160,6 +160,12 @@ article .uthevet-sitat {
 @media screen and (min-width: $tablet) {
 
   // ---- one-split ----
+
+  /*
+  .dark-mode .one-split .overskrift {
+    font-weight: bold;
+  }
+  */
 
   .one-split .overskrift {
     --font-size: 4rem;

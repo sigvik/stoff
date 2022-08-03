@@ -17,7 +17,7 @@ require get_template_directory() . '/inc/directories.php';
 
 </head>
 
-<body <?php body_class(""); ?>>
+<body <?php if (get_theme_mod('start_dark')) body_class("dark-mode"); ?>>
 
 <?php
 wp_body_open();

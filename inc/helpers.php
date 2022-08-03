@@ -46,7 +46,7 @@ function filtered_tags(){
     if ( preg_match('~[0-9]+~', $name)
     || $name == 'Nyheter'
     || strlen($name) > 15
-    || ($name_words[0] == $title_words[0] and $name_words[1] == $title_words[1])
+    //|| ($name_words[0] == $title_words[0] and $name_words[1] == $title_words[1])
     ) continue;
 
     // Add tag

@@ -71,7 +71,15 @@ function stoff_customize_register( $wp_customize ) {
     'transport' => 'refresh',
     'height'    => 325,
   ));
-    $wp_customize->add_setting('header_bg', array(
+  $wp_customize->add_setting('header_bg', array(
+    'transport' => 'refresh',
+    'height'    => 325,
+  ));
+  $wp_customize->add_setting('start_dark', array(
+    'transport' => 'refresh',
+    'height'    => 325,
+  ));
+  $wp_customize->add_setting('ui_toggle', array(
     'transport' => 'refresh',
     'height'    => 325,
   ));
@@ -92,6 +100,19 @@ function stoff_customize_register( $wp_customize ) {
     'type' => 'checkbox',
     'section' => 'header',
     'settings'  => 'header_bg',  
+  ) );
+    $wp_customize->add_control( 'start_dark', array(
+    'label' => __( 'Start i mørk modus' ),
+    'type' => 'checkbox',
+    'section' => 'header',
+    'settings'  => 'start_dark',  
+  ) );
+  $wp_customize->add_control( 'ui_toggle', array(
+    'label' => __( 'Tillat å endre mørk/lys modus' ),
+    'type' => 'checkbox',
+    'section' => 'header',
+    'settings'  => 'ui_toggle',  
+    'default'  => true, 
   ) );
   $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color_control', array(
     'label' => __( 'Accent Color', 'theme_textdomain' ),

@@ -25,6 +25,21 @@ found in the info directory.
 
 */
 
+#wpadminbar {
+  position: fixed;
+
+  --background-color: var(--theme-dark);
+  --text-color: var(--theme-light);
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  .ab-item::before,
+  .ab-icon::before {
+    color: var(--theme-light);
+  } 
+}
+
 
 a,
 button {
