@@ -118,17 +118,26 @@ article {
   font-family: "SabonLtStd_web";
   font-size: px2rem(20);
   line-height: px2rem(30);
+
+  a {
+    text-decoration: underline;
+  }
+
+  li::marker, strong, b {
+    font-family: $main-font;
+    font-weight: bold;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: $main-font;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 }
 
 article figcaption {
   font-family: $main-font;
-}
-
-article li::marker,
-article strong,
-article b {
-  font-family: $main-font;
-  font-weight: bold;
 }
 
 // Quiz

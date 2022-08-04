@@ -78,9 +78,8 @@ function stoff_customize_register( $wp_customize ) {
     [ 'big_header', ['default'  => true] ], 
     [ 'ad_setting_two', [] ], 
   ];
- 
   foreach ($settings as &$args) {
-    // For all settings, call $wp_customize->add_setting('dark_header', array())
+    // For all settings, call $wp_customize->add_setting('name', array(args))
     call_user_func_array(array($wp_customize,'add_setting'), $args);
   }
 
@@ -126,9 +125,8 @@ function stoff_customize_register( $wp_customize ) {
       'settings'  => 'ad_setting_two',  
     ]], 
   ];
-
   foreach ($controls as &$args) {
-    // For all controls, call $wp_customize->add_control('dark_header', array())
+    // For all controls, call $wp_customize->add_control('name', array(args))
     call_user_func_array(array($wp_customize,'add_control'), $args);
   }
 

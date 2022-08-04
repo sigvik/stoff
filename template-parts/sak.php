@@ -15,15 +15,18 @@ $size = $args['size'];
 $cover = $size == 'cover';
 
 // Variables
+$title = get_the_title();
+$excerpt = get_the_excerpt();
 $link = get_permalink();
 $tags = filtered_tags();
+$hasImg = has_post_thumbnail();
 
 // Color to give the headline, using first tag
-$headlie_css = '';
-if (count($tags) > 0) $headline_css = $tags[0]['css_class'];
+$headline_class = '';
+if (sizeof($tags) > 0){ $headline_class = $tags[0]['css_class']; }
 
-// Image orientation
-$orientation = '';
+// Image orientation (landscape til proven otherwise)
+$orientation = 'landscape';
 $post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
 $imgmeta = wp_get_attachment_metadata( $post_thumbnail_id );
 if ($imgmeta) {
@@ -32,6 +35,8 @@ if ($imgmeta) {
     $imgmeta['height'] / $imgmeta['width'] < 0.8
   ){ 
     $orientation = 'landscape'; 
+  } else {
+    $orientation = ''; 
   }
 }
 
@@ -43,6 +48,9 @@ $img_sizes = [
   'three-split' => [380, 290],
 ];
 
+// Don't render if there's nothing to render
+if (!$title && !$excerpt && !$hasImg) return;
+
 ?>
 
 
@@ -52,13 +60,13 @@ $img_sizes = [
 <div class="sak <?php echo $size . ' ' . $orientation ?>"><?php
 
   // Create link if not inside article
-  if (!is_single()): 
+  if (!is_single() && !is_page()):
     ?><a class="innhold" href="<?php echo $link ?>"><?php
   endif; ?>
 
     <!-- Image -->
     <div class="bilde-wrapper">
-      <?php echo the_post_thumbnail($img_sizes[$size]) ?>
+        <?php echo the_post_thumbnail($img_sizes[$size]) ?>
     </div>
 
     <div class="tekstdel">
@@ -67,15 +75,15 @@ $img_sizes = [
       <?php if ($cover && is_single()) build_tags($tags); ?>
 
       <!-- Title -->
-      <div class="overskrift <?php if ($cover || (!get_theme_mod('dark_header') && !get_theme_mod('header_bg'))) echo $headline_css ?>">
-        <?php echo get_the_title(); ?>
+      <div class="overskrift <?php if ($cover || (!get_theme_mod('dark_header') && !get_theme_mod('header_bg'))) echo $headline_class ?>">
+        <?php echo $title ?>
       </div>
 
       <?php
       // Excerpt, but not a preview of it inside articles
       if ( !($size == 'cover' and !has_excerpt()) ): ?>
         <div class="ingress">
-          <?php echo get_the_excerpt() ?>
+          <?php echo $excerpt ?>
         </div><?php
       endif; 
       
@@ -106,7 +114,7 @@ $img_sizes = [
 
     </div><?php
     
-  if (!$cover): 
+  if (!is_single() && !is_page()): 
     ?></a><?php
   endif;
 

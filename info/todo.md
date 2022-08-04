@@ -5,7 +5,8 @@ Lær å avslutte i tide sjølom du ikkje e ferdig, også når ting går bra. Ten
 Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først. Hugg også opp i bita til 
 ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i mål.
 
-- Flytt bigheader inn i wp header (og gjer kun liten på artikkelside inni)
+FIKSE COVER OVERKSIRFT I ARTICLE
+
 - Single not category side (artikkelside med big header)
 - søk funksjon
   - condition for overskrift
