@@ -42,7 +42,7 @@
             <div class="row">
 
                 <div class="text">
-                    STOFF arbeider etter Vær Varsom-plakatens regler for god presseskikk, og får støtte fra Velferdstinget Vest.
+                    <?php echo get_theme_mod('footer_txt'); ?>
                     
                     <p><a href="https://goodshit.no">Utviklet av Sigurd Vikene</a></p>
                     

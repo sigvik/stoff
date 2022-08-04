@@ -62,6 +62,7 @@ Row group system:
 - fyll bildecontainer med nåke anna mens bilde lazyloada
 - cover types dont work on front page rn
 - bruke Quiz-article class til å gi store quiz kulepunkt
+- option for pages for å skjule bilde, overskrift or all
 
 ------------------------------------
 

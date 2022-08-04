@@ -76,6 +76,7 @@ function stoff_customize_register( $wp_customize ) {
     [ 'start_dark', ['default'  => false] ], 
     [ 'ui_toggle', ['default'  => true] ], 
     [ 'big_header', ['default'  => true] ], 
+    [ 'footer_txt', ['default'  => 'STOFF arbeider etter Vær Varsom-plakatens regler for god presseskikk, og får støtte fra Velferdstinget Vest.'] ], 
     [ 'ad_setting_two', [] ], 
   ];
   foreach ($settings as &$args) {
@@ -117,6 +118,12 @@ function stoff_customize_register( $wp_customize ) {
       'type' => 'checkbox',
       'section' => 'header',
       'settings'  => 'big_header',  
+    ]], 
+    [ 'footer_txt', [
+      'label' => __( 'Tekst i meny-footer' ),
+      'type' => 'textarea',
+      'section' => 'header',
+      'settings'  => 'footer_txt',  
     ]], 
     [ 'ad_setting_two', [
       'label' => __( 'Accent Color', 'theme_textdomain' ),
