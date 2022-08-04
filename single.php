@@ -4,7 +4,7 @@ require_once get_template_directory() . '/inc/helpers.php';
 // SINGLE - Default page for articles
 
 get_header();
-get_template_part('template-parts/header-part');
+
 
 if ( have_posts() ){
   while( have_posts() ){ the_post();?>

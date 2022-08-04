@@ -66,61 +66,73 @@ function stoff_customize_register( $wp_customize ) {
     'priority'  => 70,
   )); 
 
-  // Add Settings
-  $wp_customize->add_setting('dark_header', array(
-    'transport' => 'refresh',
-    'height'    => 325,
-  ));
-  $wp_customize->add_setting('header_bg', array(
-    'transport' => 'refresh',
-    'height'    => 325,
-  ));
-  $wp_customize->add_setting('start_dark', array(
-    'transport' => 'refresh',
-    'height'    => 325,
-  ));
-  $wp_customize->add_setting('ui_toggle', array(
-    'transport' => 'refresh',
-    'height'    => 325,
-  ));
-  $wp_customize->add_setting('ad_setting_two', array(
-    'transport' => 'refresh',
-    'height'    => 325,
-  ));
+  /**
+   * Add Settings
+   * https://developer.wordpress.org/reference/classes/wp_customize_setting/__construct/#parameters
+   */
+  $settings = [
+    [ 'dark_header', ['default'  => true] ], 
+    [ 'header_bg', ['default'  => false] ], 
+    [ 'start_dark', ['default'  => false] ], 
+    [ 'ui_toggle', ['default'  => true] ], 
+    [ 'big_header', ['default'  => true] ], 
+    [ 'ad_setting_two', [] ], 
+  ];
+ 
+  foreach ($settings as &$args) {
+    // For all settings, call $wp_customize->add_setting('dark_header', array())
+    call_user_func_array(array($wp_customize,'add_setting'), $args);
+  }
 
-  // Add Controls
-  $wp_customize->add_control( 'dark_header', array(
-    'label' => __( 'Mørk header' ),
-    'type' => 'checkbox',
-    'section' => 'header',
-    'settings'  => 'dark_header',  
-  ) );
-  $wp_customize->add_control( 'header_bg', array(
-    'label' => __( 'Header-bakgrunn' ),
-    'type' => 'checkbox',
-    'section' => 'header',
-    'settings'  => 'header_bg',  
-  ) );
-    $wp_customize->add_control( 'start_dark', array(
-    'label' => __( 'Start i mørk modus' ),
-    'type' => 'checkbox',
-    'section' => 'header',
-    'settings'  => 'start_dark',  
-  ) );
-  $wp_customize->add_control( 'ui_toggle', array(
-    'label' => __( 'Tillat å endre mørk/lys modus' ),
-    'type' => 'checkbox',
-    'section' => 'header',
-    'settings'  => 'ui_toggle',  
-    'default'  => true, 
-  ) );
-  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'color_control', array(
-    'label' => __( 'Accent Color', 'theme_textdomain' ),
-    'section' => 'header',
-    'settings'  => 'ad_setting_two',  
-  )));
+  /**
+   * Add Controls
+   * https://developer.wordpress.org/reference/classes/WP_Customize_Control/__construct/
+   */
+  $controls = [
+    [ 'dark_header', [
+      'label' => __( 'Mørk header' ),
+      'type' => 'checkbox',
+      'section' => 'header',
+      'settings'  => 'dark_header',  
+    ]], 
+    [ 'header_bg', [
+      'label' => __( 'Header-bakgrunn' ),
+      'type' => 'checkbox',
+      'section' => 'header',
+      'settings'  => 'header_bg',  
+    ]], 
+    [ 'start_dark', [
+      'label' => __( 'Start i mørk modus' ),
+      'type' => 'checkbox',
+      'section' => 'header',
+      'settings'  => 'start_dark',  
+    ]], 
+    [ 'ui_toggle', [
+      'label' => __( 'Tillat å endre mørk/lys modus' ),
+      'type' => 'checkbox',
+      'section' => 'header',
+      'settings'  => 'ui_toggle', 
+    ]], 
+    [ 'big_header', [
+      'label' => __( 'Bruk stor header' ),
+      'type' => 'checkbox',
+      'section' => 'header',
+      'settings'  => 'big_header',  
+    ]], 
+    [ 'ad_setting_two', [
+      'label' => __( 'Accent Color', 'theme_textdomain' ),
+      'type' => 'color',
+      'section' => 'header',
+      'settings'  => 'ad_setting_two',  
+    ]], 
+  ];
 
-}
+  foreach ($controls as &$args) {
+    // For all controls, call $wp_customize->add_control('dark_header', array())
+    call_user_func_array(array($wp_customize,'add_control'), $args);
+  }
+
+} 
 add_action( 'customize_register', 'stoff_customize_register' );
 
 

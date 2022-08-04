@@ -5,5 +5,10 @@ Lær å avslutte i tide sjølom du ikkje e ferdig, også når ting går bra. Ten
 Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først. Hugg også opp i bita til 
 ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i mål.
 
-- Single not category side, søk funksjon, 404 side
-  
+- Flytt bigheader inn i wp header (og gjer kun liten på artikkelside inni)
+- Single not category side (artikkelside med big header)
+- søk funksjon
+  - condition for overskrift
+  - en echo om der e ingen posts
+- 404 side
+  - bodoni font

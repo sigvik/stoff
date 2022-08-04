@@ -4,12 +4,6 @@ require_once get_template_directory() . '/inc/helpers.php';
 
 get_header();
 
-get_template_part('template-parts/header-part', false, 
-[
-    'classes' => 'dark pattern-bg', 
-    'big' => true,
-]);
-
 
 //------------------ The loop -----------------------------------
 

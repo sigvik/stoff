@@ -130,3 +130,4 @@ Artikkel:
 - Oversett filene til engelsk
 - Få inn HTML5 artikkel tags
 - Skriv en plass WP'en må være på norsk for dates
+- Backup plugin

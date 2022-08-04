@@ -41,8 +41,8 @@ found in the info directory.
 }
 
 
-a,
-button {
+a:not(.logo),
+button:not(.logo) {
   transition: color $q-t-time, fill $q-t-time;
   user-select: none;
 
