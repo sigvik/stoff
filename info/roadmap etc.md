@@ -63,6 +63,7 @@ Row group system:
 - cover types dont work on front page rn
 - bruke Quiz-article class til å gi store quiz kulepunkt
 - option for pages for å skjule bilde, overskrift or all
+- endre ka farga som kjeme når du velga tekst (kategorifarge?)
 
 ------------------------------------
 

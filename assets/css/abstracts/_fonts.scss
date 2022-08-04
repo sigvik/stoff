@@ -62,3 +62,12 @@ $Sabon-vars: (
 );
 @include font-fam('SabonLtStd', $Sabon-vars);
 
+// ----- BodoniMTStd --------
+$Bodoni-vars: (
+  "BoldCond": 700,
+  "BoldCondItalic": 700,
+  "BoldItalic": 700,
+  "Italic": 500
+);
+@include font-fam('BodoniMTStd', $Bodoni-vars);
+

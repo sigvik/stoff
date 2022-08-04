@@ -46,7 +46,7 @@
                     
                     <p><a href="https://goodshit.no">Utviklet av Sigurd Vikene</a></p>
                     
-                    <p>© STOFF <?php echo date("Y"); ?></p>
+                    <p>© <?php echo bloginfo('title') .' '. date("Y"); ?></p>
                 </div>
 
                 <div class="wrapper">

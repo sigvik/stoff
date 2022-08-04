@@ -164,6 +164,18 @@ article .uthevet-sitat {
   text-transform: uppercase;
 }
 
+// Other pages ---------------
+
+.big-404 {
+  @include unselectable();
+  font-size: clamp(2rem, 40vw, 30rem);
+  font-family: 'BodoniMtStd_web';
+  font-weight: 500;
+  line-height: 1;
+  font-style: italic;
+  margin: 0;
+}
+
 
 // DESKTOP ONLY ------------------------ 
 @media screen and (min-width: $tablet) {

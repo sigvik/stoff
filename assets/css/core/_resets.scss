@@ -6,6 +6,10 @@ Removes built in styling for DOM elements.
 
 */
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
 }

@@ -15,12 +15,19 @@ $row_types = [
   ['r'=> 'three-split-alt', 'len' => 3], // 4 - One big, two small
 ];
 
+$row_order = [
+  $row_types[4],
+  $row_types[2],
+  $row_types[3],
+  $row_types[1],
+];
+
 if ( have_posts() ){
 
   $posts_left = $wp_query->post_count;
   $i = 1; //
   $s = 1;
-  $row = (is_front_page()) ? $row_types[4] : $row_types[3];
+  $row = (is_front_page()) ? $row_order[0] : $row_types[3];
 
   while( have_posts() ){ the_post();
 
