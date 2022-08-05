@@ -5,9 +5,5 @@ Lær å avslutte i tide sjølom du ikkje e ferdig, også når ting går bra. Ten
 Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først. Hugg også opp i bita til 
 ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i mål.
 
-- søk funksjon
-  - condition for overskrift
-  - en echo om der e ingen posts
-
 - menu dropdown categories
   - korleis laga en menya?
