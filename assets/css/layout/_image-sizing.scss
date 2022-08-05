@@ -36,6 +36,7 @@
     height: px2rem(480);
   }
 
+  .kolonne .landscape .bilde-wrapper,
   .one-split.landscape .bilde-wrapper {
     height: auto;
   }
@@ -48,6 +49,7 @@
     max-height: inherit;
     width: 100%;
   }
+
 }
 
 

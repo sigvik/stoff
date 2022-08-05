@@ -22,12 +22,22 @@ $row_order = [
   $row_types[1],
 ];
 
+// Give dynamic layout to certain category pages, such as 'Utgave 22'
+$page_category = $wp_query->get_queried_object();
+$utgaveside = false;
+if ($page_category) {
+  $cat_name = mb_strtolower($page_category->name, 'UTF-8');
+  $utgaveside = str_contains($cat_name, 'utgave');  
+}
+$dynamic_layout = is_front_page() || $utgaveside;
+
+
 if ( have_posts() ){
 
   $posts_left = $wp_query->post_count;
   $i = 1; //
   $s = 1;
-  $row = (is_front_page()) ? $row_order[0] : $row_types[3];
+  $row = ($dynamic_layout) ? $row_order[0] : $row_types[3];
 
   while( have_posts() ){ the_post();
 
@@ -37,7 +47,6 @@ if ( have_posts() ){
       // Category page title
       if ($i == 1) { 
         $headline_css = single_cat_title(false, false);
-        $page_category = $wp_query->get_queried_object();
         if ($page_category) $headline_css = topmost_category_name($page_category);
         $page_title = single_cat_title(false, false);
         if (is_search()) {
@@ -72,7 +81,7 @@ if ( have_posts() ){
       $s = 1;
 
       // Alternate row types on front page
-      if (is_front_page()) {
+      if ($dynamic_layout) {
         if ($row === $row_types[4]) { get_template_part('template-parts/ad'); $row = $row_types[2]; }
         else if ($row === $row_types[2]) $row = $row_types[3]; 
         else if ($row === $row_types[3]) $row = $row_types[1];
