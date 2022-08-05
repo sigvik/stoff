@@ -39,8 +39,12 @@ if ( have_posts() ){
         $headline_css = single_cat_title(false, false);
         $page_category = $wp_query->get_queried_object();
         if ($page_category) $headline_css = topmost_category_name($page_category);
+        $page_title = single_cat_title(false, false);
+        if (is_search()) {
+          $page_title = esc_html__($posts_left . ' resultater for ') . '<span>"' . get_search_query() . '"</span>';
+        }
       ?>
-        <div class="rad-overskrift <?php echo $headline_css ?>"><?php single_cat_title() ?></div><?php
+        <div class="rad-overskrift <?php echo $headline_css ?>"><?php echo $page_title ?></div><?php
       }?>
         <div class="rad <?php echo $row['r'] ?>"><?php
     }
@@ -67,7 +71,7 @@ if ( have_posts() ){
       echo '</div></div>'; 
       $s = 1;
 
-      //Alternate row types on front page
+      // Alternate row types on front page
       if (is_front_page()) {
         if ($row === $row_types[4]) { get_template_part('template-parts/ad'); $row = $row_types[2]; }
         else if ($row === $row_types[2]) $row = $row_types[3]; 
@@ -76,6 +80,19 @@ if ( have_posts() ){
       }
     }
   }
+
+} else { 
+  // 0 posts found ?>
+  <div class="rad-gruppe"> <?php
+
+  if (is_search()){
+    echo '<div class="rad-overskrift">' . esc_html__('0 resultater for ') . '<span>"' . get_search_query() . '"</span></div>';
+  } else { ?>
+    <div class="rad-overskrift">Fant ingen saker!</div> <?php
+  } ?>
+      
+    <a href="<?php echo home_url(); ?>"><p>< Tilbake til forsiden</p></a>
+  </div> <?php
 }
 
 get_footer(); 
