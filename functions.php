@@ -26,6 +26,7 @@ function stoff_setup(){
       ['post-thumbnails'],
       ['featured-content'],
       ['automatic-feed-links'],
+      ['menus'],
       ['html5', 
           [
               'search-form',

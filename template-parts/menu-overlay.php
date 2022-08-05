@@ -1,4 +1,40 @@
-<?php require get_template_directory() . '/inc/directories.php' ?>
+<?php 
+require get_template_directory() . '/inc/directories.php'; 
+
+function dropdown_category() {
+  echo '<a href="/samfunn" class="category Samfunn extends"> Samfunn </a>';
+}
+
+function dropdown_item($link, $name) {
+  echo '<a href="'.$link.'" class="menu-item">'.$name.'</a>';
+}
+
+function all_cat_children($id) {
+  $children = get_categories(['parent' => $id, 'orderby' => 'count']);
+
+  foreach ($children as $child) {
+    // Skip minor categories with few entries
+    if ($child->count < 11){ continue; }
+    dropdown_item(
+      get_category_link($child->term_id), 
+      $child->name
+    );
+  }
+}
+
+// Get top level categories
+$top_categories = get_terms( 
+  'category', 
+  array('parent' => 0)
+);
+//var_dump($top_categories);
+
+
+$utgaver = get_terms( 'category', ['name__like' => 'Utgave']);
+
+// IDs = samfunn 31, kultur 15, debatt 10
+
+?>
 
 <div id="menu-overlay" class="">
     
@@ -16,9 +52,26 @@
 
         <div class="large-categories">
             <a href="/samfunn" class="category Samfunn extends"> Samfunn </a> <!-- <div class="icon">&#xe5c5;</div> -->
+              <div class="dropdown-categories Samfunn"> 
+                <?php all_cat_children(31)?>
+              </div>
             <a href="/kultur" class="category Kultur extends"> Kultur </a>
+              <div class="dropdown-categories Kultur">
+                <?php all_cat_children(15)?>
+              </div>
             <a href="/debatt" class="category Debatt extends"> Debatt </a>
+              <div class="dropdown-categories Debatt">
+                <?php all_cat_children(10)?>
+              </div>
             <button class="category extends"> Arkiv </button>
+              <div class="dropdown-categories"> <?php
+                foreach ($utgaver as $utgave) {
+                  dropdown_item(
+                    get_category_link($utgave->term_id), 
+                    preg_replace('/[^0-9]/', '', $utgave->name)
+                  );
+                }?>
+              </div>
         </div>
 
         <div class="small-menu-items">

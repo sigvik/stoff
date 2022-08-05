@@ -46,7 +46,7 @@ button:not(.logo) {
   transition: color $q-t-time, fill $q-t-time;
   user-select: none;
 
-  &:hover {
+  &:hover, &:active {
     $hoverClr: var(--gray);
     color: $hoverClr;
     fill: $hoverClr;

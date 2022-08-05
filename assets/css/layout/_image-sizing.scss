@@ -52,5 +52,14 @@
 
 }
 
+// MOBILE ONLY ------------------------ 
+@media screen and (max-width: $mobile) {
+
+  .landscape .bilde-wrapper {
+    height: auto;
+  }
+
+}
+
 
 

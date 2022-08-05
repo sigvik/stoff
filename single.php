@@ -24,13 +24,15 @@ if ( have_posts() ){
   }
 } ?>
 
+<!--
 <div class="rad-gruppe">
   <div class="rad-overskrift">Les også</div>
   <div class="rad three-split"><?php 
-    sak(['img' => "https://www.stoffmagasin.no/wp-content/uploads/2022/05/makt-quiz-uten-bakgrunn-scaled.jpg"]);
-    sak(['img' => "https://www.stoffmagasin.no/wp-content/uploads/2022/02/endre.png"]);
-    sak(['img' => "https://www.stoffmagasin.no/wp-content/uploads/2022/06/trekule_55.jpg"]);
+    //sak(['img' => "https://www.stoffmagasin.no/wp-content/uploads/2022/05/makt-quiz-uten-bakgrunn-scaled.jpg"]);
+    //sak(['img' => "https://www.stoffmagasin.no/wp-content/uploads/2022/02/endre.png"]);
+    //sak(['img' => "https://www.stoffmagasin.no/wp-content/uploads/2022/06/trekule_55.jpg"]);
   ?></div>
 </div>
+-->
 
 <?php get_footer(); ?>

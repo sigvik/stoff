@@ -57,6 +57,14 @@ $min-padding: px2rem(56);
     }
   }
 
+  .dropdown-categories {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-bottom: $small-gap;
+  }
+
   .small-menu-items {
     @include flex-col(px2rem(24));
     padding: px2rem(24) 0;
