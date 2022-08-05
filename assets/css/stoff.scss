@@ -40,6 +40,7 @@ found in the info directory.
   } 
 }
 
+input[type=submit],
 a:not(.logo),
 button:not(.logo) {
   transition: color $q-t-time, fill $q-t-time;
@@ -49,6 +50,7 @@ button:not(.logo) {
     $hoverClr: var(--gray);
     color: $hoverClr;
     fill: $hoverClr;
+    cursor: pointer;
   }
 }
 

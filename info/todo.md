@@ -9,3 +9,5 @@ ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i m
   - condition for overskrift
   - en echo om der e ingen posts
 
+- menu dropdown categories
+  - korleis laga en menya?

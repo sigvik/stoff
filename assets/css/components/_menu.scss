@@ -38,7 +38,7 @@ $min-padding: px2rem(56);
     gap: $gap;
   }
 
-  .icons {
+  .icons, #searchform {
     display: flex;
     justify-content: space-between;
     gap: $small-gap;

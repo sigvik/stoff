@@ -5,9 +5,9 @@
     <div class="menu dark">
 
         <div class="icons">
-            <button id="search-btn" class="icon">&#xe8b6;</button>
-            <input id="search-input" type="text" placeholder="Søk.."></input><?php 
-            // get_search_form();
+            <!-- <button id="search-btn" class="icon">&#xe8b6;</button> -->
+            <!--<input id="search-input" type="text" placeholder="Søk.."></input>--><?php 
+            get_search_form();
             if (get_theme_mod('ui_toggle')): ?>  
               <button id="ui-mode-toggle" class="icon">&#xe51c;</button><?php
             endif; ?>
