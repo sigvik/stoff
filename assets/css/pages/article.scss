@@ -46,9 +46,14 @@ article figure {
   */
 }
 
+article .img-right img {
+  width: clamp(12rem, 90vw, 22rem);
+}
+
 
 // DESKTOP ONLY ------------------------ 
 @media screen and (min-width: $tablet) {
+  article .img-right,
   article img.alignright {
     position: absolute;
     left: 100%;
@@ -74,6 +79,7 @@ article figure {
 
 // TABLET & SMALLER ------------------------ 
 @media screen and (max-width: $tablet) {
+  article .img-right,
   article img.alignright {
     width: 100%;
   }

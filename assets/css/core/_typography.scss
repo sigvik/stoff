@@ -128,12 +128,29 @@ article {
     font-weight: bold;
   }
 
+  // Weird stuff to make old posts look better
+
   h1, h2, h3, h4 {
     font-family: $main-font;
     font-weight: normal;
     font-size: 2rem;
     line-height: 2.5rem;
   }
+
+  h5 {
+    font-weight: bold;
+  }
+
+  h6 {
+    font-weight: normal;
+  }
+
+  h5, h6 {
+    font-family: $main-font;
+    font-size: unset;
+    margin: 0;
+  }
+
 }
 
 article figcaption {

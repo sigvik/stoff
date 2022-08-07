@@ -29,38 +29,53 @@ get_template_part('template-parts/menu-overlay');
 
 <div class="header-wrapper <?php echo $classes ?>">
 
-    <div id="header-bar" class="<?php if ($big) echo 'hidden' ?>">
-        <div class="content">
+  <div id="header-bar" class="<?php if ($big) echo 'hidden' ?>">
+    <div class="content">
 
-            <a class="logo" href="<?php echo $home_url ?>">
-                <?php echo $logo ?>
-            </a> 
+      <a class="logo" href="<?php echo $home_url ?>">
+        <?php echo $logo ?>
+      </a> 
 
-            <button id="hamburger">&#xe5d2;</button>
+      <button id="hamburger">&#xe5d2;</button>
 
-        </div>
     </div>
+  </div>
 
-<?php if ($big) echo <<<HTML
-
+  <?php 
+  if ($big): ?>
     <div id="header-big"> 
 
-        <a class="logo" href="$home_url">
-            {$logo}
-        </a> 
+      <a class="logo" href="<?php echo $home_url ?>">
+        <?php echo $logo ?>
+      </a> 
 
-        <div class="header-menu-wrapper">
-            <div class="header-menu">
-                <a href="/samfunn" class="menu-item">Samfunn</a>
-                <a href="/kultur" class="menu-item">Kultur</a>
-                <a href="/debatt" class="menu-item">Debatt</a>
-                <a href="/bergensguide" class="menu-item">Bergensguiden</a>
-                <a href="/om-oss" class="menu-item">Om oss</a>
-            </div>
-        </div>
+      <div class="header-menu-wrapper">
+        <?php
+        if ( has_nav_menu( 'header-menu' ) ) {
 
-    </div>
+          wp_nav_menu( [
+            'theme_location' => 'header-menu',
+            'depth' => 1,
+            'items_wrap' => '<div class="header-menu">%3$s</div>',
+            'walker' => new Description_Walker,
+          ]);
 
-HTML;?>
+        } else { ?>
+
+          <div class="header-menu">
+            <a href="/samfunn" class="menu-item">Samfunn</a>
+            <a href="/kultur" class="menu-item">Kultur</a>
+            <a href="/debatt" class="menu-item">Debatt</a>
+            <a href="/bergensguide" class="menu-item">Bergensguiden</a>
+            <a href="/om-oss" class="menu-item">Om oss</a>
+          </div><?php
+
+        } ?>
+      </div>
+
+    </div><?php
+  endif;?>
 
 </div>
+
+

@@ -64,6 +64,7 @@ Row group system:
 - bruke Quiz-article class til å gi store quiz kulepunkt
 - option for pages for å skjule bilde, overskrift or all
 - endre ka farga som kjeme når du velga tekst (kategorifarge?)
+- fram og tilbake pile i utgave overskrift
 
 ------------------------------------
 

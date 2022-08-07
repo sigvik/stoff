@@ -51,6 +51,16 @@ $img_sizes = [
 // Don't render if there's nothing to render
 if (!$title && !$excerpt && !$hasImg) return;
 
+// Give dynamic layout to certain category pages, such as 'Utgave 22'
+$page_category = $wp_query->get_queried_object();
+$utgaveside = false;
+if ($page_category) {
+  $cat_name = mb_strtolower($page_category->name, 'UTF-8');
+  $utgaveside = str_contains($cat_name, 'utgave');  
+}
+$dynamic_layout = is_front_page() || $utgaveside;
+
+
 ?>
 
 
@@ -119,7 +129,7 @@ if (!$title && !$excerpt && !$hasImg) return;
   endif;
 
   // Tags, at bottom on front page
-  if (is_front_page()) build_tags($tags);
+  if ($dynamic_layout) build_tags($tags);
   ?>
 
 </div>

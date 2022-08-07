@@ -12,7 +12,7 @@ $min-padding: px2rem(56);
   z-index: 2;
 }
 
-.menu {
+#menu-overlay .menu {
   position: absolute;
   top: 0;
   right: -100%;
@@ -34,7 +34,7 @@ $min-padding: px2rem(56);
 
   @mixin flex-col($gap) {
     display: flex;
-    flex-direction: inherit;
+    flex-direction: column;
     gap: $gap;
   }
 
