@@ -51,18 +51,24 @@ $min-padding: px2rem(56);
   .large-categories {
     @include flex-col(px2rem(16));
 
-    .category {
+    .menu-item {
       display: flex;
       justify-content: space-between;
     }
   }
 
-  .dropdown-categories {
+  .large-categories .sub-menu {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;
+    padding: 0;
     padding-bottom: $small-gap;
+    margin: 0;
+
+    .menu-item {
+      padding: 0;
+    }
   }
 
   .small-menu-items {

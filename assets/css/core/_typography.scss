@@ -31,7 +31,9 @@ body {
   font-variation-settings: 'FILL' 1; // 'wght' 700;
 }
 
-.menu-item {
+.large-categories .sub-menu .menu-item,
+.header-menu .menu-item,
+.small-menu-items .menu-item {
   @include spaced;
   @include sizeNline(px2rem(16));
   font-weight: bold;
@@ -85,7 +87,7 @@ body {
   font-size: 1.5rem;
 }
 
-.large-categories .category {
+.large-categories .menu-item {
   $font-size: px2rem(40);
 
   @include sizeNline($font-size);

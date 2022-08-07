@@ -174,13 +174,19 @@ add_filter( 'post_thumbnail_html', 'remove_img_attr' );
 
 
 // Walker for removing li tags from menus (jesus wordpress)
-class Description_Walker extends Walker_Nav_Menu
-{
+class Description_Walker extends Walker_Nav_Menu {
+  // https://developer.wordpress.org/reference/classes/walker_nav_menu/
+
   function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 )
   {
+    //var_dump($args);
     $classes = empty($item->classes) ? array () : (array) $item->classes;
     $class_names = join(' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-    !empty ( $class_names ) and $class_names = ' class="'. esc_attr( $class_names ) . '"';
+
+    // Could add some hacky customs support for color classes here
+    $clrClass = filter_var($item->title, FILTER_SANITIZE_STRING);
+    !empty ( $class_names ) and $class_names = ' class=" '. $clrClass .' '. esc_attr( $class_names ) . '"';
+    
     $output .= "<div id='menu-item-$item->ID' $class_names>";
     $attributes  = '';
     !empty( $item->attr_title ) and $attributes .= ' title="'  . esc_attr( $item->attr_title ) .'"';

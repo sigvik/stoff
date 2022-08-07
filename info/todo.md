@@ -6,9 +6,7 @@ Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først. Hugg ogs�
 ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i mål.
 
 Custom menus  
- - legge inn en menu
- - korleis få default menus?
- - kan ej style menus?
+ - berre lag underpunkta custom, i small stilen
   - https://wordpress.stackexchange.com/questions/117146/how-do-i-check-if-a-menu-exists
 
 

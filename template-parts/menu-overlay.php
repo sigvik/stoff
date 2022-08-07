@@ -49,21 +49,33 @@ $utgaver = get_terms( 'category', ['name__like' => 'Utgave']);
       <button id="menu-exit" class="icon">&#xe5cd;</button>
     </div>
 
-    <div class="large-categories">
-      <a href="/samfunn" class="category Samfunn extends"> Samfunn </a> <!-- <div class="icon">&#xe5c5;</div> -->
-        <div class="dropdown-categories Samfunn"> 
+
+    <?php 
+    // Big categories menu
+    if ( has_nav_menu( 'big-categories' ) ) {
+      wp_nav_menu( [
+        'theme_location' => 'big-categories',
+        'depth' => 2,
+        'items_wrap' => '<div class="large-categories">%3$s</div>',
+        'walker' => new Description_Walker,
+      ]);
+    } else { ?>
+      
+      <div class="large-categories">
+      <a href="/samfunn" class="menu-item Samfunn extends"> Samfunn </a> <!-- <div class="icon">&#xe5c5;</div> -->
+        <div class="sub-menu Samfunn"> 
           <?php all_cat_children(31)?>
         </div>
-      <a href="/kultur" class="category Kultur extends"> Kultur </a>
-        <div class="dropdown-categories Kultur">
+      <a href="/kultur" class="menu-item Kultur extends"> Kultur </a>
+        <div class="sub-menu Kultur">
           <?php all_cat_children(15)?>
         </div>
-      <a href="/debatt" class="category Debatt extends"> Debatt </a>
-        <div class="dropdown-categories Debatt">
+      <a href="/debatt" class="menu-item Debatt extends"> Debatt </a>
+        <div class="sub-menu Debatt">
           <?php all_cat_children(10)?>
         </div>
-      <button class="category extends"> Arkiv </button>
-        <div class="dropdown-categories"> <?php
+      <button class="menu-item extends"> Arkiv </button>
+        <div class="sub-menu"> <?php
           foreach ($utgaver as $utgave) {
             dropdown_item(
               get_category_link($utgave->term_id), 
@@ -73,7 +85,12 @@ $utgaver = get_terms( 'category', ['name__like' => 'Utgave']);
         </div>
     </div>
 
-    <?php // Small categories menu
+    <?php
+    } ?>
+
+
+    <?php 
+    // Small categories menu
     if ( has_nav_menu( 'small-categories' ) ) {
       wp_nav_menu( [
         'theme_location' => 'small-categories',
