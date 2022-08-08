@@ -174,17 +174,26 @@ add_filter( 'post_thumbnail_html', 'remove_img_attr' );
 
 
 // Walker for removing li tags from menus (jesus wordpress)
-class Description_Walker extends Walker_Nav_Menu {
+class Custom_Walker extends Walker_Nav_Menu {
   // https://developer.wordpress.org/reference/classes/walker_nav_menu/
 
   function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 )
   {
-    //var_dump($args);
+    global $currentID;
+    $currentID = $item->ID;
+
     $classes = empty($item->classes) ? array () : (array) $item->classes;
     $class_names = join(' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 
     // Could add some hacky customs support for color classes here
-    $clrClass = filter_var($item->title, FILTER_SANITIZE_STRING);
+    global $clrClass;
+    $clrClass = '';
+    if ( isset($args->colors) ) {
+      if ($args->colors && $depth == 0) {
+        // Make clrClass global for submenu to reach it
+        $clrClass = filter_var($item->title, FILTER_SANITIZE_STRING);
+      }
+    }
     !empty ( $class_names ) and $class_names = ' class=" '. $clrClass .' '. esc_attr( $class_names ) . '"';
     
     $output .= "<div id='menu-item-$item->ID' $class_names>";
@@ -194,14 +203,53 @@ class Description_Walker extends Walker_Nav_Menu {
     !empty( $item->xfn ) and $attributes .= ' rel="'    . esc_attr( $item->xfn        ) .'"';
     !empty( $item->url ) and $attributes .= ' href="'   . esc_attr( $item->url        ) .'"';
     $title = apply_filters( 'the_title', $item->title, $item->ID );
+
+    $expandBtn = '';
+    if ( isset($args->expands) ) {
+      if ($args->expands && $depth == 0) {
+        $expandBtn = "<button id='expand-$item->ID' class='dropdown-btn'>+</button>";
+      }
+    }
+
     $item_output = $args->before
     . "<a $attributes>"
     . $args->link_before
     . $title
-    . '</a></div>'
+    . '</a>'
+    . $expandBtn
+    . '</div>'
     . $args->link_after
     . $args->after;
     $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+  }
+
+  function start_lvl( &$output, $depth = 0, $args = null ) {
+
+    if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+        $t = '';
+        $n = '';
+    } else {
+        $t = "\t";
+        $n = "\n";
+    }
+    $indent = str_repeat( $t, $depth );
+ 
+    // Default class.
+    global $clrClass;
+    $classes = array( 'sub-menu', 'Samfunn', 'hidden', $clrClass );
+ 
+    /**
+     * Filters the CSS class(es) applied to a menu list element.
+     */
+    $class_names = implode( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
+    $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+ 
+    $parentID = '';
+    global $currentID;
+    if ( isset($currentID) ) {
+      $parentID = "id='submenu-". $currentID ."'";
+    }
+    $output .= "{$n}{$indent}<ul $parentID $class_names>{$n}";
   }
 }
 

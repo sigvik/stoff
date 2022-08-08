@@ -71,3 +71,16 @@ if (elem('header-big')) {
 
 }
 
+
+// Menu dropdown buttons -----------------------------
+
+var btns = document.getElementsByClassName("dropdown-btn");
+
+for (let btn of btns) {
+  const subMenuId = btn.id.replace('expand-', 'submenu-')
+  const subMenu = document.getElementById(subMenuId)
+  console.log(subMenu)
+
+  btn.onclick = () => toggleClass(subMenu, 'hidden')
+
+}

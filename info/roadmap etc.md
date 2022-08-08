@@ -120,6 +120,8 @@ advanced custom fields
 - D2, Subjekt
 - MIC, Elite Daily
 - K7bulletin, Samviten
+- https://lifestyle.allwomenstalk.com/
+
 
 Artikkel:
 -https://www.dn.no/d2/mote/klar/nordmarka/signe-veiteberg/en-hyllest-til-nordmarka/7-1-sfjciek3i6

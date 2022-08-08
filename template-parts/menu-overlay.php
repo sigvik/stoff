@@ -57,7 +57,9 @@ $utgaver = get_terms( 'category', ['name__like' => 'Utgave']);
         'theme_location' => 'big-categories',
         'depth' => 2,
         'items_wrap' => '<div class="large-categories">%3$s</div>',
-        'walker' => new Description_Walker,
+        'colors' => true,
+        'expands' => true,
+        'walker' => new Custom_Walker,
       ]);
     } else { ?>
       
@@ -96,7 +98,7 @@ $utgaver = get_terms( 'category', ['name__like' => 'Utgave']);
         'theme_location' => 'small-categories',
         'depth' => 1,
         'items_wrap' => '<div class="small-menu-items">%3$s</div>',
-        'walker' => new Description_Walker,
+        'walker' => new Custom_Walker,
       ]);
     } else { ?>
       <div class="small-menu-items">

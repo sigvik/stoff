@@ -57,7 +57,7 @@ get_template_part('template-parts/menu-overlay');
             'theme_location' => 'header-menu',
             'depth' => 1,
             'items_wrap' => '<div class="header-menu">%3$s</div>',
-            'walker' => new Description_Walker,
+            'walker' => new Custom_Walker,
           ]);
 
         } else { ?>
