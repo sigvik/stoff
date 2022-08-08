@@ -65,6 +65,10 @@ Row group system:
 - option for pages for å skjule bilde, overskrift or all
 - endre ka farga som kjeme når du velga tekst (kategorifarge?)
 - fram og tilbake pile i utgave overskrift
+- big categories meny mangla en del funksjonalitet
+  - automatisk arkiv
+  - open on hover
+  - hover on entire row
 
 ------------------------------------
 
