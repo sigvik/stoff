@@ -42,6 +42,7 @@ $min-padding: px2rem(56);
     display: flex;
     justify-content: space-between;
     gap: $small-gap;
+    width: 100%;
   }
 
   #search-input {

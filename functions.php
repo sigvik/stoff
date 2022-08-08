@@ -236,7 +236,8 @@ class Custom_Walker extends Walker_Nav_Menu {
  
     // Default class.
     global $clrClass;
-    $classes = array( 'sub-menu', 'Samfunn', 'hidden', $clrClass );
+    $classes = array( 'sub-menu', 'hidden', $clrClass );
+    $clrClass = '';
  
     /**
      * Filters the CSS class(es) applied to a menu list element.
