@@ -44,8 +44,11 @@ body {
   @include sizeNline(px2rem(24));
 }
 
+div[class$="-adlabel"],
 .annonse-tag {
   @include sizeNline(px2rem(12));
+  font-family: $main-font;
+  padding-bottom: px2rem(4);
 }
 
 .sak {

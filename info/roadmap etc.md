@@ -69,6 +69,9 @@ Row group system:
   - automatisk arkiv
   - open on hover
   - hover on entire row
+  - Om menyane ikkje e definert defaulta det til en buggy en (fikse den?)
+- Advanced field for featured image caption?
+- Det ekje annonse på arkivside as of now
 
 ------------------------------------
 

@@ -12,8 +12,9 @@ function stoff_enqueue() {
 
   // Currently cheats by setting the version number to the datetime of css file creation
   $csspath = get_template_directory_uri() . '/assets/css/stoff.css';
+  $jspath = get_template_directory_uri() . '/assets/js/script.js';
   wp_enqueue_style( 'style', $csspath, array (), filemtime( get_template_directory() . '/assets/css/stoff.css' ) );
-  wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.js', array (), 1.6, true);
+  wp_enqueue_script( 'script', $jspath, array (), filemtime( get_template_directory() . '/assets/js/script.js' ), true);
 
 }
 add_action('wp_enqueue_scripts', 'stoff_enqueue');
@@ -166,11 +167,25 @@ add_filter( 'excerpt_length', function( $length ) { return 21; } );
 add_filter('excerpt_more', function( $more ) { return '...'; });
 
 
-// Remove width & height attributes from images
+// Remove width & height attributes from wp images
 function remove_img_attr ($html) {
   return preg_replace('/(width|height)="\d+"\s/', "", $html);
 }
 add_filter( 'post_thumbnail_html', 'remove_img_attr' );
+
+
+
+// Makes supre ads from advanced ads plugin are blocked by adblockers
+function ad_wrap( $output ){
+  return '
+  <div class="gofollow">
+    <div class="annonse-tag">Annonse</div>'
+    . $output . 
+  '</div>';
+}
+add_filter( 'advanced-ads-output-final', 'ad_wrap' );
+
+
 
 
 // Walker for removing li tags from menus (jesus wordpress)

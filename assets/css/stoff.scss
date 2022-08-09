@@ -58,3 +58,19 @@ button:not(.logo) {
   display: flex;
   gap: px2rem(16);
 }
+
+// Ad styling (make sure ad classes has prefix 'ad-'). 
+// Hacky padding solution because of shitty limiting ad plugin
+div[class^="ad-"]:not(.ad-adlabel) {
+  $padding: 1.5rem;
+
+  .annonse-tag {
+    padding-top: $padding;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    padding-bottom: $padding;
+  }
+}

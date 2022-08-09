@@ -22,6 +22,11 @@ $row_order = [
   $row_types[1],
 ];
 
+// Get ad from Advanced Ads plugin
+function ad() {
+  if( function_exists('the_ad_placement') ) { the_ad_placement('forside'); }
+}
+
 // Give dynamic layout to certain category pages, such as 'Utgave 22'
 $page_category = $wp_query->get_queried_object();
 $utgaveside = false;
@@ -82,7 +87,7 @@ if ( have_posts() ){
 
       // Alternate row types on front page
       if ($dynamic_layout) {
-        if ($row === $row_types[4]) { get_template_part('template-parts/ad'); $row = $row_types[2]; }
+        if ($row === $row_types[4]) { ad(); $row = $row_types[2]; }
         else if ($row === $row_types[2]) $row = $row_types[3]; 
         else if ($row === $row_types[3]) $row = $row_types[1];
         else if ($row === $row_types[1]) $row = $row_types[4];
