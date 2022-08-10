@@ -77,7 +77,7 @@ if ( have_posts() ){
     }
 
     sak(['size' => $size]);
-    $i++; $s++;
+    $i++; $s++; $posts_left--;
 
     // End row
     if ($s > $row['len']) { 
@@ -93,6 +93,7 @@ if ( have_posts() ){
         else if ($row === $row_types[1]) $row = $row_types[4];
       }
     }
+
   }
 
 } else { 
@@ -108,6 +109,31 @@ if ( have_posts() ){
     <a href="<?php echo home_url(); ?>"><p>< Tilbake til forsiden</p></a>
   </div> <?php
 }
+
+
+
+?>
+<div class="rad-gruppe"><?php
+
+  // Ajax Load More plugin infinite scroll
+  $args = array(
+    'ajax_load_more id' => "1",
+    'container_type' => "div",
+    'post_type' => "post",
+    'scroll_distance' => "-800", 
+    'button_label' => "Last inn mer", 
+    'button_loading_label' => " ", 
+    'button_done_label' => " ", 
+    'archive' => "true",
+    'no_results_text' => " ",
+  );	
+  if(function_exists('alm_render')){
+    alm_render($args);
+  }
+
+?>
+</div><?php
+
 
 get_footer(); 
 

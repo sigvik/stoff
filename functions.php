@@ -11,11 +11,36 @@ function stoff_enqueue() {
   // Update stylesheet ver number here to update on live site
 
   // Currently cheats by setting the version number to the datetime of css file creation
-  $csspath = get_template_directory_uri() . '/assets/css/stoff.css';
-  $jspath = get_template_directory_uri() . '/assets/js/script.js';
-  wp_enqueue_style( 'style', $csspath, array (), filemtime( get_template_directory() . '/assets/css/stoff.css' ) );
-  wp_enqueue_script( 'script', $jspath, array (), filemtime( get_template_directory() . '/assets/js/script.js' ), true);
+  $cssPath = get_template_directory_uri() . '/assets/css/stoff.css';
+  $scriptPath = get_template_directory_uri() . '/assets/js/script.js';
+  wp_enqueue_style( 
+    'style', 
+    $cssPath, 
+    array(), 
+    filemtime( get_template_directory() . '/assets/css/stoff.css' ) 
+  );
+  wp_enqueue_script( 
+    'script', 
+    $scriptPath, 
+    array(), 
+    filemtime( get_template_directory() . '/assets/js/script.js' ), 
+    true
+  );
 
+
+  // Add infinite scroll script to articles & article collections
+  $scollScriptPath = get_template_directory_uri() . '/assets/js/infinite-scroll.js';
+  if ( !is_page() ) {
+    wp_enqueue_script( 
+      'infinite-scroll', 
+      $scollScriptPath, 
+      array(), 
+      filemtime( get_template_directory() . '/assets/js/infinite-scroll.js' ), 
+      true
+    );
+  }
+
+  wp_enqueue_script('ajax-load-more'); 
 }
 add_action('wp_enqueue_scripts', 'stoff_enqueue');
 
