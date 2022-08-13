@@ -5,11 +5,8 @@ Lær å avslutte i tide sjølom du ikkje e ferdig, også når ting går bra. Ten
 Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først. Hugg også opp i bita til 
 ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i mål.
 
-- Endless scroll
-  - Gjere index innmaten og single innmaten til template parts
-  - men disse må ha eigen loop? sende query om ikkje allereide sendt?
-
-
+- Kjør det som e der no opp på test og få d til å funke
+- Fiks logofargen
 
 --------------------------
 - (funka expand knappane på test.stoff.no no?)

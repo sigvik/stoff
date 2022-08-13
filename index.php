@@ -111,30 +111,6 @@ if ( have_posts() ){
 }
 
 
-
-?>
-<div class="rad-gruppe"><?php
-
-  // Ajax Load More plugin infinite scroll
-  $args = array(
-    'ajax_load_more id' => "1",
-    'container_type' => "div",
-    'post_type' => "post",
-    'scroll_distance' => "-800", 
-    'button_label' => "Last inn mer", 
-    'button_loading_label' => " ", 
-    'button_done_label' => " ", 
-    'archive' => "true",
-    'no_results_text' => " ",
-  );	
-  if(function_exists('alm_render')){
-    alm_render($args);
-  }
-
-?>
-</div><?php
-
-
 get_footer(); 
 
 ?>

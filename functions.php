@@ -27,20 +27,6 @@ function stoff_enqueue() {
     true
   );
 
-
-  // Add infinite scroll script to articles & article collections
-  $scollScriptPath = get_template_directory_uri() . '/assets/js/infinite-scroll.js';
-  if ( !is_page() ) {
-    wp_enqueue_script( 
-      'infinite-scroll', 
-      $scollScriptPath, 
-      array(), 
-      filemtime( get_template_directory() . '/assets/js/infinite-scroll.js' ), 
-      true
-    );
-  }
-
-  wp_enqueue_script('ajax-load-more'); 
 }
 add_action('wp_enqueue_scripts', 'stoff_enqueue');
 
