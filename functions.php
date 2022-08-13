@@ -82,7 +82,7 @@ function stoff_customize_register( $wp_customize ) {
 
   // Add Section
   $wp_customize->add_section('header', array(
-    'title'     => __('Header', 'name-theme'), 
+    'title'     => __('Utseende', 'name-theme'), 
     'priority'  => 70,
   )); 
 
@@ -144,12 +144,6 @@ function stoff_customize_register( $wp_customize ) {
       'type' => 'textarea',
       'section' => 'header',
       'settings'  => 'footer_txt',  
-    ]], 
-    [ 'ad_setting_two', [
-      'label' => __( 'Accent Color', 'theme_textdomain' ),
-      'type' => 'color',
-      'section' => 'header',
-      'settings'  => 'ad_setting_two',  
     ]], 
   ];
   foreach ($controls as &$args) {
