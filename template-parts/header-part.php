@@ -36,7 +36,7 @@ get_template_part('template-parts/menu-overlay');
         <?php echo $logo ?>
       </a> 
 
-      <button id="hamburger" class="m_icon">&#xe5d2;</button>
+      <button id="hamburger">&#xe5d2;</button>
 
     </div>
   </div>
