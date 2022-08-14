@@ -1,87 +1,92 @@
-const elem = (id) => document.getElementById(id)
 
-const addClass = (elem, str) => elem.classList.add(str)
-const delClass = (elem, str) => elem.classList.remove(str)
-const toggleClass = (elem, str) => elem.classList.toggle(str)
+$(document).ready(function () {
 
+  const elem = (id) => document.getElementById(id)
 
-// Menu open / close -------------------------
-
-const hamburger = elem('hamburger')
-const menuOverlay = elem('menu-overlay')
-const menuOverlayBg = elem('menu-overlay-bg')
-const menuExit = elem('menu-exit')
-
-const menuOpen = () => addClass(menuOverlay, 'active')
-const menuClose = () => delClass(menuOverlay, 'active')
-
-hamburger.onclick = () => menuOpen()
-menuOverlayBg.onclick = () => menuClose()
-menuExit.onclick = () => menuClose()
+  const addClass = (elem, str) => elem.classList.add(str)
+  const delClass = (elem, str) => elem.classList.remove(str)
+  const toggleClass = (elem, str) => elem.classList.toggle(str)
 
 
-// Dark / light mode (unfinished feature, presumes starting in light) -------
-if (elem('ui-mode-toggle')) {
+  // Menu open / close -------------------------
 
-  const UIbtn = elem('ui-mode-toggle')
-  const UIicons = { light: '&#xe518;', dark: '&#xe51c;' }
-  let darkMode = false
-  if (document.body.classList.contains('dark-mode')) {
-    darkMode = true
-    UIbtn.innerHTML = UIicons.light
-  }
+  const hamburger = elem('hamburger')
+  const menuOverlay = elem('menu-overlay')
+  const menuOverlayBg = elem('menu-overlay-bg')
+  const menuExit = elem('menu-exit')
 
-  UIbtn.onclick = () => {
+  const menuOpen = () => addClass(menuOverlay, 'active')
+  const menuClose = () => delClass(menuOverlay, 'active')
 
-    toggleClass(document.body, 'dark-mode');
+  hamburger.onclick = () => menuOpen()
+  menuOverlayBg.onclick = () => menuClose()
+  menuExit.onclick = () => menuClose()
 
-    if (darkMode) {
-      darkMode = false
-      UIbtn.innerHTML = UIicons.dark
-    } else {
+
+  // Dark / light mode (unfinished feature, presumes starting in light) -------
+  if (elem('ui-mode-toggle')) {
+
+    const UIbtn = elem('ui-mode-toggle')
+    const UIicons = { light: '&#xe518;', dark: '&#xe51c;' }
+    let darkMode = false
+    if (document.body.classList.contains('dark-mode')) {
       darkMode = true
       UIbtn.innerHTML = UIicons.light
     }
-  }
 
-}
+    UIbtn.onclick = () => {
 
+      toggleClass(document.body, 'dark-mode');
 
-// Header bar scroll visibility ----------------
-
-if (elem('header-big')) {
-
-  const headerBar = elem('header-bar')
-  let lastScrollPos = 0
-  let ticking = false
-
-  function showHeaderBar(scroll_pos) {
-    (scroll_pos > 0) ? delClass(headerBar, 'hidden') : addClass(headerBar, 'hidden')
-  }
-
-  window.addEventListener('scroll', function (e) {
-    lastScrollPos = window.scrollY
-
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        showHeaderBar(lastScrollPos)
-        ticking = false
-      })
-
-      ticking = true
+      if (darkMode) {
+        darkMode = false
+        UIbtn.innerHTML = UIicons.dark
+      } else {
+        darkMode = true
+        UIbtn.innerHTML = UIicons.light
+      }
     }
-  });
 
-}
+  }
 
 
-// Menu dropdown buttons -----------------------------
+  // Header bar scroll visibility ----------------
 
-var btns = document.getElementsByClassName("dropdown-btn");
+  if (elem('header-big')) {
 
-for (let btn of btns) {
-  const subMenuId = btn.id.replace('expand-', 'submenu-')
-  const subMenu = document.getElementById(subMenuId)
+    const headerBar = elem('header-bar')
+    let lastScrollPos = 0
+    let ticking = false
 
-  btn.onclick = () => toggleClass(subMenu, 'hidden')
-}
+    function showHeaderBar(scroll_pos) {
+      (scroll_pos > 0) ? delClass(headerBar, 'hidden') : addClass(headerBar, 'hidden')
+    }
+
+    window.addEventListener('scroll', function (e) {
+      lastScrollPos = window.scrollY
+
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          showHeaderBar(lastScrollPos)
+          ticking = false
+        })
+
+        ticking = true
+      }
+    });
+
+  }
+
+
+  // Menu dropdown buttons -----------------------------
+
+  var btns = document.getElementsByClassName("dropdown-btn");
+
+  for (let btn of btns) {
+    const subMenuId = btn.id.replace('expand-', 'submenu-')
+    const subMenu = document.getElementById(subMenuId)
+
+    btn.onclick = () => toggleClass(subMenu, 'hidden')
+  }
+
+});

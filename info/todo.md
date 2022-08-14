@@ -7,11 +7,12 @@ ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i m
 
 
 
-- Converting CSS for iOS errors
-
-- Material symbols become emojis on iOS
-
-- Sabon fix
+- iOS errors
+  - Material symbols blir emojis, menyen blir = i stor.
+    iOS nekta material font?
+  - Logo i liten header blir svart (men ikkje i stor)
+  - Liten header aktiverakje sej (js error?)
+- Sabon funkakje på android
 
 
 
