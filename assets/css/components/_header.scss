@@ -28,7 +28,7 @@ Anything styling the header and it's contents.
     justify-content: space-between;
 
     .logo {
-      //width: 0; // Hacky, probably proper flexbox way to avoid container filling whole space
+      width: 0; // Hacky, probably proper flexbox way to avoid container filling whole space
 
       svg {
         height: 100%;
