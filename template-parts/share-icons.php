@@ -1,6 +1,10 @@
 <div class="share-icons">
   <div class="social-icons">
 
+    <button class="icon">
+      <?php echo m_symbol('e5d2') ?>
+    </button>
+
     <button 
       class="icon copy"
       title="Kopier lenke"

@@ -76,7 +76,7 @@ $dynamic_layout = is_front_page() || $utgaveside;
 
     <!-- Image -->
     <div class="bilde-wrapper">
-        <?php echo the_post_thumbnail($img_sizes[$size]) ?>
+      <?php echo the_post_thumbnail($img_sizes[$size]) ?>
     </div>
 
     <div class="tekstdel">
