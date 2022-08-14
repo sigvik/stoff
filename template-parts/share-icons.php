@@ -2,11 +2,11 @@
   <div class="social-icons">
 
     <button class="icon">
-      &#xe5cd;
+      
     </button>
 
     <button class="icon">
-      &#xe5cd;&#xFE0E;
+      &#xFE0E;
     </button>
 
     <button class="icon">
