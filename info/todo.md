@@ -8,10 +8,10 @@ ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i m
 
 
 - iOS errors
-  - Material symbols blir emojis, menyen blir = i stor.
+  - Material symbols blir emojis, menyen blir = i stor(overflow?).
     iOS nekta material font? Kanskje pga fakeass woff2
-  - Logo i liten header blir svart (men ikkje i stor)
-  - Liten header aktiverakje sej (js error?)
+  - Logo i liten header blir usynlig/unclickable (men ikkje i stor)
+
 - Sabon funkakje på android
 
 
