@@ -23,6 +23,7 @@ Anything styling the header and it's contents.
     @include centered-content();
     position: relative;
     height: 100%;
+    overflow: visible;
 
     @include displayFlex();
     justify-content: space-between;
@@ -31,6 +32,7 @@ Anything styling the header and it's contents.
     .logo {
       width: 0; // Hacky, probably proper flexbox way to avoid container filling whole space
       background-color: blue;
+      overflow: visible;
       svg {
         height: 100%;
         width: auto;
