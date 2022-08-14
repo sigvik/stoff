@@ -33,7 +33,7 @@ get_template_part('template-parts/menu-overlay');
     <div class="content">
 
       <a class="logo" href="<?php echo $home_url ?>">
-        <?php echo $logo ?>oioi
+        <?php echo $logo ?>
       </a> 
 
       <button id="hamburger">&#xe5d2;</button>

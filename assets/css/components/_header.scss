@@ -26,11 +26,11 @@ Anything styling the header and it's contents.
 
     @include displayFlex();
     justify-content: space-between;
-    background-color: green;
+    //background-color: green;
 
     .logo {
       width: 0; // Hacky, probably proper flexbox way to avoid container filling whole space
-      background-color: blue;
+      //background-color: blue;
       height:1.5rem; // blaa
       width: auto;
 
@@ -38,7 +38,7 @@ Anything styling the header and it's contents.
         height: 100%;
         width: auto;
         //transition: opacity $t-time;
-        background-color: red;
+        //background-color: red;
       }
     }
   }
