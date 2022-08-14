@@ -20,7 +20,7 @@ menuOverlayBg.onclick = () => menuClose()
 menuExit.onclick = () => menuClose()
 
 
-// Dark / light mode (presumes starting in light) -------------
+// Dark / light mode (unfinished feature, presumes starting in light) -------
 if (elem('ui-mode-toggle')) {
 
   const UIbtn = elem('ui-mode-toggle')

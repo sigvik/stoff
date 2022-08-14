@@ -74,6 +74,7 @@ Row group system:
 - Det ekje annonse på arkivside as of now
 - For å gjere infinite scroll properly seinare https://www.youtube.com/watch?v=7_lU7_JUS2g
 - Få inn nåke anti spam plugin
+- Digre ingressa gjer bilde mindre
 
 ------------------------------------
 
