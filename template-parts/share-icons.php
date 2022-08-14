@@ -1,22 +1,6 @@
 <div class="share-icons">
   <div class="social-icons">
 
-    <button class="icon">
-      
-    </button>
-
-    <button class="icon">
-      &#xFE0E;
-    </button>
-
-    <button class="icon">
-      &#xe14d;
-    </button>
-
-    <button class="icon">
-      &#xe14d;&#xFE0E;
-    </button>
-
     <button 
       class="icon copy m_icon"
       title="Kopier lenke"
