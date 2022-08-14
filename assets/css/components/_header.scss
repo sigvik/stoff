@@ -33,6 +33,7 @@ Anything styling the header and it's contents.
       //background-color: blue;
       height:1.5rem; // blaa
       width: auto;
+      fill: inherit;
 
       svg {
         height: 100%;
@@ -86,6 +87,7 @@ Anything styling the header and it's contents.
 .header-menu {
   // Header menu has same size as logo
   width: clamp(8rem, 60%, px2rem(560));
+  fill: inherit;
 }
 
 .header-menu-wrapper {
