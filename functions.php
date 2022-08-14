@@ -94,7 +94,7 @@ function stoff_customize_register( $wp_customize ) {
     [ 'dark_header', ['default'  => true] ], 
     [ 'header_bg', ['default'  => false] ], 
     [ 'start_dark', ['default'  => false] ], 
-    [ 'ui_toggle', ['default'  => true] ], 
+    [ 'ui_toggle', ['default'  => false] ],
     [ 'big_header', ['default'  => true] ], 
     [ 'footer_txt', ['default'  => 'STOFF arbeider etter Vær Varsom-plakatens regler for god presseskikk, og får støtte fra Velferdstinget Vest.'] ], 
     [ 'ad_setting_two', [] ], 
@@ -127,12 +127,13 @@ function stoff_customize_register( $wp_customize ) {
       'section' => 'header',
       'settings'  => 'start_dark',  
     ]], 
+    /* //UI toggle feature is unifnished, don't allow activation
     [ 'ui_toggle', [
       'label' => __( 'Tillat å endre mørk/lys modus' ),
       'type' => 'checkbox',
       'section' => 'header',
       'settings'  => 'ui_toggle', 
-    ]], 
+    ]], */
     [ 'big_header', [
       'label' => __( 'Bruk stor header' ),
       'type' => 'checkbox',

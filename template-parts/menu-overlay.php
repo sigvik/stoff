@@ -43,7 +43,7 @@ $utgaver = get_terms( 'category', ['name__like' => 'Utgave']);
     <div class="icons">
       <?php 
       get_search_form();
-      if (get_theme_mod('ui_toggle')): ?>  
+      if (get_theme_mod('ui_toggle')): echo get_theme_mod('ui_toggle'); ?>  
         <button id="ui-mode-toggle" class="icon">&#xe51c;</button><?php
       endif; ?>
       <button id="menu-exit" class="icon">&#xe5cd;</button>

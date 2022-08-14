@@ -21,26 +21,29 @@ menuExit.onclick = () => menuClose()
 
 
 // Dark / light mode (presumes starting in light) -------------
+if (elem('ui-mode-toggle')) {
 
-const UIbtn = elem('ui-mode-toggle')
-const UIicons = { light: '&#xe518;', dark: '&#xe51c;' }
-let darkMode = false
-if (document.body.classList.contains('dark-mode')) {
-  darkMode = true
-  UIbtn.innerHTML = UIicons.light
-}
-
-UIbtn.onclick = () => {
-
-  toggleClass(document.body, 'dark-mode');
-
-  if (darkMode) {
-    darkMode = false
-    UIbtn.innerHTML = UIicons.dark
-  } else {
+  const UIbtn = elem('ui-mode-toggle')
+  const UIicons = { light: '&#xe518;', dark: '&#xe51c;' }
+  let darkMode = false
+  if (document.body.classList.contains('dark-mode')) {
     darkMode = true
     UIbtn.innerHTML = UIicons.light
   }
+
+  UIbtn.onclick = () => {
+
+    toggleClass(document.body, 'dark-mode');
+
+    if (darkMode) {
+      darkMode = false
+      UIbtn.innerHTML = UIicons.dark
+    } else {
+      darkMode = true
+      UIbtn.innerHTML = UIicons.light
+    }
+  }
+
 }
 
 

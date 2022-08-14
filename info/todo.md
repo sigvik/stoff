@@ -6,7 +6,6 @@ Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først. Hugg ogs�
 ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i mål.
 
 - Converting CSS for iOS errors
-  - Sass funksjon for å legge på mozilla og webkit
 - Material symbols become emojis on iOS
 - Sabon fix
 
