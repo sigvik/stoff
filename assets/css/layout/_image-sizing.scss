@@ -32,6 +32,10 @@
 // DESKTOP ONLY ------------------------ 
 @media screen and (min-width: $tablet) {
 
+  .one-split .bilde-wrapper {
+    height: px2rem(480);
+  }
+
   .kolonne .landscape .bilde-wrapper,
   .one-split.landscape .bilde-wrapper {
     height: auto;
@@ -44,15 +48,6 @@
   .sak:not(.cover).landscape img {
     max-height: inherit;
     width: 100%;
-  }
-
-}
-
-// TABLET AND BIGGER ------------------------ 
-@media screen and (min-width: $mobile) {
-
-  .one-split .bilde-wrapper {
-    height: px2rem(480);
   }
 
 }
