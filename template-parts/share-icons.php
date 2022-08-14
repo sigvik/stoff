@@ -10,11 +10,11 @@
     </button>
 
     <button class="icon">
-      <?php echo m_symbol('e14d') ?>
+      &#xe14d;
     </button>
 
     <button class="icon">
-      <?php echo m_symbol('e5d2') ?>
+      &#xe14d;&#xFE0E;
     </button>
 
     <button 
