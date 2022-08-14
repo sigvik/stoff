@@ -26,14 +26,16 @@ Anything styling the header and it's contents.
 
     @include displayFlex();
     justify-content: space-between;
+    background-color: green;
 
     .logo {
       width: 0; // Hacky, probably proper flexbox way to avoid container filling whole space
-
+      background-color: blue;
       svg {
         height: 100%;
         width: auto;
-        transition: opacity $t-time;
+        //transition: opacity $t-time;
+        background-color: red;
       }
     }
   }
