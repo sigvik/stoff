@@ -118,6 +118,7 @@ http://shouldiprefix.com/
 - for å få kategoriside til å ikkje ha /category/ først går du på permalink settings, sette custom structure til /%category%/%year%/%monthnum%/%day%/%postname%/ og category slug til .  (Må også ikkje ha side som overkjøre)
 - Det som slowa ned flywheel til helvete va getimagesize()
 - For bakgrunnsfarge på ei radgruppe, wrap den i en div og gi den fargen
+- Material icons needs to have material icons font specified instead of as a fallback font. If not line height is messed up and might be overriden by emojis on iOS. Hamburger button however needs it to be a fallback to fit with top of logo. Weird.
 
 ------------------------
 
