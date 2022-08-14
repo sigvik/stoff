@@ -11,6 +11,8 @@ ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i m
   - Material symbols blir emojis
     iOS nekta material font? Kanskje pga fakeass woff2
 
+    LUL feilen e at ej spesifiserakje material symbol font
+
 - Sabon funkakje på android
 
 

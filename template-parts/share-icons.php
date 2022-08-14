@@ -18,7 +18,7 @@
     </button>
 
     <button 
-      class="icon copy"
+      class="icon copy m_icon"
       title="Kopier lenke"
       onclick="
         navigator.clipboard.writeText('<?php echo get_the_permalink() ?>');
