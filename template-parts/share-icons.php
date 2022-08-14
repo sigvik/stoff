@@ -2,11 +2,11 @@
   <div class="social-icons">
 
     <button class="icon">
-      <?php echo m_symbol('e876') ?>
+      &#xe5cd;
     </button>
 
     <button class="icon">
-      <?php echo m_symbol('e8b8') ?>
+      &#xe5cd;&#xFE0E;
     </button>
 
     <button class="icon">
