@@ -2,6 +2,18 @@
   <div class="social-icons">
 
     <button class="icon">
+      <?php echo m_symbol('e876') ?>
+    </button>
+
+    <button class="icon">
+      <?php echo m_symbol('e8b8') ?>
+    </button>
+
+    <button class="icon">
+      <?php echo m_symbol('e8b6') ?>
+    </button>
+
+    <button class="icon">
       <?php echo m_symbol('e5d2') ?>
     </button>
 
