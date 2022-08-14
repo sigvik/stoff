@@ -17,7 +17,7 @@ $min-padding: px2rem(56);
   top: 0;
   right: -100%;
 
-  display: flex;
+  @include displayFlex();
   flex-direction: column;
   gap: 2rem;
   //justify-content: space-between;
@@ -33,13 +33,13 @@ $min-padding: px2rem(56);
 
 
   @mixin flex-col($gap) {
-    display: flex;
+    @include displayFlex();
     flex-direction: column;
     gap: $gap;
   }
 
   .icons, #searchform {
-    display: flex;
+    @include displayFlex();
     justify-content: space-between;
     gap: $small-gap;
     width: 100%;
@@ -54,7 +54,7 @@ $min-padding: px2rem(56);
     padding: 1.5rem 0;
 
     .menu-item {
-      display: flex;
+      @include displayFlex();
       justify-content: space-between;
       padding: 0.5rem 0 1.5rem;
     }
@@ -62,7 +62,7 @@ $min-padding: px2rem(56);
   }
 
   .large-categories .sub-menu {
-    display: flex;
+    @include displayFlex();
     flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;
@@ -94,16 +94,16 @@ $min-padding: px2rem(56);
 
     .social-icons {
       padding: 1rem 0 $default-gap;
-      flex: 1;
+      @include flex(1);
     }
 
     .row {
-      display: flex;
+      @include displayFlex();
       gap: $default-gap;
     }
 
     .row>* {
-      flex: 1;
+      @include flex(1);
     }
 
     .vt-logo svg {

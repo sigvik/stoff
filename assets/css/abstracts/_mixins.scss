@@ -23,9 +23,34 @@ Common style elements to be used by other stylesheets.
   border-bottom: $divider-height solid var(--text-color);
 }
 
-@mixin unselectable() {
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
+@mixin crossBrowser($property, $val) {
+  -webkit-#{$property}: $val;
+  -moz-#{$property}: $val;
+  -ms-#{$property}: $val;
+  #{$property}: $val;
 }
+
+@mixin displayGrid() {
+  display: -ms-grid;
+  display: grid;
+}
+
+@mixin displayFlex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($val) {
+  -webkit-box-flex: $val;
+  -webkit-flex: $val;
+  -ms-flex: $val;
+  flex: $val;
+}
+
+@mixin unselectable() {
+  @include crossBrowser(user-select, none);
+}
+
+

@@ -73,6 +73,7 @@ Row group system:
 - Advanced field for featured image caption?
 - Det ekje annonse på arkivside as of now
 - For å gjere infinite scroll properly seinare https://www.youtube.com/watch?v=7_lU7_JUS2g
+- Få inn nåke anti spam plugin
 
 ------------------------------------
 
@@ -88,6 +89,9 @@ Om fleksibel layout:
 https://developer.wordpress.org/themes/customize-api/
 .. korleis bruke custom info en he satt opp?
 advanced custom fields
+
+CSS prefixes, browser support
+http://shouldiprefix.com/
 
 
 -------------------------

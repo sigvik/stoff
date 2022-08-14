@@ -1,7 +1,7 @@
 // IMAGE SIZING
 
 .bilde-wrapper {
-  display: flex;
+  @include displayFlex();
   justify-content: center;
   height: px2rem(256);
   background-color: var(--opaque);

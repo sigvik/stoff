@@ -5,13 +5,15 @@ Lær å avslutte i tide sjølom du ikkje e ferdig, også når ting går bra. Ten
 Gjer det enkelt, i same stil som andre. Hugg opp planen i bita først. Hugg også opp i bita til 
 ka tid utover heile prosjektet, for å lage en trygg følelse av at det går i mål.
 
+- Converting CSS for iOS errors
+  - Sass funksjon for å legge på mozilla og webkit
+- Material symbols become emojis on iOS
+- Sabon fix
+
+--------------------------------
+Uviktig:
+
 - Gjere rolla til journo actually restricted so den ikkje kjeminnpå admin med uhell
-- Fiks ka sake some på forsida
-- Fiks logofargen - lmao sida e fullstendig broken på ios (bank emoji og princess emoji - og row col på tablet)
 - Fikse wp admin looken (egen font)
-- Endre 'headerinstilligner' til nåke anna / fjerne 'accent color'
 - oppdatere php
 - Fikse cookie consent
-
---------------------------
-- (funka expand knappane på test.stoff.no no?)

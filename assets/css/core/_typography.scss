@@ -56,9 +56,8 @@ div[class$="-adlabel"],
 
   // Use &shy; to mark good places to break text. E.g. "train&shy;station"
   word-wrap: break-word;
-  -webkit-hyphens: manual;
-  -ms-hyphens: manual;
-  hyphens: manual;
+  @include crossBrowser(hyphens, manual);
+  
 }
 
 .overskrift {

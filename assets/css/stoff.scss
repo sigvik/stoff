@@ -55,7 +55,7 @@ button:not(.logo) {
 }
 
 .social-icons {
-  display: flex;
+  @include displayFlex();
   gap: px2rem(16);
 }
 

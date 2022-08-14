@@ -18,7 +18,7 @@ intertwined with the gird.
 
 .rad,
 .kolonne {
-  display: flex;
+  @include displayFlex();
   flex-direction: row; // flex-direction: column for .kolonne further down */
   gap: $default-gap;
 }
@@ -28,27 +28,27 @@ intertwined with the gird.
 }
 
 .sak {
-  display: flex;
+  @include displayFlex();
   flex-direction: column;
   padding: $default-gap 0;
   width: 100%;
   gap: $small-gap;
 
   .innhold {
-    display: flex;
+    @include displayFlex();
     flex-direction: column;
     gap: $small-gap;
   }
 }
 
 .tekstdel {
-  display: flex;
+  @include displayFlex();
   flex-direction: column;
   gap: $small-gap;
 }
 
 .tags {
-  display: flex;
+  @include displayFlex();
   justify-content: center;
   gap: $small-gap;
 }
@@ -88,7 +88,7 @@ intertwined with the gird.
   // ---- three-split-alt ----
 
   .three-split-alt {
-    display: grid;
+    @include displayGrid();
     grid-template-columns: repeat(3, 1fr);
   }
 

@@ -9,7 +9,7 @@
   @include centered-content();
   @include divider-top();
   @include divider-btm();
-  display: flex;
+  @include displayFlex();
   justify-content: flex-end;
 
   .social-icons {
@@ -34,7 +34,7 @@ article figure {
 }
 
 .opp-ned {
-  transform: rotate(180deg);
+  @include crossBrowser(transform, rotate(180deg));
   /* Optional solution that blacks out instead of rotating
   background-color: var(--text-color);
   color: var(--text-color);
