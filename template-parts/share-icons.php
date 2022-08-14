@@ -10,7 +10,7 @@
     </button>
 
     <button class="icon">
-      <?php echo m_symbol('e8b6') ?>
+      <?php echo m_symbol('e14d') ?>
     </button>
 
     <button class="icon">
