@@ -1,15 +1,7 @@
 ## Roadmap:
 
-- Artikkelside
-- Enkeltside (om oss, etc)
-- Søkefunksjon
-- Dropdown kategoria i menyen (og links på dei)
-- 404 side
-- Theme customizing (colors, front page, ad)
-
+- Theme customizing (colors etc)
 - Endless scroll / Les også
-
-- Implementering (wp admin, plugin og categories fixing)
 
 -------------------------------------
 
@@ -76,6 +68,11 @@ Row group system:
 - Få inn nåke anti spam plugin
 - Digre ingressa gjer bilde mindre
 - Bilde settikje sej ordentlig inn i sak size wise, bryte flyten til innlasta
+- Vil probably redusere load time en heil del å fjerne material icons font (1.5mb) for et utvalg svg file
+- Gjere rolla til journo actually restricted so den ikkje kjeminnpå admin med uhell
+- Fikse wp admin looken (egen font)
+- oppdatere php
+- Fikse cookie consent
 
 ------------------------------------
 
@@ -98,13 +95,6 @@ http://shouldiprefix.com/
 
 -------------------------
 
-## Mysteries:
-- Korfor blir brødteksta fakka av og til, med tilsynelatande same formatering
-- korleis funka utgave systemet, e visst ikkje BERRE categories. slags search term? virka introdusert i nye themen. nåke basic php sql variable shit?
-- suggested articles e berre forsidesakene til tidligare utgave? (OG ALLE AV DEI?)
-- vanilla framside vise kun stickies?
-- korleis kan vi få gamle utgave til å ha en viss custom layout?
-
 ## Solved mysteries:
 - Riktig themenavn må oppdaterast i alle style.css paths
 - Versjonnavn på css må oppdaterast i header for refresh
@@ -119,13 +109,6 @@ http://shouldiprefix.com/
 - Det som slowa ned flywheel til helvete va getimagesize()
 - For bakgrunnsfarge på ei radgruppe, wrap den i en div og gi den fargen
 - Material icons needs to have material icons font specified instead of as a fallback font. If not line height is messed up and might be overriden by emojis on iOS. Hamburger button however needs it to be a fallback to fit with top of logo. Weird.
-
-------------------------
-
-## Other business:
-
-.. finne ut om vi he prøvd å kjøpe stoff.no
-.. foreslå vi burde opprette en wikipedia artikkel for stoff magasin
 
 -------------------------
 
@@ -149,5 +132,4 @@ Artikkel:
 - Å gjere DIN i admin til en linka font
 - Oversett filene til engelsk
 - Få inn HTML5 artikkel tags
-- Skriv en plass WP'en må være på norsk for dates
 - Backup plugin
