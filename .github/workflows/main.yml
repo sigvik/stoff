@@ -4,7 +4,7 @@ on:
       - master
 name: 🚀 Deploy website on push
 jobs:
-  web-deploy:
+  web-deploy-test:
     name: 🎉 Deploy Test
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,7 @@ jobs:
         password: ${{ secrets.stoff_password }}
         protocol: ftp
         server-dir: /test/wp-content/themes/stoff/
-  web-deploy:
+  web-deploy-main:
     name: 🎉 Deploy Main
     runs-on: ubuntu-latest
     steps:
