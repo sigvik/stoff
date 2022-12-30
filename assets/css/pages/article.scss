@@ -51,7 +51,8 @@ article .img-right img {
 }
 
 // Some article images are displayed on their own line
-article b img {
+article b img,
+article strong img {
   display: block;
 }
 
