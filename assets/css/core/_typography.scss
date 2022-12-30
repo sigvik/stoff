@@ -83,6 +83,13 @@ div[class$="-adlabel"],
   @include material-symbol();
   font-size: 2rem;
   font-variation-settings: 'FILL' 1, 'wght' 300;
+
+  // Lazy fix for displaying the 'Kopiert!' message when Icon clicked in the correct font:
+  p {
+    margin: 0;
+    padding: 0;
+    font-family: $main-font;
+  }
 }
 
 .m_icon {

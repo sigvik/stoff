@@ -45,6 +45,7 @@ intertwined with the gird.
   @include displayFlex();
   flex-direction: column;
   gap: $small-gap;
+  flex: 1;
 }
 
 .tags {

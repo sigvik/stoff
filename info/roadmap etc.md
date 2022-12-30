@@ -116,7 +116,7 @@ http://shouldiprefix.com/
 
 - Medium.com med riktige fonta, Grist, It's Nice That
 - D2, Subjekt
-- MIC, Elite Daily
+- MIC, Elite Daily, Dazed, Gawker
 - K7bulletin, Samviten
 - https://lifestyle.allwomenstalk.com/
 

@@ -125,7 +125,7 @@ $utgaver = get_terms( 'category', ['name__like' => 'Utgave']);
         <div class="text">
           <?php echo get_theme_mod('footer_txt'); ?>
           
-          <p><a href="https://goodshit.no">Utviklet av Sigurd Vikene</a></p>
+          <p><a href="https://sigurd.cc">Utviklet av Sigurd Vikene</a></p>
           
           <p>© <?php echo bloginfo('title') .' '. date("Y"); ?></p>
         </div>

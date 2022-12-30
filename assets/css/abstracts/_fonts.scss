@@ -53,14 +53,14 @@ $DIN-vars: (
 @include font-fam('DIN', $DIN-vars);
 
 
-// ----- SabonLtStd --------
+// ----- SabonLTStd --------
 $Sabon-vars: (
   "Roman": 400,
   "Italic": 400,
   "Bold": 700,
   "BoldItalic": 700
 );
-@include font-fam('SabonLtStd', $Sabon-vars);
+@include font-fam('SabonLTStd', $Sabon-vars);
 
 // ----- BodoniMTStd --------
 $Bodoni-vars: (

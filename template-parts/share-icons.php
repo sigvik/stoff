@@ -6,7 +6,7 @@
       title="Kopier lenke"
       onclick="
         navigator.clipboard.writeText('<?php echo get_the_permalink() ?>');
-        this.innerHTML = 'Kopiert!';
+        this.innerHTML = '<p>Kopiert!</p>';
         setTimeout(() => {this.innerHTML = '<?php echo m_symbol('e14d') ?>'}, 800);
       "
     >
