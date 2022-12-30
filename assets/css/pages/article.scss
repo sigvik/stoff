@@ -50,6 +50,11 @@ article .img-right img {
   width: clamp(12rem, 90vw, 22rem);
 }
 
+// Some article images are displayed on their own line
+article b img {
+  display: block;
+}
+
 
 // DESKTOP ONLY ------------------------ 
 @media screen and (min-width: $tablet) {
